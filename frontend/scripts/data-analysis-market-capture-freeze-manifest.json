@@ -1,0 +1,220 @@
+{
+  "schemaVersion": 1,
+  "featureVersion": "data-analysis-market-capture-v2-cef150-bounded-complete-20260828",
+  "frozenAt": "2026-08-28",
+  "files": {
+    "src/features/dataAnalysis/constants/dataAnalysisMarketCaptureFreezeContract.js": "67c291fb8f38b916ebd6039589d5b9d5b43a24491fb021ddfdddb7bd53e688aa",
+    "src/features/dataAnalysis/model/useDataAnalysisMarket.js": "390208b1d4c7d858ff609de5284d15cec2d8e52190ebe0cca3f9440b6851a191",
+    "src/features/dataAnalysis/services/dataAnalysisMarketHotRuntime.js": "7b15ae64ce11d6fe8bb449a631d96678f5d007c4ce3ee889c7ec76632dde7ba9",
+    "src/features/dataAnalysis/services/dataAnalysisMarketRefreshService.js": "6b1a0b6dd3091d5975bdbcfe82a105228fd96687349650f17fa19d1b16be8834",
+    "src/features/dataAnalysis/services/dataAnalysisMarketBrowserService.js": "0c16960fee066cc8522b9c372e0b295cb7245bb7f8ab32919305fbb37884e41e",
+    "src/features/dataAnalysis/services/dataAnalysisMarketCacheService.js": "c9d34300a897dd23d3957338e4c2ddc55a631811a1b3a7fa9b30b835e04b456d",
+    "src/features/dataAnalysis/services/dataAnalysisMarketCacheStorage.js": "398ba8372cc05328ddff7bd5e50c0f3259a208d31ba3cecf000913a35f3bcf4d",
+    "src/services/ozonMarketCapture/marketCaptureRoutes.js": "7ff8e391d8c30123b28fd0ae108ebc4a6afcf3516891a083873b983c6f7eaa56",
+    "src/services/ozonMarketCapture/marketCaptureTransport.js": "ae8caecc80a5a7fdbe3c83c925a19ee2582ab38a6b4af46f48c1f09065afe029",
+    "src/services/ozonMarketCapture/marketCaptureWorkflow.js": "25328a0f7ad431bb5c90d4d211b8856275745006911cac753be6742139352e77",
+    "src/services/ozonMarketCapture/marketCollectorCoordinator.js": "be8a5b23be489c96859d12f0fb451a545aa7b96e74dc184fefd3af6868f8143a",
+    "../desktop/resources/browser-extensions/ozon-analytics-observer/content/ozon-analytics-observer.js": "26a65aa3ecac3f317920853598cb2f4e731b6d68ca58cf4f344f8df083ddbbf8",
+    "../desktop/resources/browser-extensions/ozon-analytics-observer/manifest.json": "a20652dd1c096a64ef370bed08916ea757d46e77507d0bc3a21c34aba4c59e10"
+  },
+  "contracts": [
+    {
+      "file": "src/features/dataAnalysis/DataAnalysisPage.jsx",
+      "required": [
+        "const market = useDataAnalysisMarket({",
+        "enabled: isActive && center.activeModuleId === 'market',"
+      ]
+    },
+    {
+      "file": "src/features/dataAnalysis/model/useDataAnalysisMarket.js",
+      "required": [
+        "useDataAnalysisMarket({ enabled = false }",
+        "readDataAnalysisMarketCache({})",
+        "browser: { autoNavigate: true, awaitBackground: true }"
+      ],
+      "forbidden": [
+        "profileId = ''",
+        "shopId = ''",
+        "first-page-only"
+      ]
+    },
+    {
+      "file": "src/features/dataAnalysis/services/dataAnalysisMarketHotRuntime.js",
+      "required": [
+        "DATA_ANALYSIS_MARKET_BACKGROUND_INTERVAL_MS = 30 * 60_000",
+        "profileId: profileIds[0]",
+        "selectOzonBrowserProfiles(payload)[0]"
+      ],
+      "forbidden": [
+        "5 * 60_000",
+        "for (const profileId of profileIds)",
+        "Promise.all(profileIds"
+      ]
+    },
+    {
+      "file": "src/features/dataAnalysis/services/dataAnalysisMarketRefreshService.js",
+      "required": [
+        "const DEFAULT_INTERACTIVE_TIMEOUT_MS = 25 * 60_000",
+        "const DEFAULT_PASSIVE_TIMEOUT_MS = 30 * 60_000",
+        "safePartialCapture",
+        "failedRoutes.length",
+        "MARKET_CACHE_WRITE_ATTEMPTS = 3"
+      ]
+    },
+    {
+      "file": "src/services/ozonMarketCapture/marketCaptureRoutes.js",
+      "required": [
+        "id: 'all-queries'",
+        "id: 'ozon-bestsellers'",
+        "id: 'market-bestsellers'",
+        "id: 'all-bestsellers'",
+        "id: 'graphs'",
+        "paginationMode: 'complete'",
+        "pagination: false",
+        "OZON_MARKET_REFRESH_BUDGET_MS = 20 * 60_000"
+      ],
+      "forbidden": [
+        "paginationMode: 'first-page-only'"
+      ]
+    },
+    {
+      "file": "src/services/ozonMarketCapture/marketCaptureTransport.js",
+      "required": [
+        "DEFAULT_PAGINATION_DELAY_MS = 100",
+        "['duplicate-page', Object.freeze({",
+        "preserveExisting: true",
+        "markTimeBudgetPartial",
+        "markPageBudgetPartial"
+      ],
+      "forbidden": [
+        "markFirstPageOnlyPartial",
+        "OZON_DATA_PAGINATION_FIRST_PAGE_ONLY",
+        "paginationMode === 'first-page-only'"
+      ]
+    },
+    {
+      "file": "src/services/ozonMarketCapture/marketCaptureWorkflow.js",
+      "required": [
+        "Math.min(OZON_MARKET_REFRESH_BUDGET_MS, Number(options.paginationBudgetMs) || OZON_MARKET_REFRESH_BUDGET_MS)",
+        "paginationDeadlineAt",
+        "safeToPersist",
+        "preserveExisting"
+      ]
+    },
+    {
+      "file": "../desktop/src/purchaseBrowser/cefPurchaseBrowserController.js",
+      "required": [
+        "MARKET_COLLECTOR: 'market-collector'",
+        "command === 'ozon-data-paginate'",
+        "const paginationPages = Math.max(1, Math.min(250, Number(input.maxPages) || 5))",
+        "? 1_205_000",
+        "Math.min(1_205_000, 150_000 + paginationPages * (paginationDelay + 30_000))",
+        "OZON_LOGIN_VERIFICATION_PENDING",
+        "const shouldPreemptCollector = !productLinkParserCommand && (",
+        "supersedePendingKeys: lifecycleCommand || interactiveOpen ? ['bounds'] : []"
+      ]
+    },
+    {
+      "file": "../desktop/resources/browser-extensions/ozon-analytics-observer/content/ozon-analytics-observer.js",
+      "required": [
+        "const VERSION = '2.6.15'",
+        "const MAX_OFFSET_PAGE_SIZE = 50",
+        "async function paginate(sourceSequence, maxPages = 5, delayMs = 100)",
+        "const delay = Math.max(100, Math.min(3000, Number(delayMs) || 100))",
+        "if (expandedOffsetFailed)",
+        "stopReason = 'empty-page'",
+        "stopReason = 'duplicate-page'"
+      ]
+    },
+    {
+      "file": "../desktop/resources/browser-extensions/ozon-analytics-observer/manifest.json",
+      "required": [
+        "\"version\": \"2.6.15\""
+      ]
+    },
+    {
+      "file": "package.json",
+      "required": [
+        "\"check:data-analysis-market-capture-freeze\": \"node scripts/data-analysis-market-capture-freeze.mjs\"",
+        "scripts/data-analysis-market-capture-freeze.node.mjs",
+        "npm run check:data-analysis-market-capture-freeze"
+      ]
+    },
+    {
+      "file": "../.agents/references/frozen-contracts.md",
+      "required": [
+        "data-analysis-market-capture-v2-cef150-bounded-complete-20260828",
+        "npm run check:data-analysis-market-capture-freeze",
+        "market-collector"
+      ]
+    },
+    {
+      "file": "../desktop/native/Wangzai.CefBrowserHost/BrowserSession.cs",
+      "required": [
+        "RenderProcessMessageHandler = new FingerprintRenderProcessMessageHandler(profile)",
+        "case \"ozon-data-status\"",
+        "case \"ozon-data-read\"",
+        "case \"ozon-data-probe\"",
+        "case \"ozon-data-paginate\"",
+        "case \"ozon-data-cancel-pagination\"",
+        "ReadOzonSellerSessionEvidenceAsync()",
+        "verificationOutcome",
+        "verificationPending"
+      ]
+    },
+    {
+      "file": "../desktop/src/purchaseBrowser/purchaseBrowserAccountPrewarmer.js",
+      "required": [
+        "selectOzonBrowserPrewarmProfiles",
+        "browserRole: 'market-collector'",
+        "command: 'ozon-login-status'",
+        "persistStatus: true",
+        "OZON_LOGIN_READY_ATTEMPTS",
+        "OZON_LOGIN_VERIFICATION_PENDING",
+        "throw new Error('OZON_LOGIN_REQUIRED')"
+      ]
+    },
+    {
+      "file": "../desktop/src/purchaseBrowser/purchaseBrowserLocalApiClient.js",
+      "required": [
+        "saveIntegrationProfileLoginStatus(profileId, body)",
+        "/api/internal/purchase-browser/integration-profiles/${id}/login-status"
+      ]
+    },
+    {
+      "file": "../desktop/src/purchaseBrowser/purchaseBrowserExternalLinkRouter.js",
+      "required": [
+        "chooseOzonSellerIntegrationProfile",
+        "clean(row?.shopId || row?.shop_id) === requestedShopId",
+        "ownerType: 'integration_profile'"
+      ]
+    },
+    {
+      "file": "../local-api/src/db/repositories/integrationProfileRepository.js",
+      "required": [
+        "function saveBrowserLoginState(profileId, input = {})",
+        "const verified = input.loggedIn === true && input.cookieSaved === true",
+        "const configStatus = !verified",
+        "verified ? 'Cookie 已保存' : 'Cookie 已失效'",
+        "Date.parse(timestamp) < existingUpdatedAt",
+        "PURCHASE_BROWSER_INTEGRATION_LOGIN_READBACK_FAILED"
+      ]
+    },
+    {
+      "file": "src/features/settings/services/ozonBrowserLoginService.js",
+      "required": [
+        "command: 'ozon-login-status'",
+        "status.result.loggedIn === true",
+        "status.result.cookieSaved === true"
+      ]
+    },
+    {
+      "file": "../desktop/native/Wangzai.CefBrowserHost/InternalRequestHandler.cs",
+      "required": [
+        "Alibaba1688OrderNetworkCapture? alibaba1688OrderCapture",
+        "BrowserUrlPolicy.IsAllowedInteractiveNavigation(request.Url, extensions)",
+        "new FingerprintResourceRequestHandler(profile, alibaba1688OrderCapture)"
+      ]
+    }
+  ]
+}

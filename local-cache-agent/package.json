@@ -1,0 +1,16 @@
+{
+  "name": "wangzai-local-cache-agent",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "客户电脑本地数据代理，并在用户选择本地模式时执行固定模板自动回复。",
+  "scripts": {
+    "start": "node src/server.js",
+    "check": "node --check src/server.js && node --check src/store.js && node --check src/compatRoutes.js && node --check src/smartReply/contract.js && node --check src/smartReply/ozonClient.js && node --check src/smartReply/localService.js",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "license": "SEE LICENSE IN ../LICENSE"
+}

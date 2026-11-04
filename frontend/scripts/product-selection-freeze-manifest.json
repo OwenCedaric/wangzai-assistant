@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 1,
+  "featureVersion": "ozon-product-selection-v2-server-template-20260828",
+  "frozenAt": "2026-08-28",
+  "files": {
+    "src/features/promptLibrary/constants/productSelectionFreezeContract.js": "ea114ca4f0549efac1427db1dcb2272b4b15cfafa19122c33fe4b0ea9b1d79ed",
+    "src/features/promptLibrary/services/smartToolProductSelectionService.js": "29451fdcf8de9c973ca837b2bb0fcacc1e724b0ebb5aa7993a50eb8f17d4891d",
+    "src/features/promptLibrary/services/smartToolProductSelectionInsightService.js": "11e46787a6fb05ca8ac10e3af05e36796575fc1a92028e001048ae42d722f904",
+    "src/features/promptLibrary/services/smartToolProductSelectionSourcePlanService.js": "e3e390a1b7deb08c89f4299df39fb90c3ebdee5752f5b248bf0791769eea4b6f",
+    "src/features/promptLibrary/services/smartToolProductSelectionSourceService.js": "666368b67a99eb47ecde5da75ccba4f541faed18d10877f7ae9ef71fc3a74002",
+    "src/features/promptLibrary/components/PromptLibraryProductSelectionSources.jsx": "97f92d53bca54b5cf95cf83a2540cd01ff2c32ab1648da14665d44afa4e4d2f8",
+    "src/features/promptLibrary/lib/smartToolOzonProductAnalysis.js": "4dbecd82d5ea80673add74884226ba5098ce718d48f007ad4ed3ca7195a53572",
+    "src/features/promptLibrary/lib/smartToolOzonProductDecisionRules.js": "93d5b1973e17c72f34150137c74616e08f90c7c7c939714c41deb6845e66f984",
+    "src/features/promptLibrary/lib/smartToolOzonProductMetricMath.js": "28458568581da97e1d717e8afed7a5f93c8851f1e053d5d23605560715e16bee",
+    "src/features/promptLibrary/lib/smartToolServerTemplates.js": "2108d463f0040406569a3577785ea94929b7bbf0ddbf9bf5cc12d1a0513c411e"
+  },
+  "segments": [
+    {
+      "name": "ozon-product-selection-styles",
+      "file": "src/styles.css",
+      "startMarker": "/* PRODUCT_SELECTION_FREEZE:BEGIN */",
+      "endMarker": "/* PRODUCT_SELECTION_FREEZE:END */",
+      "sha256": "d1476aadfa5670c96a82cdd21db7563420663664c43e285c7313f914fcce5fdb"
+    }
+  ],
+  "contracts": [
+    {
+      "file": "src/features/promptLibrary/components/PromptLibraryStandardRun.jsx",
+      "required": [
+        "import { PromptLibraryProductSelectionSources } from './PromptLibraryProductSelectionSources.jsx';",
+        "import { PRODUCT_SELECTION_SKILL_ID } from '../constants/productSelectionFreezeContract.js';",
+        "selectedPrompt?.id === PRODUCT_SELECTION_SKILL_ID",
+        "result.productSelectionInsight",
+        "<PromptLibraryProductSelectionSources sourceSearch={result.sourceSearch} />"
+      ]
+    },
+    {
+      "file": "src/features/promptLibrary/components/PromptLibraryOzonProductResult.jsx",
+      "required": [
+        "result?.viewType !== 'product-selection'",
+        "<ProductSelectionSupport result={result} />"
+      ]
+    },
+    {
+      "file": "src/features/promptLibrary/model/usePromptLibraryExecution.js",
+      "required": [
+        "canUseSmartToolProductSelection,",
+        "runSmartToolProductSelection,",
+        "runSmartToolProductSelection(selectedPrompt, values, {",
+        "modelSelection,"
+      ]
+    },
+    {
+      "file": "src/features/promptLibrary/services/smartToolOzonBrowserDataService.js",
+      "required": [
+        "import { analyzeOzonProductRecords } from '../lib/smartToolOzonProductAnalysis.js';",
+        "const productAnalysis = analyzeOzonProductRecords(outputRecords, {",
+        "productAnalysis,"
+      ]
+    },
+    {
+      "file": "src/features/promptLibrary/lib/promptLibraryStore.jsx",
+      "required": [
+        "id: 'ozon-product-selection'",
+        "title: 'Ozon 选品助手'",
+        "'ozon-product-selection': ['选品分析', '商品列表']"
+      ]
+    },
+    {
+      "file": "src/features/promptLibrary/lib/smartToolSkillCatalog.js",
+      "required": [
+        "'ozon-product-selection': {",
+        "runType: 'ozon-product-selection-readonly'",
+        "自动选择 Ozon 同类热销商品，转换成中文采购词，并过滤与商品不一致的 1688 识图结果",
+        "固定评分由程序计算，文本模型只能解释，不能改分或补造指标"
+      ]
+    },
+    {
+      "file": "src/features/promptLibrary/lib/smartToolRuntime.js",
+      "required": [
+        "'ozon-product-selection': {",
+        "actionMode: '读取市场数据并生成选品判断'",
+        "全程只读"
+      ]
+    },
+    {
+      "file": "src/features/promptLibrary/lib/smartToolServerTemplates.js",
+      "required": [
+        "'ozon-product-selection': {",
+        "templateId: 'product-selection.v1'",
+        "modelPurpose: 'Ozon 选品决策、市场证据与货源核对'",
+        "systemPrompt: ''"
+      ]
+    },
+    {
+      "file": "src/features/promptLibrary/lib/smartToolOzonBrowserDataProfiles.js",
+      "required": [
+        "'ozon-product-selection': {",
+        "queryMode: 'product'",
+        "datasets: ['product-performance']"
+      ]
+    },
+    {
+      "file": "src/features/promptLibrary/services/smartToolProductLinkService.js",
+      "required": [
+        "export async function parseSmartToolProductLink",
+        "{ key: '1688', label: '1688', hosts: ['1688.com', 'alibaba.com'] }"
+      ]
+    },
+    {
+      "file": "package.json",
+      "required": [
+        "\"check:product-selection-freeze\": \"node scripts/product-selection-freeze.mjs\"",
+        "scripts/product-selection-freeze.node.mjs",
+        "npm run check:product-selection-freeze"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,143 @@
+{
+  "schemaVersion": 1,
+  "featureVersion": "data-analysis-insight-v2-server-template-20260828",
+  "frozenAt": "2026-08-28",
+  "files": {
+    "src/features/dataAnalysis/constants/dataAnalysisInsightFreezeContract.js": "3089f053c21c8d669661adb2ef0feb8efabba6a5b79b5a6a04c382503c036f9c",
+    "src/features/dataAnalysis/components/DataAnalysisInsightDialog.jsx": "75b39baa8d62c51b657540374e5472789a3e38ac59e8b40758ea1212624dc431",
+    "src/features/dataAnalysis/components/DataAnalysisInsightReport.jsx": "841824b8bf82d1baf5ff4b4c7ba8d481965c4d8ed2685a642c1c001dc450ec64",
+    "src/features/dataAnalysis/lib/dataAnalysisInsightReport.js": "c0ab6115d40a69c22c1c7fc1bdea7df24289a963242812b3db227d0470af21ca",
+    "src/features/dataAnalysis/model/useDataAnalysisInsight.js": "40366c186d3ae795e36f6d53209adb00f7d40f15a97732d78f7cebeced8b5d8b",
+    "src/features/dataAnalysis/services/dataAnalysisInsightClient.js": "1f5fb7c3a2bcceeeae0159656eeda7c1130a0cf370784b8d34e779969d9eb74d",
+    "../local-api/src/domain/dataAnalysis/dataAnalysisInsightService.js": "a1325f466f9e64b23077658ba74077f773ac51d0e4208034e124d626d760f4dc",
+    "../local-api/src/domain/dataAnalysis/dataAnalysisInsightRoutes.js": "d02d986697df5bbccb3eca6c025733b2018b71c0611e261a80cbbe3ed26c80a5"
+  },
+  "segments": [
+    {
+      "name": "data-analysis-insight-report-styles",
+      "file": "src/styles.css",
+      "startMarker": "/* DATA_ANALYSIS_INSIGHT_REPORT_FREEZE:BEGIN */",
+      "endMarker": "/* DATA_ANALYSIS_INSIGHT_REPORT_FREEZE:END */",
+      "sha256": "68db40519da0855f0d6eba4afbf2e7f6ac724d8faedf4d3ef0658aaf158f040a"
+    }
+  ],
+  "contracts": [
+    {
+      "file": "src/features/dataAnalysis/DataAnalysisPage.jsx",
+      "required": [
+        "import { DataAnalysisInsightDialog } from './components/DataAnalysisInsightDialog.jsx';",
+        "const insight = useDataAnalysisInsight({",
+        "dashboard,",
+        "promptConfig: skillConfig",
+        "setAnalysisOpen(true);",
+        "void analyzeInsight();",
+        "dashboard={dashboard}"
+      ],
+      "forbidden": [
+        "refreshAnalysis({ keepStatus: true })"
+      ]
+    },
+    {
+      "file": "src/features/dataAnalysis/components/DataAnalysisInsightDialog.jsx",
+      "required": [
+        "import { DataAnalysisInsightReport } from './DataAnalysisInsightReport.jsx';",
+        "className=\"data-analysis-insight-dialog-content-stack\"",
+        "state.status === 'success' && dashboard",
+        "<DataAnalysisInsightReport",
+        "modelReady={Boolean(modelSelection?.ready)}"
+      ],
+      "forbidden": [
+        "function getInsightSections",
+        "function ReportBody"
+      ]
+    },
+    {
+      "file": "src/features/dataAnalysis/components/DataAnalysisInsightReport.jsx",
+      "required": [
+        "DATA_ANALYSIS_INSIGHT_FREEZE_VERSION",
+        "data-freeze-version={DATA_ANALYSIS_INSIGHT_FREEZE_VERSION}",
+        "className=\"data-analysis-report-sheet\"",
+        "aria-label=\"报告核心经营指标\"",
+        "className=\"data-analysis-report-section-grid\"",
+        "isWideDataAnalysisReportSection({"
+      ]
+    },
+    {
+      "file": "src/features/dataAnalysis/model/useDataAnalysisInsight.js",
+      "required": [
+        "import { generateDataAnalysisInsight } from '../services/dataAnalysisInsightClient.js';",
+        "templateId: 'data-analysis.v1'",
+        "templateInput,",
+        "customRules,",
+        "userInstruction:",
+        "const result = await generateDataAnalysisInsight({"
+      ]
+    },
+    {
+      "file": "src/features/dataAnalysis/services/dataAnalysisInsightClient.js",
+      "required": [
+        "requestLocalApi('/api/data-analysis/insights'",
+        "DATA_ANALYSIS_INSIGHT_REQUEST_TIMEOUT_MS = 300_000",
+        "method: 'POST'"
+      ],
+      "forbidden": [
+        "fetch(",
+        "localStorage"
+      ]
+    },
+    {
+      "file": "../local-api/src/domain/dataAnalysis/dataAnalysisInsightService.js",
+      "required": [
+        "DATA_ANALYSIS_INSIGHT_MAX_ATTEMPTS = 2",
+        "function compactDashboard(dashboard = {})",
+        "DATA_ANALYSIS_ADAPTER_RULES",
+        "dataAnalysisService?.readCache?.(query)",
+        "requestInsightCompletion({",
+        "isRetryableStatus(response.status)"
+      ],
+      "forbidden": [
+        "JSON.stringify(dashboard, null, 2)"
+      ]
+    },
+    {
+      "file": "../local-api/src/domain/dataAnalysis/dataAnalysisInsightRoutes.js",
+      "required": [
+        "req.method !== 'POST' || requestUrl.pathname !== '/api/data-analysis/insights'",
+        ".then((body) => service.generate(body, paidCapabilityContextFromRequest(req)))",
+        "DATA_ANALYSIS_INSIGHT_FAILED"
+      ]
+    },
+    {
+      "file": "../local-api/src/app/createApp.js",
+      "required": [
+        "createDataAnalysisInsightService({",
+        "dataAnalysisService: domainServices.get(\"data-analysis\")",
+        "createDataAnalysisInsightRoutes({",
+        "dataAnalysisInsightRoutes.handleRequest({"
+      ]
+    },
+    {
+      "file": "../desktop/src/runtime/localApiProxy.js",
+      "required": [
+        "[\"POST /api/data-analysis/insights\", 300_000]",
+        "permission: \"analytics.view\""
+      ]
+    },
+    {
+      "file": "package.json",
+      "required": [
+        "\"check:data-analysis-insight-freeze\": \"node scripts/data-analysis-insight-freeze.mjs\"",
+        "scripts/data-analysis-insight-freeze.node.mjs",
+        "npm run check:data-analysis-insight-freeze"
+      ]
+    },
+    {
+      "file": "../.agents/references/frozen-contracts.md",
+      "required": [
+        "## 已冻结模块：店铺经营分析报告",
+        "data-analysis-insight-v2-server-template-20260828",
+        "npm run check:data-analysis-insight-freeze"
+      ]
+    }
+  ]
+}

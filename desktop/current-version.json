@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "editionId": "wangzai-5.0-current",
+  "displayVersion": "5.0 当前版",
+  "windowTitle": "旺崽助手 · 5.0 当前版",
+  "workspaceFolderName": "旺崽助手-新版本",
+  "sourceDataDirectory": ".runtime-profile",
+  "packageOutputDirectory": "dist-current-5.0",
+  "ports": {
+    "purchaseBridge": 6788,
+    "localApi": 6790,
+    "cacheAgent": 6792,
+    "ozonPushGateway": 6794
+  }
+}

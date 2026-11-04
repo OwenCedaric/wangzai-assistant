@@ -1,0 +1,53 @@
+{
+  "name": "旺崽助手",
+  "code": "wangzai_desktop",
+  "version": "1.0.1",
+  "version_hash": "",
+  "description": "Ozon 运营桌面端",
+  "modules": [
+    {
+      "code": "dashboard.view",
+      "name": "查看工作台"
+    },
+    {
+      "code": "products.view",
+      "name": "商品管理"
+    },
+    {
+      "code": "orders.view",
+      "name": "订单管理"
+    },
+    {
+      "code": "purchase.manage",
+      "name": "拍单管理"
+    },
+    {
+      "code": "profit.view",
+      "name": "利润核算"
+    },
+    {
+      "code": "marketing.view",
+      "name": "营销活动"
+    },
+    {
+      "code": "analytics.view",
+      "name": "数据分析"
+    },
+    {
+      "code": "customer_service.view",
+      "name": "客服咨询"
+    },
+    {
+      "code": "smart_tools.use",
+      "name": "智能工具"
+    },
+    {
+      "code": "collection_pricing.use",
+      "name": "采集核价"
+    },
+    {
+      "code": "warehouse.view",
+      "name": "仓储物流"
+    }
+  ]
+}

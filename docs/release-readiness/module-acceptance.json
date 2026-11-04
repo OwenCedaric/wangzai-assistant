@@ -1,0 +1,2407 @@
+{
+  "schemaVersion": 1,
+  "project": "wangzai",
+  "target": "windows-local-first",
+  "decision": "NOT_READY",
+  "updatedAt": "2026-09-07",
+  "note": "Every applicable check requires version-bound evidence. Not-run never means passed.",
+  "repairSnapshot": {
+    "status": "PARTIAL_REPAIRS_VERIFIED_NOT_RELEASE_READY",
+    "purchaseCapacityRead": { "status": "CAPACITY_READ_INTERACTIONS_VERIFIED_PERFORMANCE_NOT_ACCEPTED", "updatedAt": "2026-09-07", "shops": 10, "products": 100000, "orders": 200000, "verifiedReadInteractions": 15, "coldFullLoadMs": 76430.4, "allShopSwitchMs": 4906.2, "worstShopSwitchMs": 10185.8, "scrollP5Fps": 105.263, "frontendTestsPassed": 246, "backendTestsPassed": 47, "desktopTestsPassed": 19, "businessRulesChanged": false, "profitFormulaChanged": false, "currencyRulesChanged": false, "realDataChanged": false, "nativeInputUsed": false, "newSubagents": 0, "developmentFrontendUpdated": true, "installerUpdated": false, "performanceAccepted": false, "report": "docs/release-readiness/拍单大数据隔离实测-2026-09-07.md", "evidence": "docs/release-readiness/拍单大数据隔离实测-2026-09-07.json" },
+    "isolatedLicenseNavigation": { "status": "REAL_ISOLATED_ISSUER_AND_HIDDEN_SOURCE_UI_VERIFIED", "updatedAt": "2026-09-07", "shopsAuthorized": 10, "fixtureProducts": 5001, "fixtureOrders": 5000, "measuredShopProducts": 500, "measuredShopOrders": 500, "sourcePages": ["products", "sales-orders"], "targetedTestsPassed": 44, "customerRealtimeInitialZeroCursorFixed": true, "developmentFrontendUpdated": true, "businessRulesChanged": false, "realCredentialsUsed": false, "nativeInputUsed": false, "subagentsUsed": 0, "productionBackendStarted": false, "productionAuthorizationAccepted": false, "packagedAccepted": false, "report": "docs/release-readiness/管理后台授权与隐藏客户端实测-2026-09-07.md", "evidence": ".codex-temp/license-integration-20260907/run-5ae2b567-8a77-40df-994b-784035b77b97.json", "activationReceipt": ".codex-temp/license-integration-20260907/realtime-activation.json" },
+    "fiveReadinessArchitecture": { "status": "SAFE_ARCHITECTURE_FIXES_ACTIVATED_PARTIAL_RELEASE_READINESS", "updatedAt": "2026-09-07", "frontendTestsPassed": 227, "apiTestsPassed": 49, "desktopTestsPassed": 70, "performanceInfrastructureTestsPassed": 9, "actualChromiumRowsCompared": 200000, "chromiumUsesFreshProcessPerImplementation": true, "isolatedCapacity": { "shops": 10, "products": 100000, "orders": 200000, "reopened": true, "profileDisposed": true }, "businessRulesChanged": false, "profitFormulaChanged": false, "currencyRulesChanged": false, "profileChanged": false, "nativeInputUsed": false, "activeDependencyRuntimeReplaced": false, "installerUpdated": false, "fullClientExperienceAccepted": false, "report": "docs/release-readiness/五项上线补强-2026-09-06.md", "evidence": "docs/release-readiness/五项上线补强-2026-09-07.json", "activationReceipt": ".codex-temp/five-readiness-20260906/activation/activated-20260907.json", "activatedAt": "2026-09-07T10:58:06+08:00" },
+    "penaltyPagination": { "status": "PAGINATION_ONLY_FIXED_ISOLATED_HTTP_SQLITE_VERIFIED_AND_DEVELOPMENT_FRONTEND_UPDATED", "frontendTestsPassed": 188, "apiTestsPassed": 26, "realSchedulerHttpCasesPassed": 2, "currencyRulesChanged": false, "profitFormulaChanged": false, "currencyExperimentWithdrawnToDraft": true, "realBusinessWritesIssued": false, "realPlatformPaginationAccepted": false, "frontendFilesActivated": 56, "nativeArtifactsChanged": false, "profileChanged": false, "applicationStartedByAgent": false, "activatedAt": "2026-09-06T18:57:21+08:00", "report": "docs/release-readiness/罚款分页修复-2026-09-06.md", "evidence": "docs/release-readiness/罚款分页修复-2026-09-06.json", "activationReceipt": ".codex-temp/penalty-pagination-20260906/activation.json" },
+    "fourBrowserHardening": { "status": "TARGETED_FIXES_ACTIVATED_AND_INSTALLED_ARTIFACTS_RETESTED", "protectionCasesPassed": 16, "desktopTestsPassed": 289, "apiTestsPassed": 39, "frontendTestsPassed": 49, "nativeParserTestsPassed": 40, "accountTransportTestsPassed": 21, "generatedNativeWorkflowTestsPassed": 10, "cefApiSqliteWorkflowTestsPassed": 13, "actualCefChecksPassed": 42, "nativeInputUsed": false, "realBusinessWritesIssued": false, "runtimeArtifactsActivated": true, "installedArtifactsRetested": true, "installedArtifactChecksPassed": 39, "exactRemoteReadbackRequiresProviderFields": true, "candidateNativeDllSha256": "5d158e7f32eea952bc730166a44df1927698c43e988081998e79e5d71874fb24", "report": "docs/release-readiness/浏览器四项补强隔离验收-2026-09-06.md", "evidence": ".codex-temp/four-browser-fixes-20260906/verification.json", "postUpdateEvidence": ".codex-temp/four-browser-fixes-20260906/post-installed.json" },
+    "generatedOrderWorkflow": { "status": "GENERATED_FIXTURE_WORKFLOW_FIXED_ACTIVATED_AND_POST_TESTED", "syntheticAccounts": 2, "shops": 2, "generatedBusinessOrders": 4, "nativeWorkflowCasesPassed": 10, "cefApiSqliteWorkflowCasesPassed": 13, "restartReadbackVerified": true, "nativeInputUsed": false, "realCredentialsUsed": false, "realPlatformOrdersCreated": false, "allRealPlatformFlowsAccepted": false, "nativeDllSha256": "3fd99da46ea9aa13543bddf1b0d223aa9a2dc6c06caf2ce260022165423fe3ba", "report": "docs/release-readiness/生成订单隔离流程验收-2026-09-06.md", "evidence": ".codex-temp/generated-workflow-20260906/candidate.json", "postUpdateEvidence": ".codex-temp/generated-workflow-20260906/post-installed.json" },
+    "pluginAccountFailureAcceptance": { "status": "TARGETED_ACCOUNT_FAILURE_FIXES_ACTIVATED_AND_READBACK_VERIFIED", "syntheticAccountTransportTestsPassed": 21, "transportUsesActualCompiledNativeClass": true, "transportUsesFakeHttpAndCookieCallbacks": true, "actualCefChecksPassed": 42, "desktopRegressionTestsPassed": 236, "apiRegressionTestsPassed": 39, "frontendRegressionTestsPassed": 48, "nativeParserTestsPassed": 40, "compiledNativeClassTestsPassed": 10, "nativeInputUsed": false, "realCredentialsUsed": false, "realBusinessWritesIssued": false, "allPluginFunctionsAccepted": false, "nativeDllSha256": "dfeea2d8aa216a36a17af09074cc6ea794b6bcbde5a90d6264140d6f4144d64e", "report": "docs/release-readiness/插件隔离账户异常验收-2026-09-06.md", "evidence": ".codex-temp/plugin-account-experiments-20260906/candidate.json", "postUpdateEvidence": ".codex-temp/plugin-account-experiments-20260906/post-installed.json" },
+    "pluginReadUnification": { "status": "TARGETED_READ_FIXES_ACTIVATED_AND_INSTALLED_CEF_VERIFIED", "productPlatforms": 10, "actualCefChecksPassed": 42, "desktopRegressionTestsPassed": 235, "captureApiTestsPassed": 14, "frontendReadTestsPassed": 15, "nativeParserTestsPassed": 40, "compiledNativeClassTestsPassed": 10, "sharedNumberParser": true, "priceArrayRegressionFixedAndRetested": true, "isolatedOldObserverUpgradeVerified": true, "nativeInputUsed": false, "realBusinessWritesIssued": false, "allRealPlatformFlowsAccepted": false, "fullLegacyParityAccepted": false, "nativeDllSha256": "ae2ae54b8697f18263160862586eca19eca06ffb4d01ccee262f4f1ac58f23c7", "report": "docs/release-readiness/其他插件读取统一核验-2026-09-06.md", "evidence": ".codex-temp/plugin-read-unification-20260906/candidate.json", "postUpdateEvidence": ".codex-temp/plugin-read-unification-20260906/post-installed.json" },
+    "pddTaobaoSyntheticOrderAcceptance": { "status": "TARGETED_FIXES_ACTIVATED_SYNTHETIC_CEF_AND_PERSISTENCE_VERIFIED", "syntheticBusinessOrders": 4, "shops": 2, "actualCefChecksPassed": 23, "desktopRegressionTestsPassed": 147, "captureApiRegressionTestsPassed": 14, "exactTargetMismatchRejected": true, "sqliteReopenVerified": true, "realPlatformOrderSamplesVerified": false, "realOrdersOrPaymentsCreated": false, "credentialsUsed": false, "nativeInputUsed": false, "nativeDllSha256": "d0724ff266b3bbb613d867a9b696891e25db6edc4de05cded940bcfe2a228787", "report": "docs/release-readiness/拼多多淘宝订单隔离验收-2026-09-06.md", "evidence": ".codex-temp/purchase-platform-verify-20260906/regression.json", "postUpdateEvidence": ".codex-temp/purchase-platform-verify-20260906/native-installed.json" },
+    "browserCredentialAcceptance": { "status": "TARGETED_FIXES_ACTIVATED_REAL_READONLY_PARTIAL_ACCEPTANCE", "observerVersion": "2.6.16", "realOzonShops": 3, "realOzonReadonlyCallsPassed": 6, "purchasePagesLoaded": 3, "alibabaOrdersObserved": 31, "alibabaOrderPayloadUnchanged": true, "pddTaobaoOrderSamplesVerified": false, "desktopTargetedTestsPassed": 79, "frontendTargetedTestsPassed": 32, "extensionTransactionTestsPassed": 22, "installedCefTargetedCasesPassed": 4, "nativeInputUsed": false, "realBusinessWritesIssued": false, "fullLegacyParityAccepted": false, "longRunAccepted": false, "report": "docs/release-readiness/浏览器真实凭证隔离验收-2026-09-06.md", "evidence": ".codex-temp/browser-verify-20260906/final-validation.json", "postUpdateEvidence": ".codex-temp/browser-verify-20260906/native-installed.json" },
+    "emptySnapshotFirstPaint": { "status": "SOURCE_FIXED_RENDERED_HOOK_PROOF_PASSED_RUNTIME_UPDATED", "targetedTestsPassed": 17, "realChromiumCounterfactualPassed": true, "productionLogicChanges": 1, "dependenciesAdded": false, "nativeInputUsed": false, "fullClientExperienceAccepted": false, "requiresSourceLauncherRebuildOnRestart": false, "activatedAt": "2026-09-06T14:33:07+08:00", "report": "docs/release-readiness/空缓存首批显示修复-2026-09-06.md", "evidence": ".codex-temp/first-paint-20260906/validation.json" },
+    "backgroundOrderRead": { "status": "SOURCE_FIXED_REAL_SQLITE_COMPARISON_VERIFIED", "shops": 3, "orders": 30000, "comparisonRuns": 2, "targetedTestsPassed": 51, "responsePayloadsIdentical": true, "frontendExperienceAccepted": false, "nativeInputAllowed": false, "foregroundTestProcessesStopped": true, "userClientRestarted": false, "restartRequiredForSourceClient": true, "report": "docs/release-readiness/后台订单读取实测-2026-09-05.md", "evidence": ".codex-temp/ux-acceptance-20260905/order-repair-validation.json" },
+    "purchaseLoading": { "status": "FIRST_PAINT_FIX_ACTIVATED_AND_READBACK_VERIFIED", "targetedTestsPassed": 29, "activatedAt": "2026-09-05T22:59:06+08:00", "realOrdersChanged": false, "clientForcedClosed": false, "fullMaterializationStillPresent": true, "realLatencyRecheckComplete": false, "report": "docs/release-readiness/拍单管理加载专项-2026-09-05.md", "candidate": ".codex-temp/purchase-loading-20260905/frontend-candidate.json", "activationReceipt": ".runtime-update-backups/20260905-purchase-browser-72278fc3-b7c6-4767-912e-fbb705f72d54/activated.json" },
+    "pluginAcceptance": { "status": "CONFIRMED_DEFECTS_REPAIRED_AND_ACTIVATED_PARTIAL_ACCEPTANCE", "productionCodeChanged": true, "realProfileUsed": false, "actualNativeExtensionChecksPassed": 5, "nativeExtensionTransactionTestsPassed": 20, "nativeOrderParsingTestsPassed": 40, "nativePreferenceLifecycleTestsPassed": 15, "postActivationProxyTestsPassed": 4, "wechatFinalAdditionalAuthorizationTestsPassed": 8, "initialFailureEvidenceRetained": true, "publicKeyHypothesis": "Historical strict AQ== rejection assertion still fails, but real CEF executes that same MV3 key; no unsupported PKI restriction is imposed and the historical whole probe is not reported as passed.", "legacyPluginInventoryComplete": false, "livePlatformAccepted": false, "report": "docs/release-readiness/浏览器及拍单运行更新-2026-09-05.md", "evidence": ".codex-temp/browser-functional-fix-20260905/candidate-status.json" },
+    "frontend": { "files": 620, "passed": 3599, "failed": 0, "log": ".codex-temp/browser-functional-fix-20260905/frontend-all.log", "snapshotNote": "Full regular run after browser/Ozon fixes, before the final purchase first-paint changes. The latter have a separate 6-file/29-test regression and a newer build; final all-suite rerun is not claimed." },
+    "localApi": { "passed": 1657, "failed": 0, "log": ".codex-temp/browser-functional-fix-20260905/local-api-all.log", "snapshotNote": "Historical full isolated run before the final multi-shop page materialization changes. Those later source changes have a separate 9-file/51-test regression and real SQLite comparison; a final full-suite pass is not claimed." },
+    "desktop": { "passed": 912, "failed": 1, "log": ".codex-temp/storage-lifecycle-20260905/final-verification/desktop-all-standalone-recheck.log", "knownFailure": "missing perf-electron-navigation.mjs", "concurrentRunNote": "The earlier same-source cross-package concurrent run had 910 passes and 3 failures, including two 100ms synthetic CEF startup timeouts. Their isolated 22-test recheck and same-source full standalone run passed; no timeout/threshold was changed. Timing stability remains unverified under concurrent full-suite load." },
+    "automaticStorageMaintenance": { "status": "STAGE_TWO_SOURCE_REPAIRS_AND_ISOLATED_NATIVE_REGRESSION_VERIFIED", "realNativeFixturePassed": true, "realProfileCleaned": false, "businessDataDeleted": false, "currentClientRestarted": false, "nativeBinaryChanged": true, "currentSourceNativeUpdated": true, "currentSourceRestartRequired": true, "totalDiskHardLimitProven": false, "evidence": ".codex-temp/storage-lifecycle-20260905/final-verification/evidence.json", "nativeUpdateReceipt": ".codex-temp/storage-lifecycle-20260905/native-build-update-evidence.json", "report": "docs/release-readiness/自动清理第二阶段-2026-09-05.md" },
+    "accountRemoval": { "status": "SOURCE_REPAIRS_AND_ISOLATED_REGRESSION_VERIFIED", "stressCycles": 300, "sourceGatePassed": 44, "realPendingTasksResumed": 0, "activeClientUpdated": true, "applicationStartedByAgent": false, "evidence": ".codex-temp/account-removal-20260905/final-validation-evidence.json" },
+    "embeddedBrowser": { "status": "SOURCE_REPAIRS_AND_ISOLATED_REAL_CEF_VERIFIED", "nativeLoopbackPassed": true, "liveBusinessPlatformVerified": false, "activeClientUpdated": true, "applicationStartedByAgent": false, "evidence": ".codex-temp/browser-hardening-20260905/verified-evidence.json" },
+    "runtimeActivation": { "mode": "current-source-desktop-shortcut", "status": "activated-and-readback-verified", "activatedAt": "2026-09-06T17:41:19+08:00", "receipt": ".runtime-update-backups/20260906-four-browser-fixes-e529a1b1-c573-4ac3-9418-9d5b579444a1/activated.json", "profileChanged": false, "applicationStarted": false, "isolatedNativeStartedAndExited": true, "launcherFrontendWouldRebuild": false, "postActivationNativeEvidence": ".codex-temp/four-browser-fixes-20260906/post-installed.json" },
+    "note": "Package-wide regression results do not mark every module's eight acceptance dimensions passed. Frontend is the configured regular runner, not the separately requested V2 stress suite. Native/packaged/live remote deletion acceptance remains unverified. See the deletion handoff for version-bound evidence and unresolved gates."
+  },
+  "releaseBlockers": [
+    { "id": "profit-pagination-freeze-review", "status": "open", "message": "Penalty pagination is fixed and the current development frontend is updated with 214 isolated tests passing, including real scheduler/HTTP/SQLite integration. Currency changes were withdrawn to draft and original currency behavior restored. Profit core freeze has 3 hash differences: 2 pre-existing runtime differences and the new rating read/cache support change in profitLedgerMapping.jsx. No freeze hash or calculation version was refreshed; formal freeze review and live Ozon pagination acceptance remain open.", "evidence": "docs/release-readiness/罚款分页修复-2026-09-06.json" },
+    { "id": "purchase-page-real-loading-latency", "status": "open", "message": "First-batch delivery is activated. Multi-shop backend pagination now selects compact merge keys before hydrating only returned full orders, with 51 targeted tests and identical 30000-order SQLite comparison payloads. User forbids native mouse/keyboard or foreground takeover; owned visible test processes were stopped and tests are background-only. Neither the earlier empty/unauthorized fixture UI nor the new database timing is a real user-experience pass. Frontend full materialization, actual same-scope UI latency and background contention remain open." },
+    { "id": "plugin-functional-acceptance", "status": "open", "message": "Earlier limited platform reads remain historical evidence. Expanded isolated account/HTTP experiments exposed and repaired three previously untested classes: failed responses becoming empty success, overlapping pages falsely completing, and unknown charges becoming zero. The new compiled-runtime transport fixture passes 21 tests; 42 installed CEF checks and 373 related regressions also pass. The transport uses synthetic per-owner cookie callbacks and fake HTTP, not real third-party authentication. Runtime and frontend are updated. All original plugin functions, real platform variants, transaction/write workflows, packaging and long-run acceptance remain open. No real payments, orders, deletions or messages were issued." },
+    {"id":"storage-longrun-and-retention-coverage","status":"open","message":"Cache maintenance now waits 60 quiet seconds after last-session close, cancels queued checks on reopen, and uses bounded failure/cancellation backoff; successful verified worker exits retain the 6-hour rate limit. Active owners, native-exit fences, cookies, business data and backups remain protected. Two large synthetic capacity profiles were disposed after verification; future capacity CLI supports identity-bound disposal. This is not a whole-disk hard limit or real long-running browser acceptance; unknown/retained artifacts and real backups remain preserved.","evidence":"docs/release-readiness/五项上线补强-2026-09-07.json"},
+    { "id": "concurrent-test-timing-stability", "status": "open", "message": "The same-source cross-package concurrent full test run produced two 100ms synthetic CEF startup timeouts. Isolated lifecycle and full standalone desktop rechecks pass those cases, but concurrent test timing reliability is not proven; original failures are preserved and no timeout or performance threshold was raised." },
+    { "id": "safe-multi-wal-restore", "status": "open", "message": "The five-test rollback-journal prototype is not integrated with application-wide admission, reader shutdown, restore transaction ownership and restart recovery. Unsafe online imports remain blocked." },
+    {"id":"performance-harness","status":"open","message":"Hidden source-app purchase reads now verify 10 shops, 100000 products and 200000 orders with normal isolated-issuer login and 15 read-only UI interactions. Full load takes 76.43s, all-shop selection 4.91s and one shop switch 10.19s; performance is NOT accepted despite default-shop scrolling passing 105 FPS. The diagnostic observation window does not waive the original 16s deadline. True pagination/incremental read models, all-page workflows and packaged/live acceptance remain incomplete.","evidence":"docs/release-readiness/拍单大数据隔离实测-2026-09-07.json"},
+    {"id":"remaining-freeze-and-structure","status":"open","message":"Financial formulas and currency handling remain unchanged. September 7 structure audit: 20 size violations, 0 dependency cycles. Freeze differences: profit core 6, insight 0, market 5, image 27, follow-seller 9. Runtime changes have targeted and Chromium equivalence evidence but require formal freeze reconciliation. No thresholds or protected hashes were refreshed. Differences are not equivalent to that many independently confirmed business bugs.","evidence":"docs/release-readiness/五项上线补强-2026-09-07.json"},
+    { "id": "remaining-development-dependencies", "status": "open", "message": "Frontend production and desktop dependency audits are clear; frontend all-dependency audit still reports esbuild low and UUID/ExcelJS moderate findings requiring treatment or documented approval. No blanket waiver was applied." },
+    {"id":"openclaw-runtime-upgrade","status":"open","message":"Active OpenClaw 2026.7.1-2 still has 11 dependency findings (7 high, 4 moderate). Candidate 2026.9.1 has audit=0, Weixin import and isolated gateway checks, but complete equivalence of reserveTokensFloor=24576 and memory flush behavior is unproven. SDK exists at the hoisted root; hard-coded nested paths need proper resolution. Root overrides on the shrinkwrapped old engine were proven ineffective even after successful installation through an existing local proxy. Active dependencies were not replaced. The MCP timeout unit bug was independently fixed and tested.","evidence":"docs/release-readiness/五项上线补强-2026-09-07.json"},
+    { "id": "packaged-and-real-environment-acceptance", "status": "open", "message": "Source-mode isolated-issuer login is verified for two hidden pages. Isolated installer, upgrade, complete profile restore, long-running load, production-issuer authorization and real-platform readback acceptance are not complete." },
+    { "id": "account-removal-live-acceptance", "status": "open", "message": "Deletion source repairs and isolated fixtures do not prove real remote cleanup. The user-authorized source-mode frontend/native runtime files are now activated and readback-verified; the app was not launched by the agent. Five real pending operations were not resumed. Profile/database/installer were not modified; real remote deletion acceptance remains unverified." },
+    { "id": "browser-live-acceptance", "status": "open", "message": "Native CEF passes isolated cookie/maintenance, proxy, frame capture, version and scope guards; the installed September 6 runtime is readback-verified and old artifacts preserved. Existing credentials were used only for readonly checks and private isolated cookie snapshots. This proves limited real Ozon/1688 reads, not all account functions. Captcha, full PDD/Taobao order flows, cross-origin capture, OS sleep, installer and long-running load remain unverified. No user mouse/keyboard or foreground takeover was used." },
+    { "id": "v2-scope", "status": "open", "message": "V2 remains a separate, unaccepted deployment path. Current target uses the existing local-first configuration; V2 must not inherit this target's results." }
+  ],
+  "modules": [
+    {
+      "id": "dashboard",
+      "label": "旺崽汇总",
+      "group": "前端菜单",
+      "sourceEvidence": [
+        "frontend/src/features/dashboard/DashboardPage.jsx:25",
+        "local-api/src/domain/dashboard/dashboardOverviewService.js:3",
+        "local-api/src/domain/domainRegistry.js:172"
+      ],
+      "checks": {
+        "automatedBehavior": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "scopeIsolation": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "faultRecovery": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "restartPersistence": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "backupRestore": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "performance": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "packaged": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "externalReadback": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        }
+      }
+    },
+    {
+      "id": "products",
+      "label": "商品列表",
+      "group": "前端菜单",
+      "sourceEvidence": [
+        "frontend/src/features/products/ProductListPage.jsx:1",
+        "local-api/src/domain/products/productsService.js:1",
+        "local-api/src/domain/products/productSyncService.js:897"
+      ],
+      "checks": {
+        "automatedBehavior": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "scopeIsolation": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "faultRecovery": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "restartPersistence": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "backupRestore": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "performance": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "packaged": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "externalReadback": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        }
+      }
+    },
+    {
+      "id": "sales-orders",
+      "label": "销售订单",
+      "group": "前端菜单",
+      "sourceEvidence": [
+        "frontend/src/features/orders/sales/SalesOrdersPage.jsx:1",
+        "local-api/src/domain/orders/ordersService.js:304",
+        "local-api/src/domain/orders/ordersService.js:627"
+      ],
+      "checks": {
+        "automatedBehavior": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "scopeIsolation": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "faultRecovery": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "restartPersistence": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "backupRestore": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "performance": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "packaged": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "externalReadback": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        }
+      }
+    },
+    {
+      "id": "purchase-orders",
+      "label": "拍单管理",
+      "group": "前端菜单",
+      "sourceEvidence": [
+        "frontend/src/features/orders/purchase/PurchaseOrdersPage.jsx:1",
+        "local-api/src/domain/purchase/purchaseService.js:1",
+        "desktop/src/purchaseBrowser/purchaseOrderWorkbench.js:13"
+      ],
+      "checks": {
+        "automatedBehavior": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "scopeIsolation": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "faultRecovery": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "restartPersistence": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "backupRestore": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "performance": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "packaged": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "externalReadback": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        }
+      }
+    },
+    {
+      "id": "after-sales-orders",
+      "label": "售后订单",
+      "group": "前端菜单",
+      "sourceEvidence": [
+        "frontend/src/features/orders/afterSales/AfterSalesOrdersPage.jsx:43",
+        "local-api/src/domain/returns/returnsService.js:345",
+        "local-api/src/domain/returns/returnsService.js:700"
+      ],
+      "checks": {
+        "automatedBehavior": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "scopeIsolation": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "faultRecovery": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "restartPersistence": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "backupRestore": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "performance": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "packaged": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "externalReadback": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        }
+      }
+    },
+    {
+      "id": "pending-orders",
+      "label": "待处理单",
+      "group": "前端菜单",
+      "sourceEvidence": [
+        "frontend/src/App.jsx:1045",
+        "frontend/src/features/orders/afterSales/AfterSalesOrdersPage.jsx:93",
+        "frontend/src/entities/order/afterSalesStatusRules.jsx:1"
+      ],
+      "checks": {
+        "automatedBehavior": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "scopeIsolation": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "faultRecovery": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "restartPersistence": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "backupRestore": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "performance": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "packaged": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "externalReadback": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        }
+      }
+    },
+    {
+      "id": "print-shipping",
+      "label": "打单发货",
+      "group": "前端菜单",
+      "sourceEvidence": [
+        "frontend/src/features/orders/printShipping/PrintShippingPage.jsx:1",
+        "frontend/src/features/orders/printShipping/view/PrintShippingPageView.jsx:1",
+        "frontend/src/services/orderWriteClient.js:1"
+      ],
+      "checks": {
+        "automatedBehavior": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "scopeIsolation": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "faultRecovery": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "restartPersistence": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "backupRestore": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "performance": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "packaged": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "externalReadback": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        }
+      }
+    },
+    {
+      "id": "purchase-rehearsal",
+      "label": "自动拍单",
+      "group": "前端菜单",
+      "sourceEvidence": [
+        "frontend/src/features/purchaseRehearsal/PurchaseRehearsalPage.jsx:10",
+        "frontend/src/features/purchaseRehearsal/model/useAutomaticOrderWorkflow.js:1",
+        "desktop/src/purchaseBrowser/purchaseBrowserCommandQueue.js:1",
+        "desktop/src/purchaseBrowser/alipayPaymentWindowController.js:241"
+      ],
+      "checks": {
+        "automatedBehavior": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "scopeIsolation": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "faultRecovery": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "restartPersistence": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "backupRestore": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "performance": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "packaged": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "externalReadback": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        }
+      }
+    },
+    {
+      "id": "shipping",
+      "label": "订单利润",
+      "group": "前端菜单",
+      "sourceEvidence": [
+        "frontend/src/features/profit/ProfitPage.jsx:20",
+        "frontend/src/features/profit/ProfitPage.jsx:108",
+        "local-api/src/domain/profit/profitService.js:90",
+        "local-api/src/domain/profit/profitService.js:151"
+      ],
+      "checks": {
+        "automatedBehavior": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "scopeIsolation": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "faultRecovery": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "restartPersistence": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "backupRestore": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "performance": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "packaged": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "externalReadback": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        }
+      }
+    },
+    {
+      "id": "profit-report",
+      "label": "利润报表",
+      "group": "前端菜单",
+      "sourceEvidence": [
+        "frontend/src/features/profitReport/ProfitReportPage.jsx:36",
+        "local-api/src/domain/profitReport/profitReportService.js:87",
+        "local-api/src/db/repositories/profitReportRepository.js:1"
+      ],
+      "checks": {
+        "automatedBehavior": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "scopeIsolation": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "faultRecovery": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "restartPersistence": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "backupRestore": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "performance": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "packaged": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "externalReadback": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        }
+      }
+    },
+    {
+      "id": "inventory",
+      "label": "营销活动",
+      "group": "前端菜单",
+      "sourceEvidence": [
+        "frontend/src/features/marketing/MarketingActivitiesPage.jsx:1",
+        "local-api/src/domain/marketing/marketingService.js:382",
+        "local-api/src/domain/marketing/marketingService.js:960"
+      ],
+      "checks": {
+        "automatedBehavior": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "scopeIsolation": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "faultRecovery": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "restartPersistence": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "backupRestore": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "performance": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "packaged": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "externalReadback": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        }
+      }
+    },
+    {
+      "id": "paid-promotion",
+      "label": "付费推广",
+      "group": "前端菜单",
+      "sourceEvidence": [
+        "frontend/src/features/paidPromotion/PaidPromotionPage.jsx:12",
+        "local-api/src/integrations/performanceApiClient.js:544",
+        "local-api/src/db/repositories/performanceAccountRepository.js:119",
+        "local-api/src/db/migrations/081_bind_performance_accounts_to_shops.sql:5"
+      ],
+      "checks": {
+        "automatedBehavior": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "scopeIsolation": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "faultRecovery": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "restartPersistence": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "backupRestore": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "performance": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "packaged": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "externalReadback": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        }
+      }
+    },
+    {
+      "id": "data-analysis",
+      "label": "数据分析",
+      "group": "前端菜单",
+      "sourceEvidence": [
+        "frontend/src/features/dataAnalysis/DataAnalysisPage.jsx:11",
+        "local-api/src/domain/dataAnalysis/dataAnalysisService.js:275",
+        "local-api/src/db/migrations/032_create_data_analysis_cache_tables.sql:1"
+      ],
+      "checks": {
+        "automatedBehavior": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "scopeIsolation": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "faultRecovery": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "restartPersistence": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "backupRestore": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "performance": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "packaged": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "externalReadback": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        }
+      }
+    },
+    {
+      "id": "prompt-library",
+      "label": "智能工具",
+      "group": "前端菜单",
+      "sourceEvidence": [
+        "frontend/src/features/promptLibrary/PromptLibraryPage.jsx:2",
+        "frontend/src/features/promptLibrary/lib/smartToolExecutionPlan.js:1",
+        "frontend/src/features/promptLibrary/lib/smartToolAdapterRegistry.js:1",
+        "local-api/src/domain/promptLibrary/skillInstallSourceService.js:1"
+      ],
+      "checks": {
+        "automatedBehavior": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "scopeIsolation": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "faultRecovery": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "restartPersistence": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "backupRestore": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "performance": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "packaged": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "externalReadback": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        }
+      }
+    },
+    {
+      "id": "collection-pricing",
+      "label": "采集核价",
+      "group": "前端菜单",
+      "sourceEvidence": [
+        "frontend/src/features/collectionPricing/CollectionPricingPage.jsx:9",
+        "frontend/src/features/collectionPricing/services/collectionPricingQuoteService.js:67",
+        "frontend/src/features/collectionPricing/services/collectionListingService.js:1"
+      ],
+      "checks": {
+        "automatedBehavior": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "scopeIsolation": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "faultRecovery": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "restartPersistence": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "backupRestore": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "performance": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "packaged": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "externalReadback": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        }
+      }
+    },
+    {
+      "id": "points-packages",
+      "label": "积分套餐",
+      "group": "前端菜单",
+      "sourceEvidence": [
+        "frontend/src/features/pointsPackages/PointsPackagesPage.jsx:9",
+        "frontend/src/features/pointsPackages/model/usePointsPackagesModel.jsx:1",
+        "desktop/src/licensing/licenseRuntime.js:165",
+        "desktop/src/runtime/paidCapabilityPoints.js:67"
+      ],
+      "checks": {
+        "automatedBehavior": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "scopeIsolation": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "faultRecovery": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "restartPersistence": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "backupRestore": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "performance": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "packaged": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "externalReadback": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        }
+      }
+    },
+    {
+      "id": "follow-seller-defense",
+      "label": "剔除跟卖",
+      "group": "前端菜单",
+      "sourceEvidence": [
+        "frontend/src/features/followSellerDefense/FollowSellerDefensePage.jsx:1",
+        "local-api/src/domain/followSellerDefense/followSellerDefenseService.js:216",
+        "desktop/src/purchaseBrowser/followSellerNetworkRoute.js:1"
+      ],
+      "checks": {
+        "automatedBehavior": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "scopeIsolation": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "faultRecovery": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "restartPersistence": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "backupRestore": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "performance": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "packaged": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "externalReadback": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        }
+      }
+    },
+    {
+      "id": "customer-consultation",
+      "label": "在线客服",
+      "group": "前端菜单",
+      "sourceEvidence": [
+        "frontend/src/features/customerConsultation/CustomerConsultationPage.jsx:11",
+        "local-api/src/domain/customerService/customerServiceService.js:213",
+        "local-api/src/domain/customerService/customerServiceRealtimeHub.js:1"
+      ],
+      "checks": {
+        "automatedBehavior": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "scopeIsolation": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "faultRecovery": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "restartPersistence": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "backupRestore": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "performance": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "packaged": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "externalReadback": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        }
+      }
+    },
+    {
+      "id": "smart-reply",
+      "label": "智能回复",
+      "group": "前端菜单",
+      "sourceEvidence": [
+        "frontend/src/features/smartReply/SmartReplyPage.jsx:8",
+        "local-cache-agent/src/smartReply/localService.js:1",
+        "local-cache-agent/src/store.js:1"
+      ],
+      "checks": {
+        "automatedBehavior": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "scopeIsolation": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "faultRecovery": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "restartPersistence": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "backupRestore": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "performance": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "packaged": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "externalReadback": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        }
+      }
+    },
+    {
+      "id": "warehouse-logistics",
+      "label": "仓储物流",
+      "group": "前端菜单",
+      "sourceEvidence": [
+        "frontend/src/features/warehouse/WarehouseLogisticsPage.jsx:32",
+        "frontend/src/features/warehouse/services/warehouseWriteClient.js:1",
+        "local-api/src/db/migrations/067_complete_product_warehouse_stock_facts.sql:1"
+      ],
+      "checks": {
+        "automatedBehavior": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "scopeIsolation": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "faultRecovery": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "restartPersistence": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "backupRestore": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "performance": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "packaged": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "externalReadback": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        }
+      }
+    },
+    {
+      "id": "data-backup",
+      "label": "数据备份",
+      "group": "前端菜单",
+      "sourceEvidence": [
+        "frontend/src/features/dataBackup/DataBackupPage.jsx:12",
+        "local-api/src/backup/dataBackupService.js:188",
+        "local-api/src/backup/recoveryRestoreOrchestrator.js:40"
+      ],
+      "checks": {
+        "automatedBehavior": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "scopeIsolation": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "faultRecovery": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "restartPersistence": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "backupRestore": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "performance": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "packaged": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "externalReadback": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        }
+      }
+    },
+    {
+      "id": "settings-ozon",
+      "label": "Ozon 店铺设置",
+      "group": "设置中心",
+      "sourceEvidence": [
+        "frontend/src/shared/config/appConfigCore.jsx:653",
+        "frontend/src/features/settings/OzonShopSettingsSections.jsx:112",
+        "local-api/src/domain/shops/shopBootstrapCoordinator.js:489"
+      ],
+      "checks": {
+        "automatedBehavior": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "scopeIsolation": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "faultRecovery": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "restartPersistence": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "backupRestore": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "performance": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "packaged": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "externalReadback": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        }
+      }
+    },
+    {
+      "id": "settings-cross-border",
+      "label": "跨境巴士设置",
+      "group": "设置中心",
+      "sourceEvidence": [
+        "frontend/src/shared/config/appConfigCore.jsx:654",
+        "frontend/src/features/settings/StructuredSettingsLayout.jsx:274",
+        "local-api/src/domain/logistics/crossBorderAccountService.js:1"
+      ],
+      "checks": {
+        "automatedBehavior": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "scopeIsolation": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "faultRecovery": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "restartPersistence": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "backupRestore": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "performance": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "packaged": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "externalReadback": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        }
+      }
+    },
+    {
+      "id": "settings-purchase-account",
+      "label": "拍单账号设置",
+      "group": "设置中心",
+      "sourceEvidence": [
+        "frontend/src/shared/config/appConfigCore.jsx:655",
+        "frontend/src/features/settings/StructuredSettingsLayout.jsx:444",
+        "local-api/src/db/repositories/purchaseAccountRepository.js:1",
+        "desktop/src/purchaseBrowser/purchaseBrowserProfileStore.js:1"
+      ],
+      "checks": {
+        "automatedBehavior": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "scopeIsolation": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "faultRecovery": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "restartPersistence": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "backupRestore": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "performance": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "packaged": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "externalReadback": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        }
+      }
+    },
+    {
+      "id": "settings-model-api",
+      "label": "模型接口设置",
+      "group": "设置中心",
+      "sourceEvidence": [
+        "frontend/src/shared/config/appConfigCore.jsx:656",
+        "frontend/src/features/settings/ModelApiSettingsPanel.jsx:1",
+        "local-api/src/domain/modelApi/modelApiDiscoveryService.js:1",
+        "local-api/src/db/repositories/modelApiAccountRepository.js:1"
+      ],
+      "checks": {
+        "automatedBehavior": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "scopeIsolation": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "faultRecovery": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "restartPersistence": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "backupRestore": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "performance": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "packaged": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "externalReadback": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        }
+      }
+    },
+    {
+      "id": "settings-wechat",
+      "label": "微信助理设置",
+      "group": "设置中心",
+      "sourceEvidence": [
+        "frontend/src/shared/config/appConfigCore.jsx:657",
+        "frontend/src/features/settings/services/wechatAssistantSettingsService.js:1",
+        "desktop/src/runtime/wechatAssistantRuntime.js:236"
+      ],
+      "checks": {
+        "automatedBehavior": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "scopeIsolation": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "faultRecovery": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "restartPersistence": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "backupRestore": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "performance": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "packaged": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "externalReadback": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        }
+      }
+    },
+    {
+      "id": "settings-watermark",
+      "label": "水印工具设置",
+      "group": "设置中心",
+      "sourceEvidence": [
+        "frontend/src/shared/config/appConfigCore.jsx:658",
+        "frontend/src/features/settings/ui/WatermarkSettingsPanel.jsx:1",
+        "local-api/src/db/repositories/profileAssetRepository.js:1"
+      ],
+      "checks": {
+        "automatedBehavior": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "scopeIsolation": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "faultRecovery": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "restartPersistence": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "backupRestore": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "performance": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "packaged": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "externalReadback": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        }
+      }
+    },
+    {
+      "id": "settings-fee",
+      "label": "费用设定",
+      "group": "设置中心",
+      "sourceEvidence": [
+        "frontend/src/shared/config/appConfigCore.jsx:659",
+        "frontend/src/features/settings/lib/feeSettings.jsx:1",
+        "frontend/src/services/logisticsPricingSettingsStore.js:1"
+      ],
+      "checks": {
+        "automatedBehavior": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "scopeIsolation": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "faultRecovery": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "restartPersistence": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "backupRestore": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "performance": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "packaged": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "externalReadback": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        }
+      }
+    },
+    {
+      "id": "settings-maintenance",
+      "label": "数据维护",
+      "group": "设置中心",
+      "sourceEvidence": [
+        "frontend/src/shared/config/appConfigCore.jsx:660",
+        "frontend/src/features/settings/model/useDataMaintenance.js:1",
+        "local-api/src/maintenance/maintenanceStatusService.js:1",
+        "local-api/src/maintenance/automaticMaintenanceScheduler.js:1"
+      ],
+      "checks": {
+        "automatedBehavior": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "scopeIsolation": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "faultRecovery": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "restartPersistence": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "backupRestore": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "performance": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "packaged": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "externalReadback": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        }
+      }
+    },
+    {
+      "id": "settings-platform-api",
+      "label": "外部接口设置",
+      "group": "设置中心",
+      "sourceEvidence": [
+        "frontend/src/shared/config/appConfigCore.jsx:661",
+        "frontend/src/features/settings/StructuredSettingsLayout.jsx:1029",
+        "local-api/src/db/repositories/integrationProfileRepository.js:1",
+        "local-api/src/db/repositories/integrationCredentialRepository.js:1"
+      ],
+      "checks": {
+        "automatedBehavior": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "scopeIsolation": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "faultRecovery": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "restartPersistence": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "backupRestore": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "performance": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "packaged": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "externalReadback": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        }
+      }
+    },
+    {
+      "id": "support-desktop",
+      "label": "桌面壳与进程监督",
+      "group": "后台支撑",
+      "sourceEvidence": [
+        "desktop/src/main.js:24",
+        "desktop/src/runtime/serviceRuntime.js:152",
+        "desktop/src/runtime/processSupervisor.js:38"
+      ],
+      "checks": {
+        "automatedBehavior": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "scopeIsolation": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "faultRecovery": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "restartPersistence": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "backupRestore": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "performance": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "packaged": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "externalReadback": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        }
+      }
+    },
+    {
+      "id": "support-license",
+      "label": "授权与付费能力",
+      "group": "后台支撑",
+      "sourceEvidence": [
+        "desktop/src/licensing/licenseRuntime.js:165",
+        "frontend/src/features/licensing/components/DesktopAccessGate.jsx:107",
+        "desktop/src/runtime/paidCapabilityPoints.js:56"
+      ],
+      "checks": {
+        "automatedBehavior": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "scopeIsolation": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "faultRecovery": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "restartPersistence": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "backupRestore": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "performance": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "packaged": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "externalReadback": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        }
+      }
+    },
+    {
+      "id": "support-local-api",
+      "label": "本地接口与写入安全门",
+      "group": "后台支撑",
+      "sourceEvidence": [
+        "local-api/src/server.js:37",
+        "local-api/src/app/createApp.js:514",
+        "local-api/src/security/localApiAccess.js:11",
+        "local-api/src/security/writeGuardService.js:48"
+      ],
+      "checks": {
+        "automatedBehavior": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "scopeIsolation": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "faultRecovery": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "restartPersistence": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "backupRestore": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "performance": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "packaged": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "externalReadback": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        }
+      }
+    },
+    {
+      "id": "support-cache-agent",
+      "label": "本地缓存代理",
+      "group": "后台支撑",
+      "sourceEvidence": [
+        "local-cache-agent/src/server.js:8",
+        "local-cache-agent/src/store.js:1",
+        "desktop/src/runtime/localCacheAgentRuntime.js:43"
+      ],
+      "checks": {
+        "automatedBehavior": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "scopeIsolation": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "faultRecovery": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "restartPersistence": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "backupRestore": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "performance": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "packaged": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "externalReadback": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        }
+      }
+    },
+    {
+      "id": "support-seller-scheduler",
+      "label": "Seller API 请求调度",
+      "group": "后台支撑",
+      "sourceEvidence": [
+        "local-api/src/ozon/ozonScheduler.js:14",
+        "local-api/src/ozon/requestQueue.js:58",
+        "local-api/src/ozon/requestQueue.js:87",
+        "local-api/src/ozon/ozonClient.js:210"
+      ],
+      "checks": {
+        "automatedBehavior": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "scopeIsolation": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "faultRecovery": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "restartPersistence": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "backupRestore": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "performance": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "packaged": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "externalReadback": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        }
+      }
+    },
+    {
+      "id": "support-shop-storage",
+      "label": "店铺身份与独立存储",
+      "group": "后台支撑",
+      "sourceEvidence": [
+        "local-api/src/db/shopDatabaseManager.js:63",
+        "local-api/src/db/shopDatabaseManager.js:82",
+        "local-api/src/db/shopDatabaseRouter.js:52",
+        "local-api/src/db/shopFederatedReadDatabase.js:48"
+      ],
+      "checks": {
+        "automatedBehavior": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "scopeIsolation": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "faultRecovery": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "restartPersistence": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "backupRestore": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "performance": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "packaged": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "externalReadback": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        }
+      }
+    },
+    {
+      "id": "support-performance",
+      "label": "广告账号与店铺归属",
+      "group": "后台支撑",
+      "sourceEvidence": [
+        "local-api/src/db/repositories/performanceAccountRepository.js:119",
+        "local-api/src/db/migrations/081_bind_performance_accounts_to_shops.sql:5",
+        "local-api/src/integrations/performanceApiClient.js:544"
+      ],
+      "checks": {
+        "automatedBehavior": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "scopeIsolation": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "faultRecovery": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "restartPersistence": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "backupRestore": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "performance": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "packaged": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "externalReadback": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        }
+      }
+    },
+    {
+      "id": "support-push",
+      "label": "Ozon 推送与实时刷新",
+      "group": "后台支撑",
+      "sourceEvidence": [
+        "local-api/src/domain/notifications/ozonPushNotificationService.js:3",
+        "local-api/src/domain/notifications/ozonPushNotificationService.js:73",
+        "local-api/src/domain/notifications/ozonPushNotificationService.js:305",
+        "frontend/src/app/shell/OzonPushRealtimeBridge.jsx:1"
+      ],
+      "checks": {
+        "automatedBehavior": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "scopeIsolation": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "faultRecovery": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "restartPersistence": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "backupRestore": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "performance": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "packaged": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "externalReadback": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        }
+      }
+    },
+    {
+      "id": "support-protected-compute",
+      "label": "受保护计算",
+      "group": "后台支撑",
+      "sourceEvidence": [
+        "local-api/src/domain/protectedCompute/protectedComputeRuntime.js:1",
+        "local-api/src/domain/protectedCompute/protectedComputeVerifier.js:1",
+        "local-api/src/domain/protectedCompute/secretGuard.js:1",
+        "desktop/resources/protected-compute/README.md:1"
+      ],
+      "checks": {
+        "automatedBehavior": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "scopeIsolation": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "faultRecovery": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "restartPersistence": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "backupRestore": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "performance": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "packaged": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "externalReadback": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        }
+      }
+    },
+    {
+      "id": "support-maintenance",
+      "label": "自动维护与技术保留",
+      "group": "后台支撑",
+      "sourceEvidence": [
+        "local-api/src/maintenance/automaticMaintenanceScheduler.js:1",
+        "local-api/src/maintenance/technicalRetentionRunner.js:1",
+        "local-api/src/maintenance/databaseCompactionService.js:1"
+      ],
+      "checks": {
+        "automatedBehavior": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "scopeIsolation": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "faultRecovery": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "restartPersistence": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "backupRestore": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "performance": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "packaged": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "externalReadback": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        }
+      }
+    },
+    {
+      "id": "support-recovery",
+      "label": "备份恢复与迁移编排",
+      "group": "后台支撑",
+      "sourceEvidence": [
+        "local-api/src/backup/recoveryRestoreOrchestrator.js:40",
+        "local-api/src/backup/recoveryStagingService.js:1",
+        "desktop/src/runtime/recoveryDatabaseActivator.js:1",
+        "desktop/src/runtime/legacyWorkspaceBusinessMigration.js:361"
+      ],
+      "checks": {
+        "automatedBehavior": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "scopeIsolation": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "faultRecovery": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "restartPersistence": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "backupRestore": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "performance": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "packaged": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "externalReadback": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        }
+      }
+    },
+    {
+      "id": "support-account-removal",
+      "label": "删除账号编排",
+      "group": "后台支撑",
+      "sourceEvidence": [
+        "local-api/src/domain/accountRemoval/accountRemovalOrchestrator.js:13",
+        "local-api/src/domain/accountRemoval/accountRemovalOrchestrator.js:196",
+        "local-api/src/domain/accountRemoval/accountRemovalVerifier.js:1"
+      ],
+      "checks": {
+        "automatedBehavior": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "scopeIsolation": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "faultRecovery": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "restartPersistence": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "backupRestore": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "performance": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "packaged": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "externalReadback": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        }
+      }
+    },
+    {
+      "id": "support-image-provenance",
+      "label": "商品图片资产与来源",
+      "group": "后台支撑",
+      "sourceEvidence": [
+        "local-api/src/domain/productImages/productImageAssetService.js:159",
+        "local-api/src/domain/productImages/aliyunOssProductImageStorage.js:111",
+        "local-api/src/domain/imageProvenance/imageProvenanceService.js:1"
+      ],
+      "checks": {
+        "automatedBehavior": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "scopeIsolation": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "faultRecovery": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "restartPersistence": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "backupRestore": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "performance": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "packaged": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "externalReadback": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        }
+      }
+    },
+    {
+      "id": "support-catalog-insights",
+      "label": "共享类目与外部数据见解",
+      "group": "后台支撑",
+      "sourceEvidence": [
+        "local-api/src/domain/catalog/sharedCatalogService.js:1",
+        "local-api/src/integrations/seerfarCategoryTreeService.js:1",
+        "local-api/src/domain/externalDataInsights/externalDataInsightService.js:1"
+      ],
+      "checks": {
+        "automatedBehavior": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "scopeIsolation": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "faultRecovery": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "restartPersistence": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "backupRestore": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "performance": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "packaged": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "externalReadback": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        }
+      }
+    },
+    {
+      "id": "support-tools",
+      "label": "工程检查与发布工具",
+      "group": "工程工具",
+      "sourceEvidence": [
+        "frontend/package.json:5",
+        "local-api/package.json:8",
+        "desktop/package.json:10",
+        "tools/structure-audit.mjs:1"
+      ],
+      "checks": {
+        "automatedBehavior": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "scopeIsolation": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "faultRecovery": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "restartPersistence": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "backupRestore": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "performance": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "packaged": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        },
+        "externalReadback": {
+          "status": "unverified",
+          "evidence": [],
+          "notes": ""
+        }
+      }
+    }
+  ]
+}

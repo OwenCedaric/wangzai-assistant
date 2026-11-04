@@ -1,0 +1,55 @@
+{
+  servers {
+    protocols h1 h2 h3
+  }
+}
+
+{$LICENSE_DOMAIN} {
+  encode zstd gzip
+
+  log {
+    output stdout
+    format json
+  }
+
+  # Slow requests (model calls up to 300s, profit compute, 30MB recovery uploads) go to
+  # backend-heavy so they can never starve login/heartbeat on the light backend.
+  # Rollback: delete this block and every request goes to backend again.
+  @heavy path /api/core-v2/* /api/protected-compute/* /api/paid-capabilities/* /api/recovery/objects/*
+  handle @heavy {
+    header Cache-Control "no-store"
+    reverse_proxy backend-heavy:8000 {
+      transport http {
+        dial_timeout 3s
+        response_header_timeout 330s
+        keepalive 30s
+      }
+    }
+  }
+
+  @api path /api/* /health
+  handle @api {
+    header Cache-Control "no-store"
+    reverse_proxy backend:8000 {
+      transport http {
+        dial_timeout 3s
+        response_header_timeout 180s
+        keepalive 30s
+      }
+    }
+  }
+
+  handle {
+    reverse_proxy admin:80
+  }
+
+  header {
+    Strict-Transport-Security "max-age=31536000; includeSubDomains"
+    Content-Security-Policy "default-src 'self'; base-uri 'self'; connect-src 'self'; font-src 'self' data:; form-action 'self'; frame-ancestors 'none'; img-src 'self' data: blob: https:; object-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'"
+    Permissions-Policy "camera=(), geolocation=(), microphone=(), payment=()"
+    Referrer-Policy "strict-origin-when-cross-origin"
+    X-Content-Type-Options "nosniff"
+    X-Frame-Options "DENY"
+    -Server
+  }
+}

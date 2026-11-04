@@ -1,0 +1,8 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><OutputType>Exe</OutputType><TargetFramework>net8.0</TargetFramework><Nullable>enable</Nullable><ImplicitUsings>enable</ImplicitUsings></PropertyGroup>
+  <ItemGroup>
+    <Compile Include="../Wangzai.CefBrowserHost/BrowserRequestContextPreferences.cs" Link="Production/BrowserRequestContextPreferences.cs" />
+    <Compile Include="../Wangzai.CefBrowserHost/BrowserProfile.cs" Link="Production/BrowserProfile.cs" />
+    <Compile Include="../Wangzai.CefBrowserHost/BrowserPendingLaunches.cs" Link="Production/BrowserPendingLaunches.cs" />
+  </ItemGroup>
+</Project>

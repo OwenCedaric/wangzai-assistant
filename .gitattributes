@@ -1,0 +1,3 @@
+# Frozen contracts hash exact source bytes. Do not normalize existing content on
+# checkout or staging; formatting changes must be reviewed explicitly.
+* -text

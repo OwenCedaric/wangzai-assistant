@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <PlatformTarget>x64</PlatformTarget>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <SelfContained>true</SelfContained>
+    <PublishSingleFile>false</PublishSingleFile>
+    <PublishReadyToRun>false</PublishReadyToRun>
+    <InvariantGlobalization>false</InvariantGlobalization>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>wangzai.ico</ApplicationIcon>
+    <AssemblyName>Wangzai.CefBrowserHost</AssemblyName>
+    <RootNamespace>Wangzai.CefBrowserHost</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CefSharp.WinForms.NETCore" Version="150.0.110" />
+    <EmbeddedResource Include="../../src/purchaseBrowser/purchaseCaptureNumber.js" LogicalName="Wangzai.PurchaseCaptureNumber.js" />
+  </ItemGroup>
+</Project>

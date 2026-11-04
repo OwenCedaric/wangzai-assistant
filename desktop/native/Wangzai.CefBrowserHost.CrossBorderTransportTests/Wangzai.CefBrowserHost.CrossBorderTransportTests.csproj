@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <RuntimeFrameworkVersion>8.0.29</RuntimeFrameworkVersion>
+    <SelfContained>false</SelfContained>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <CandidateRoot Condition="'$(CandidateRoot)' == ''">$(MSBuildThisFileDirectory)../Wangzai.CefBrowserHost/publish</CandidateRoot>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CefSharp"><HintPath>$(CandidateRoot)/CefSharp.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="CefSharp.Core"><HintPath>$(CandidateRoot)/CefSharp.Core.dll</HintPath><Private>false</Private></Reference>
+  </ItemGroup>
+</Project>

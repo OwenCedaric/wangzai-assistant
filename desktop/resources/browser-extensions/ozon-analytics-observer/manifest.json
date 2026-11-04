@@ -1,0 +1,22 @@
+{
+  "name": "旺崽 Ozon 数据观察器",
+  "description": "在内置浏览器中旁路记录已登录账号实际收到的 Ozon 分析响应，不改写页面权限或接口数据。",
+  "version": "2.6.16",
+  "manifest_version": 3,
+  "permissions": [],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://seller.ozon.ru/*",
+        "https://www.ozon.ru/*",
+        "https://ozon.ru/*"
+      ],
+      "js": [
+        "content/ozon-analytics-observer.js"
+      ],
+      "run_at": "document_start",
+      "world": "MAIN",
+      "all_frames": true
+    }
+  ]
+}

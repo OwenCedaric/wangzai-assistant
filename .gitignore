@@ -1,0 +1,71 @@
+# Local-only refactor safety net. Business data, credentials, installers,
+# dependencies, build output and scratch runs must never be versioned here.
+
+# Real business data, runtime profiles and credentials
+本地数据/
+安装包/
+.runtime/
+.runtime-profile/
+.runtime-profile-*/
+.runtime-update-backups/
+local-api/data/
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+*.db
+*.key
+.env
+.env.*
+
+# Dependencies and build output
+node_modules/
+dist/
+frontend/dist-package/
+desktop/native/**/publish/
+desktop/native/**/publish-pending/
+desktop/native/**/bin/
+desktop/native/**/obj/
+
+# Scratch, evidence runs, analysis material and tool caches
+.codex-temp/
+.managed-dev-scratch/
+.tmp/
+.analysis/
+.ruff_cache/
+.claude/
+artifacts/
+test-results/
+desktop/.desktop-*/
+desktop/.source-link-visual-test/
+desktop/NVIDIA Corporation/
+
+# Logs
+*.log
+
+# Bundled toolchains
+desktop/.tools/
+
+# Real-SKU evidence databases (read from disk by release gates)
+local-api/evidence/
+*.proofdb
+
+# Per-installation configuration. Public examples are committed separately.
+desktop/resources/distribution.json
+desktop/resources/project.json
+desktop/resources/protected-compute/*.pem
+desktop/resources/protected-compute/*.signed-public.json
+local-api/config/local-api.config.json
+*.p12
+*.pfx
+*.pem
+*.sqlite3
+.npmrc
+!local-api/.env.example
+.selfhost/
+.venv/
+__pycache__/
+.pytest_cache/
+.coverage
+htmlcov/
+.secrets/
+!deploy/.env.production.example

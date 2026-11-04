@@ -1,0 +1,61 @@
+function sourceEvidence(sourceFile, sourceSymbol, ownerBasis) {
+  return Object.freeze({ sourceFile, sourceSymbol, ownerBasis });
+}
+
+export const ACCOUNT_OWNERSHIP_V8_EXTERNAL_INPUTS = Object.freeze([
+  Object.freeze({
+    id: 'runtime:desktop-wechat-assistant-runtime',
+    storageKind: 'runtime',
+    resource: 'desktop main wechatAssistantRuntime',
+    ownerType: 'system',
+    ownerField: 'profile-global WeChat assistant lifecycle',
+    sourceEvidence: sourceEvidence('desktop/src/main.js', 'wechatAssistantRuntime', 'profile-global WeChat assistant runtime shared by configured shops'),
+    preserveRule: 'preserve the shared WeChat assistant runtime during a business-account removal',
+    risk: 'stopping the shared runtime for one owner can interrupt unrelated shop notifications',
+    backupRule: 'excluded',
+  }),
+  Object.freeze({
+    id: 'runtime:desktop-purchase-browser-cache-maintenance',
+    storageKind: 'runtime',
+    resource: 'desktop main purchaseBrowserCacheMaintenancePromise',
+    ownerType: 'system',
+    ownerField: 'profile-global native browser cache maintenance task',
+    sourceEvidence: sourceEvidence('desktop/src/main.js', 'purchaseBrowserCacheMaintenancePromise', 'shared native browser cache maintenance task'),
+    preserveRule: 'await or preserve the shared maintenance task; never treat it as one account row',
+    risk: 'cancelling the shared task can leave another account browser cache half-maintained',
+    backupRule: 'excluded',
+  }),
+  Object.freeze({
+    id: 'memory:desktop-purchase-browser-event-listeners',
+    storageKind: 'memory',
+    resource: 'desktop preload purchaseBrowserEventListeners Set',
+    ownerType: 'system',
+    ownerField: 'renderer-global purchase browser event subscribers',
+    sourceEvidence: sourceEvidence('desktop/src/preload.cjs', 'purchaseBrowserEventListeners', 'subscriber callbacks contain no authoritative account ownership'),
+    preserveRule: 'preserve the shared listener registry; individual subscribers unregister through their returned cleanup callback',
+    risk: 'clearing the registry for one account disconnects unrelated browser workflows',
+    backupRule: 'excluded',
+  }),
+  Object.freeze({
+    id: 'runtime:renderer-customer-consultation-preferences-write-queue',
+    storageKind: 'runtime',
+    resource: 'customer consultation preferences updateQueue',
+    ownerType: 'system',
+    ownerField: 'profile-global serialized preferences write queue',
+    sourceEvidence: sourceEvidence('frontend/src/features/customerConsultation/services/customerConsultationPreferences.js', 'updateQueue', 'one queue serializes profile settings writes across conversation scopes'),
+    preserveRule: 'preserve and drain the shared queue through its owning preferences service',
+    risk: 'dropping the queue for one shop can lose or reorder another shop draft update',
+    backupRule: 'excluded',
+  }),
+  Object.freeze({
+    id: 'memory:renderer-order-domain-cache-unattributed',
+    storageKind: 'memory',
+    resource: 'frontend orderCanonicalCacheRuntime orderDomainCache',
+    ownerType: 'unknown',
+    ownerField: 'cache key may contain query and shop scope but has no audited exact owner selector',
+    sourceEvidence: sourceEvidence('frontend/src/services/orderCanonicalCacheRuntime.js', 'orderDomainCache', 'bounded in-memory orders/returns cache can contain more than one shop scope'),
+    preserveRule: 'fail closed until a typed exact-shop invalidation contract exists; ordinary TTL and domain clear remain the only cleanup paths',
+    risk: 'guessing ownership from the serialized query key could clear or preserve the wrong shop cache entry',
+    backupRule: 'excluded',
+  }),
+]);

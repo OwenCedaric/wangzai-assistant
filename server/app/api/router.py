@@ -1,0 +1,62 @@
+from fastapi import APIRouter
+
+from app.api import (
+    admin_agents,
+    admin_api_pool,
+    admin_attributions,
+    admin_cards,
+    admin_catalog,
+    admin_cross_border,
+    admin_operations,
+    admin_orders,
+    admin_oss,
+    admin_paid_capabilities,
+    admin_points,
+    auth,
+    auth_sms,
+    client,
+    client_updates,
+    core_v2,
+    license,
+    model_presets,
+    orders,
+    oss_runtime,
+    ozon_notifications,
+    paid_capabilities,
+    payments,
+    points,
+    protected_compute,
+    recovery,
+    smart_reply,
+    store,
+)
+
+api_router = APIRouter(prefix="/api")
+api_router.include_router(auth.router)
+api_router.include_router(auth_sms.router)
+api_router.include_router(license.router)
+api_router.include_router(client.router)
+api_router.include_router(client_updates.router)
+api_router.include_router(core_v2.router)
+api_router.include_router(store.router)
+api_router.include_router(orders.router)
+api_router.include_router(oss_runtime.router)
+api_router.include_router(payments.router)
+api_router.include_router(points.router)
+api_router.include_router(model_presets.router)
+api_router.include_router(ozon_notifications.router)
+api_router.include_router(paid_capabilities.router)
+api_router.include_router(recovery.router)
+api_router.include_router(protected_compute.router)
+api_router.include_router(smart_reply.router)
+api_router.include_router(admin_catalog.router)
+api_router.include_router(admin_cross_border.router)
+api_router.include_router(admin_cards.router)
+api_router.include_router(admin_operations.router)
+api_router.include_router(admin_oss.router)
+api_router.include_router(admin_agents.router)
+api_router.include_router(admin_api_pool.router)
+api_router.include_router(admin_attributions.router)
+api_router.include_router(admin_orders.router)
+api_router.include_router(admin_points.router)
+api_router.include_router(admin_paid_capabilities.router)

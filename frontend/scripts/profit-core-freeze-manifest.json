@@ -1,0 +1,297 @@
+{
+  "schemaVersion": 2,
+  "calculationVersion": "profit-ledger-v16-partial-compensation-net-income",
+  "runtimeVersion": "profit-page-runtime-v6-readback-confirmed-chunked-persistence-20260905-account-removal-lifecycle",
+  "calculationSupportRevision": "profit-owner-cache-read-fence-v1-20260905",
+  "historicalReadbackSupportReconciliation": {
+    "date": "2026-09-05",
+    "file": "src/entities/profit/profitAfterSalesRules.jsx",
+    "oldCalculationRoleHash": "21a5fd8ffa7c747959f1653c66925fe75deb6a9d26d41a074c5ca6981b83bb4c",
+    "currentRuntimeAndSourceHash": "be96b7f4b14ac1cac79c68396e95e38f02898bcbc4777f49c5f98a93e52b137e",
+    "sourceChangedThisTurn": false,
+    "historicalReadbackBehaviorChanged": true,
+    "moneyAndExchangeRateExpressionsChanged": false,
+    "review": "Compared the exact old-hash source backup with the unchanged task-start/current source. Changes enforce complete pagination, retry/cancellation/batching and official empty-finance evidence admission; this is not merely formatting. The two protection roles now reference the same reviewed current bytes, with conflicting-role rejection retained in the checker.",
+    "isolatedRegression": "../.codex-temp/account-removal-20260905/profit-after-sales-support-regression.json",
+    "isolatedRegressionPassed": 56,
+    "historical1793OrdersReverifiedThisTurn": false,
+    "liveRecalculationVerifiedThisTurn": false
+  },
+  "accountRemovalCacheLifecycleVerification": {
+    "date": "2026-09-05",
+    "calculationRulesChanged": false,
+    "calculationVersionChanged": false,
+    "liveBusinessDataRead": false,
+    "liveRecalculationVerified": false,
+    "scope": "Only two release exports and nine cache lifecycle functions changed. 14 other calculation files are byte-identical to the pre-repair baseline; all non-cache statements in the two support files are byte-equal. Cache key, TTL, requests, fees and exchange-rate calculations are unchanged.",
+    "fixedCandidateProof": "../.codex-temp/account-removal-20260905/profit-calculation-preservation.json",
+    "isolatedRegression": "../.codex-temp/account-removal-20260905/profit-read-fence-regression.json",
+    "isolatedRegressionPassed": 91,
+    "activation": "source-only; packaged/native/live acceptance still pending"
+  },
+  "shopCalculationLaneVerification": {
+    "date": "2026-09-05",
+    "calculationRulesChanged": false,
+    "shopIsolation": "one cooperative calculation lane per shop",
+    "chunkSize": 40,
+    "oneShopFailureDoesNotBlockOtherShops": true,
+    "onlyChangedShopRecalculates": true,
+    "keepsPreviousRowsUntilShopCalculationCompletes": true,
+    "staleGenerationCancellation": true,
+    "perShopPersistenceRoutesPreserved": true,
+    "activation": "restart-required; live-lane-duration-not-yet-verified"
+  },
+  "partialCompensationVerification": {
+    "date": "2026-09-04",
+    "userAuthorizedRule": "部分补偿：销售额减实际补偿，再扣原有采购、运费等成本；不得把部分补偿当作全额退款。",
+    "calculationRulesChanged": true,
+    "otherFeeRateAndClassificationRulesChanged": false,
+    "verifiedOrders": 1793,
+    "verifiedPartialCompensationOrders": 8,
+    "repeatedRecalculationAndReopenVerified": true,
+    "priorV16MigrationPreservesConfirmedAmounts": true,
+    "activation": "restart-required; production-live-recalculation-not-yet-verified"
+  },
+  "localFinanceBatchVerification": {
+    "date": "2026-09-04",
+    "calculationRulesChanged": false,
+    "verifiedOrders": 1793,
+    "verifiedAssociatedFinanceOperations": 5403,
+    "oldRequestsByShop": [
+      8,
+      7,
+      31
+    ],
+    "newRequestsByShop": [
+      3,
+      3,
+      10
+    ],
+    "everyTransactionFieldUnchanged": true,
+    "exactCalculationComparisonPassed": true,
+    "maximumPostingQueryBytes": 6000,
+    "activation": "restart-required; live-total-latency-not-yet-verified"
+  },
+  "financeReadbackSpeedVerification": {
+    "date": "2026-09-04",
+    "calculationRulesChanged": false,
+    "ownerRowsUnchanged": 292,
+    "oldDesktopRoundTrips": 10,
+    "newDesktopRoundTrips": 1,
+    "ozonPostingQueriesPreserved": 10,
+    "isolatedLicensedOzonBatchMs": 3900,
+    "perShopEarlyPublish": true,
+    "exchangeRatesOverlapFinance": true,
+    "activation": "restart-required; live-80-second-target-not-yet-verified"
+  },
+  "officialEmptyFinanceVerification": {
+    "date": "2026-09-04",
+    "calculationRulesChanged": false,
+    "ownerRows": 292,
+    "verifiedEmptyPostings": 5,
+    "actualReadyRowsAfterReplay": 292,
+    "unexplainedActualProfitChanges": 0,
+    "realPurchaseAndCrossBorderCostsPreserved": true,
+    "receiptLifetimeHours": 24,
+    "activation": "restart-required; isolated-replay-and-readback-only"
+  },
+  "financeInputReadbackVerification": {
+    "date": "2026-09-04",
+    "calculationRulesChanged": false,
+    "ownerRows": 292,
+    "sourceFinanceOperations": 1028,
+    "reproducedRegressionsRepaired": 6,
+    "olderMissingAcquiringChargesVerifiedFromSource": 3,
+    "unexplainedActualProfitChanges": 0,
+    "activation": "restart-required; live-data-not-overwritten-by-test"
+  },
+  "profitOwnerSaveSpeedVerification": {
+    "date": "2026-09-04",
+    "calculationRulesChanged": false,
+    "ownerRows": 292,
+    "oldWriteRequests": 3,
+    "newWriteRequests": 1,
+    "oldResponseBytes": 1440963,
+    "newResponseBytes": 77437,
+    "sameDataReadback": true,
+    "scope": "independent profit owner only; shared stores retain their existing write flow"
+  },
+  "profitStoragePilotVerification": {
+    "date": "2026-09-04",
+    "shopId": "ozon-shop-example-01",
+    "calculationRulesChanged": false,
+    "currentOwnerRows": 292,
+    "historicalOwnerRows": 1101,
+    "otherHistoricalRowsVerifiedUnchanged": 1875,
+    "isolatedQueueVerified": true,
+    "activation": "verified-backup-and-migration-on-next-desktop-restart"
+  },
+  "financeReadRetryVerification": {
+    "date": "2026-09-04",
+    "calculationRulesChanged": false,
+    "scope": "local-finance-batch-completeness-and-failed-only-hydration",
+    "readOnlyVerifiedOrders": 1787,
+    "readOnlyVerifiedFinanceOperations": 5392,
+    "injectedPageFailureRecovered": true,
+    "successfulBatchesReread": 0
+  },
+  "storageMigrationRepair": {
+    "date": "2026-09-04",
+    "scope": "v15-to-v16-confirmed-evidence-preservation",
+    "calculationRulesChanged": false,
+    "verifiedHistoricalRows": 1757,
+    "amountResultOrExchangeRateChanges": 0,
+    "protection": "read-migrate-merge-persist-chunks-rollback; no ready-to-pending overwrite",
+    "restartFollowup": "shop-id/client-id purchase lookup compatibility; preserve cache-miss provenance, not a confirmed zero; arithmetic and fee rules unchanged"
+  },
+  "migratableCalculationVersions": [
+    "profit-ledger-v16-per-order-finance-exchange-rate",
+    "profit-ledger-v15-final-cancel-zero-bus-without-exact-charge",
+    "profit-ledger-v14-final-cross-border-charge-evidence",
+    "profit-ledger-v13-rfbs-finance-commission",
+    "profit-ledger-v12-explicit-no-forecast-evidence",
+    "profit-ledger-v11-parent-finance-canonical-key",
+    "profit-ledger-v10-cross-border-source-authority",
+    "profit-ledger-v9-cross-border-recharge-cash-converted",
+    "profit-ledger-v8-finance-metadata-monotonic",
+    "profit-ledger-v8-finance-metadata-monotonic-shop-isolated"
+  ],
+  "verifiedDataBaseline": {
+    "verifiedAt": "2026-08-15T01:25:55.262Z",
+    "scope": "2026-05-03_2026-08-14",
+    "salesOrders": 469,
+    "distinctPostingNumbers": 469,
+    "duplicateShopPostingPairs": 0,
+    "shopCounts": {
+      "ozon-shop-example-01": 292,
+      "ozon-shop-example-02": 156,
+      "ozon-shop-example-03": 21
+    },
+    "commissionEvidenceAudit": {
+      "activeOrderItems": 487,
+      "ordersWithExactCurrentRfbsRate": 469,
+      "ordersMissingRfbsRate": 0,
+      "financeSaleCommissionOperations": 269,
+      "currentOrdersWithActualSaleCommission": 228,
+      "currentOrdersAwaitingActualSaleCommission": 241,
+      "financeSaleOperationsUsingRfbsSchema": 269,
+      "verifiedSampleOrders": 10,
+      "verifiedSampleRateMismatches": 0
+    },
+    "crossBorderActualEvidenceAudit": {
+      "verifiedSampleOrder": "0133107681-0024-1",
+      "exactForecastRows": 0,
+      "exactChargeRows": 0,
+      "legacySettingsActualCny": 1.2,
+      "migratedActualStatus": "ready",
+      "migratedActualBusFeeCny": 0,
+      "migratedActualProfitCny": 0,
+      "migratedBestProfitStatus": "ready",
+      "falseLossRemoved": true
+    }
+  },
+  "verifiedRuntimeBaseline": {
+    "verifiedAt": "2026-09-03T18:02:12.171Z",
+    "scope": "all-history-profit-ledger-through-2026-09-03",
+    "snapshotKey": "ozon-profit-ledger-v1:ozon-shop:client:4067587|ozon-shop:client:4097603|ozon-shop:client:4616153:profit-calculation:range:all-history:filter:all:v:time-v1",
+    "salesOrders": 1775,
+    "distinctPostingNumbers": 1775,
+    "distinctShopPostingPairs": 1775,
+    "duplicateShopPostingPairs": 0,
+    "shopCounts": {
+      "ozon-shop-example-01": 292,
+      "ozon-shop-example-02": 249,
+      "ozon-shop-example-04": 1234
+    },
+    "minPayment": "2026-05-03T19:59:45Z",
+    "maxPayment": "2026-09-03T14:29:06Z",
+    "exchangeRateEvidenceAudit": {
+      "estimatedRateRows": 1775,
+      "actualRateRows": 1718,
+      "invalidEstimatedRates": 0,
+      "invalidActualRates": 0
+    }
+  },
+  "calculationFiles": {
+    "src/services/profitLedgerService.js": "2d861fc23346109924daa869b377a90ce6b8018ae4425a13e79e3bcd16921946",
+    "src/services/profitPartialCompensation.js": "42286a62337b82c16d1220b26552b1b0b8cfa64c55ef8496d53023e2e4ffb443",
+    "src/services/profitFinanceBreakdown.js": "10d03a818051ffa17f9ab4885049f48395eff1bbb8e97549879dfeb3335e2c0d",
+    "src/services/commissionRateSnapshot.js": "23979a2e35da8824dd6503cc34e9a59690d316f0ca5e1472271227bb91fd075f",
+    "src/entities/product/productLocalMirror.jsx": "1e0abfabe5f5145718954e06eea202f3728d4cd858a9091f0a93ebaad5e74ce0",
+    "src/services/profitFinanceMatching.js": "92c2fbef6540a8fcf7770bacc5384b8894935fe3d01c3c8afc78f8648cf4421c",
+    "src/services/profitPenaltyAttribution.js": "f928a88cc46b933806548466e6ae00c909a04004a30cf7e2c6bd64bbdfe02108",
+    "src/services/profitRatingPenalty.js": "8e7a9b3311cb11db7ffb6b9df16d08921128a107549984f1129059e3399d6e4f",
+    "src/services/feeCalculationService.js": "066c1e8e0c224335ba71abcb8285d86916737c9adb5567651d51bf3f912cf3c0",
+    "src/services/orderExchangeRateRules.js": "9d9f6e96be484a519d8b56893cc972215e6bd936b67c51f3474bf8cf5ebbab54",
+    "src/entities/profit/profitAfterSalesRules.jsx": "be96b7f4b14ac1cac79c68396e95e38f02898bcbc4777f49c5f98a93e52b137e",
+    "src/entities/profit/profitFinanceEvidence.jsx": "f6acbde767dd31d82ffbf465f8aba4d3540b055767c84c8866d62a8a5d71fe77",
+    "src/entities/profit/profitDisplayRules.jsx": "3545b9d196b9d9cfde681bedbbb83fa372d3b2d276dff4d86507c44b625a33db",
+    "src/entities/profit/profitLedgerMapping.jsx": "2efb78f792c4cfc101d4178180bba1939b23dd4fa637409d88634d7418af7fab",
+    "src/entities/profit/profitOrderRecordRules.jsx": "e212603a488a93d1d370d8cafe24a03b31971f1ea338b1ae89ccfb3d5f2192be",
+    "src/services/afterSalesClassification.js": "9d194c8ab1f134525e7765d6df0a1b6f675fa80b4073832ae748fca1d6e852b6"
+  },
+  "runtimeFiles": {
+    "src/services/ownerCacheReadFence.js": "bf7f9fb2cee3112d974a2a50eff4f29fb987d161ba6a18c2cc46de4e3b8c941a",
+    "src/entities/marketing/marketingSnapshotRuntime.jsx": "1b34167dcf537d223c66c2e2b0bfe4ca812091ea4f1a9c488fc3093675942c79",
+    "src/entities/profit/profitAfterSalesRules.jsx": "be96b7f4b14ac1cac79c68396e95e38f02898bcbc4777f49c5f98a93e52b137e",
+    "src/entities/profit/profitAfterSalesSnapshot.jsx": "d1d73dd5c5611eca43d78475bf3b5459b750fe3de4a8c9d4d23dc6184391628d",
+    "src/entities/profit/profitLedgerPersistence.jsx": "c19a6707774dcc10aad5000489d0d306f00594f99df86cbc0d5c25defd778739",
+    "src/entities/profit/profitOrderSnapshot.jsx": "a7ca59521896ed2b6e87c271ae45a3ce91db964998d1925789a3aacf13e8e454",
+    "src/features/profit/ProfitPage.jsx": "59fcf33368e42563c8d8dc32ad76109ae36dcc615cc4518baaef52f4d19f9ae3",
+    "src/features/profit/lib/profitOrderSourceMerge.js": "ccefae33f85a9f145e95ad629a284e7f88962794f82dc63897efb609e2beec12",
+    "src/features/profit/model/profitCalculationSignatures.js": "744384fb722254ed1817fd8cec00656bb8a4261a9ced0fe04dd35fca2f2e4f94",
+    "src/features/profit/model/useProfitCalculationLanes.js": "b62a5a9e6076538c4f81dc1bf1dbc3d57d193f5b780baaaf766e86e82e22622a",
+    "src/features/profit/model/useProfitInlineEditing.js": "a6c948531e97051ae11b4437d0704e00b5aba97e52d2906151a9dbf1b631ee52",
+    "src/features/profit/model/useProfitLedgerReadback.js": "b3e8991a4ed0fe4f7659ffff636b7c2dfaef215316da1ed1aad86291c6c24edf",
+    "src/features/profit/model/useProfitLocalInputs.js": "71ed682582e528ff57df80786efa7ec08823dd4ec23c7a2a70b83dc95e36e41f",
+    "src/features/profit/services/profitSharedOrderCacheService.js": "2dda17b46ef5f41117e48e416baf329f6ff73dcaefcb2ef937e2230c62d859f0",
+    "src/features/profit/ui/ProfitEditableMoney.jsx": "aef30db898fb523919b79eb8090d64753a2cc174d5b66e5e476d755970f7856e",
+    "src/services/logisticsPricingService.js": "3272b30baf6595cd2d7bb1ea3aecd8b2f71f33d1de4b220a242b43ba5df38240",
+    "src/services/orderSplitRelationRules.js": "5457d440130f25948c65b08af4a3a0166394bb69c6683803b92b9412c5c12492",
+    "src/services/profitEmptyFinanceEvidence.js": "8dcde40dbed23cc5773b769eb56908bd3d678194e78f25517248c2d84872e63f",
+    "src/services/profitFinanceBatchReader.js": "0d49865074c11edd3a3f5197ad1071b342a2514ef9997237942daca0f945270d",
+    "src/services/profitFinanceHydrationRules.js": "5bf57da565c3af69b44d9f33c62f15e1aaccdce6aefa6e8baddf5b6f568958ae",
+    "src/services/profitFinanceReadBatches.js": "2a61e7d6623f1968e91da2e2e7fd24f6cd7a3b9f8ff078793ff4e370efe3f7a4",
+    "src/services/profitFinanceReadbackGuard.js": "8df4cb69aff21fcf96e3a7569a6fa6d4d63c3ff9b98fd97b4db52383f21b681b",
+    "src/services/profitLedgerPersistenceCompaction.js": "dadb36341ea62c594de76dbb72c8e4d4b0e9b1357a68a0eca9a818290aa04e11",
+    "src/services/profitOrderDependencyRecovery.js": "24e08f39be0f78361eae8252a670e37cb44a2f12e9df11ed06409eebcf6d0fcb",
+    "src/services/profitOrderView.js": "e5c023bcd5a59787b8ede352a81964e95d769579cb6564cefe8bd60aa520b181",
+    "src/services/profitShopCalculationLanes.js": "3c10f66df8eb1781cc70ae9cb1a67208f725cba638f9773e8adde4be235ff67e",
+    "src/services/salesOrderPagedCacheClient.js": "e8768743098bd9dfd66847c98f2ce16aa71e72786b0c9af7ac32d9f4963162df"
+  },
+  "retiredPaths": [
+    "src/services/profitLegacyPipelineFreeze.js",
+    "src/features/profit/lib/profitLocalSnapshot.js"
+  ],
+  "retiredSymbols": {
+    "filterProfitSplitAggregateRows": [
+      "src/features/profit/ProfitPage.jsx",
+      "src/services/profitOrderView.js"
+    ],
+    "requestOzonProfitLegacyLocalOnlySnapshotForShops": [
+      "src/entities/profit/profitAfterSalesRules.jsx"
+    ],
+    "LEGACY_JSON_ORDER_SNAPSHOT_RUNTIME": [
+      "src/features/profit/ProfitPage.jsx"
+    ],
+    "allowLegacyLocalSnapshot": [
+      "src/entities/profit/profitAfterSalesSnapshot.jsx"
+    ],
+    "enableLegacyAmountHeuristic": [
+      "src/services/profitOrderView.js"
+    ]
+  },
+  "releaseReadinessVerification": {
+    "date": "2026-09-05",
+    "calculationRulesChanged": false,
+    "method": "code review, synthetic fault injection and 607-file frontend regression",
+    "frontendTestsPassed": 3476,
+    "localApiTestsPassed": 1569,
+    "partitionReadsPublishIndependently": true,
+    "partialReadIsNotComplete": true,
+    "manualOverrideRequiresDurableReceipt": true,
+    "cancelledRefreshRemainsPending": true,
+    "liveProfileAndInstallerAcceptance": false,
+    "evidence": ".codex-temp/release-readiness-20260905/frontend-final-regression.log"
+  }
+}

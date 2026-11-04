@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.desktop-runtime-test/
+.desktop-recovery-shell-smoke/
+.desktop-performance-test/
+.source-link-visual-test/
+current-source-launch.log
+current-source-smoke.log

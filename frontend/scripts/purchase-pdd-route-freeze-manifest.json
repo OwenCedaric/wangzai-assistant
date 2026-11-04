@@ -1,0 +1,180 @@
+{
+  "schemaVersion": 1,
+  "featureVersion": "purchase-pdd-1688-route-v2-shared-alipay-session-20260828",
+  "frozenAt": "2026-08-28",
+  "route": [
+    "Ozon 商品公网图片",
+    "1688 以图搜款真实同款列表",
+    "1688 同款商品标题回读",
+    "拼多多标题搜索页",
+    "拼多多支付宝官方 H5 独立小窗",
+    "支付宝会话按软件用户与采购账号隔离持久化",
+    "无密码短信登录可预热并同步到精确采购账号",
+    "拼多多已付款回读确认后关闭小窗"
+  ],
+  "files": {
+    "src/features/orders/purchase/constants/purchasePddRouteFreezeContract.js": "8fe5c5c826131a0c6a5b44a0656cde8ea9e0282930446b578c21853806319735",
+    "scripts/purchase-bridge/pdd-title-search-service.mjs": "002556abb855049e2c99514e80f821fe6344637d03c6ccff4e8263d61b982dfe",
+    "scripts/purchase-pdd-route-freeze-core.mjs": "fa61f699e3ac0f61fa6c1b1c14e1573254c773522fbe1806748c5584be2b2fc6",
+    "scripts/purchase-pdd-route-freeze.mjs": "0e1b76acb716fe529ee015e256408ccc7e3c8dd8a5397a7b343a1f5641396ac0",
+    "scripts/purchase-pdd-route-freeze.node.mjs": "22c62a927dc803cccbb1cce1980466a7f810681ce1a2b77a7d2ff38a7cfe1c5d",
+    "../desktop/src/purchaseBrowser/alipayPaymentWindowController.js": "ae97ceb7bf753def140925ac762fc3f19acf1c313d87c907e14fde84abd4bd64",
+    "../desktop/src/purchaseBrowser/alipayPaymentPreload.cjs": "ba5bc917593e0e5c553eb07e3657c7e7b5772cf6291fa3c26487171200e71ba0"
+  },
+  "segments": [
+    {
+      "name": "1688-image-search-provider",
+      "file": "scripts/purchase-bridge/search-service.mjs",
+      "startMarker": "// PURCHASE_PDD_1688_PROVIDER_FREEZE:BEGIN",
+      "endMarker": "// PURCHASE_PDD_1688_PROVIDER_FREEZE:END",
+      "sha256": "e00deb974e87ca7e23130f74c58ab7356591b3225cae4d2fb26c522a743daa34"
+    },
+    {
+      "name": "1688-title-candidate-selection",
+      "file": "scripts/purchase-bridge/search-utils.mjs",
+      "startMarker": "// PURCHASE_PDD_1688_TITLE_SELECTION_FREEZE:BEGIN",
+      "endMarker": "// PURCHASE_PDD_1688_TITLE_SELECTION_FREEZE:END",
+      "sha256": "308c327e28ca1b78a728bb2d78b7726bb0d84c13c579231aa71dfd3c9b71ec40"
+    },
+    {
+      "name": "purchase-PDD-frontend-route",
+      "file": "src/features/orders/purchase/model/usePurchaseSourceLinkState.jsx",
+      "startMarker": "// PURCHASE_PDD_1688_FRONTEND_ROUTE_FREEZE:BEGIN",
+      "endMarker": "// PURCHASE_PDD_1688_FRONTEND_ROUTE_FREEZE:END",
+      "sha256": "550e288436b424f4f1ebe9b3b535f7d5824d598f7cd7bb6496b960e1e21d003c"
+    }
+  ],
+  "contracts": [
+    {
+      "file": "scripts/purchase-bridge/pdd-title-search-service.mjs",
+      "required": [
+        "import { search1688ByImage } from './search-service.mjs';",
+        "const sourceSearch = await search1688ByImage(imageUrl);",
+        "const pddUrl = buildPddSearchUrl(sourceSearch.searchTitle);",
+        "platform: '1688'",
+        "PDD_IMAGE_TITLE_CACHE_TTL_MS = 6 * 60 * 60 * 1000"
+      ],
+      "forbidden": [
+        "searchTaobaoByImage",
+        "resolvePurchasePddSearchTitle",
+        "purchaseSearchKeywordService",
+        "payload.searchTitle",
+        "payload.titleSource",
+        "paidCapability",
+        "visionModel",
+        "/api/paid-capabilities"
+      ]
+    },
+    {
+      "file": "scripts/purchase-bridge/search-service.mjs",
+      "required": [
+        "export async function search1688ByImage(imageUrl)",
+        "method: 'uploadBase64WithRequest'",
+        "method: 'imageOfferSearchService'",
+        "const candidate = selectTitleCandidate(results);"
+      ],
+      "forbidden": [
+        "handlePddTitleSearch"
+      ]
+    },
+    {
+      "file": "scripts/purchase-search-bridge.mjs",
+      "required": [
+        "import { handlePddTitleSearch } from './purchase-bridge/pdd-title-search-service.mjs';",
+        "if (url.pathname === '/api/purchase/pdd-title-search')",
+        "const result = await handlePddTitleSearch(payload);"
+      ]
+    },
+    {
+      "file": "src/features/orders/purchase/model/usePurchaseSourceLinkState.jsx",
+      "required": [
+        "? '/api/purchase/pdd-title-search'",
+        "const payload = await requestPurchaseSourceSearch(platform, imageUrl);",
+        "? firstFilled(payload.targetUrl, payload.searchUrl)",
+        "openSourceSearchUrl(autoOpenUrl);",
+        "正在通过 1688 以图搜款读取同款标题，完成后直接打开 PDD。"
+      ],
+      "forbidden": [
+        "resolvePurchasePddSearchTitle",
+        "purchaseSearchKeywordService",
+        "vision-model",
+        "pre-recognized"
+      ]
+    },
+    {
+      "file": "../desktop/src/runtime/purchaseBridgeProxy.js",
+      "required": [
+        "[\"POST /api/purchase/pdd-title-search\", \"purchase.manage\"]"
+      ]
+    },
+    {
+      "file": "package.json",
+      "required": [
+        "\"check:purchase-pdd-route-freeze\": \"node scripts/purchase-pdd-route-freeze.mjs\"",
+        "npm run check:purchase-pdd-route-freeze",
+        "scripts/purchase-pdd-route-freeze.node.mjs"
+      ]
+    },
+    {
+      "file": "../desktop/src/purchaseBrowser/alipayPaymentWindowController.js",
+      "required": [
+        "export function isAlipayH5PaymentUrl",
+        "persist:wangzai-alipay-",
+        "contextIsolation: true",
+        "nodeIntegration: false",
+        "sandbox: true",
+        "result?.paymentVerified === true && result?.readbackVerified === true",
+        "scheduleReverify(record)",
+        "clearStorageData?.()"
+      ],
+      "forbidden": [
+        "executeJavaScript",
+        "setPermissionRequestHandler?.((_webContents, _permission, callback) => callback(true))"
+      ]
+    },
+    {
+      "file": "../desktop/src/purchaseBrowser/alipayPaymentPreload.cjs",
+      "required": [
+        "const CHANNEL = 'wangzai:alipay-page-state';",
+        "visibleText('.cashierActivity__msg')",
+        "function setInputValue(input, value)",
+        "stage === 'result' && /支付成功/u.test(resultText)",
+        "ipcRenderer.send(CHANNEL, payload);"
+      ],
+      "forbidden": [
+        "localStorage",
+        "sessionStorage"
+      ]
+    },
+    {
+      "file": "../desktop/src/purchaseBrowser/cefPurchaseBrowserController.js",
+      "required": [
+        "import { isAlipayH5PaymentUrl, isAlipayPaymentUrl } from './alipayPaymentWindowController.js';",
+        "await alipayPaymentWindowController.open({",
+        "await alipayPaymentWindowController.openSharedLogin({",
+        "await alipayPaymentWindowController.syncSharedLoginToOwners(",
+        "case 'verify-alipay-payment': return verifyPinduoduoAlipayPayment(input.tabId);",
+        "await runPinduoduoAutoCapture(tab, { force: true });",
+        "function publishAlipayPaymentEvent(payload = {})"
+      ]
+    },
+    {
+      "file": "../desktop/src/main.js",
+      "required": [
+        "import { createAlipayPaymentWindowController } from './purchaseBrowser/alipayPaymentWindowController.js';",
+        "preloadPath: path.join(__dirname, 'purchaseBrowser', 'alipayPaymentPreload.cjs')",
+        "command: 'verify-alipay-payment'",
+        "alipayPaymentWindowController,"
+      ]
+    },
+    {
+      "file": "src/features/orders/purchase/model/usePurchaseOrderWorkbenchState.jsx",
+      "required": [
+        "'alipay-payment-opened'",
+        "'alipay-payment-pending'",
+        "'alipay-payment-verified'",
+        "拼多多已确认付款，支付宝窗口已自动关闭。"
+      ]
+    }
+  ]
+}

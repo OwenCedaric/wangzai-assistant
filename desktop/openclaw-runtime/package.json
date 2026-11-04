@@ -1,0 +1,12 @@
+{
+  "name": "wangzai-openclaw-runtime",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Pinned OpenClaw runtime bundled with Wangzai Desktop.",
+  "license": "SEE LICENSE IN ../../LICENSE",
+  "dependencies": {
+    "@tencent-weixin/openclaw-weixin": "2.4.6",
+    "openclaw": "2026.7.1-2",
+    "qrcode": "1.5.4"
+  }
+}

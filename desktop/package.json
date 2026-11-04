@@ -1,0 +1,276 @@
+{
+  "name": "wangzai-desktop",
+  "private": true,
+  "version": "1.0.1",
+  "description": "旺崽助手 Windows 桌面端：复用现有 React UI、local-api 和本机 bridge。",
+  "author": "旺崽助手",
+  "license": "SEE LICENSE IN ../LICENSE",
+  "type": "module",
+  "main": "src/bootstrap.cjs",
+  "scripts": {
+    "dev": "powershell.exe -NoLogo -NoProfile -NonInteractive -ExecutionPolicy Bypass -File scripts/launch-current-source.ps1 -ForceBuild",
+    "dev:fast": "powershell.exe -NoLogo -NoProfile -NonInteractive -ExecutionPolicy Bypass -File scripts/launch-current-source.ps1",
+    "cleanup:dev:preview": "powershell.exe -NoLogo -NoProfile -NonInteractive -ExecutionPolicy Bypass -File scripts/cleanup-dev-workspace.ps1",
+    "cleanup:dev": "powershell.exe -NoLogo -NoProfile -NonInteractive -ExecutionPolicy Bypass -File scripts/cleanup-dev-workspace.ps1 -Apply",
+    "cleanup:dev:deep:preview": "powershell.exe -NoLogo -NoProfile -NonInteractive -ExecutionPolicy Bypass -File scripts/cleanup-dev-workspace.ps1 -Deep",
+    "cleanup:dev:deep": "powershell.exe -NoLogo -NoProfile -NonInteractive -ExecutionPolicy Bypass -File scripts/cleanup-dev-workspace.ps1 -Deep -Apply",
+    "test:launcher": "node --test ../tools/managed-dev-scratch.test.mjs scripts/cleanup-dev-workspace.test.mjs scripts/launcherLog.test.mjs scripts/launch-current-source.test.mjs scripts/installer-shell-shortcut-snapshot.test.mjs src/window/startupSplash.test.js",
+    "install:shortcut": "powershell.exe -NoLogo -NoProfile -NonInteractive -ExecutionPolicy Bypass -File scripts/install-current-source-shortcut.ps1",
+    "build:frontend": "npm --prefix ../frontend run build",
+    "build:frontend:clean": "npm --prefix ../frontend run build:package",
+    "check:source": "node --check src/bootstrap.cjs && node --check src/main.js && node --check src/licensing/licenseServerBootstrap.js && node --check src/licensing/rememberedLoginStore.js && node --check src/protocol/appProtocol.js && node --check src/preload.cjs && node --check src/runtime/desktopIpc.js && node --check src/runtime/productImageModelSourceStager.js && node --check src/runtime/wechatAssistantActionRelay.js && node --check src/runtime/wechatAssistantModelExecutor.js && node --check src/runtime/wechatAssistantModelRelay.js && node --check src/runtime/wechatAssistantPoints.js && node --check src/runtime/wechatAssistantRuntime.js && node --check src/window/mainWindow.js && node --check test-support/legacyRetirementHarness.js && node --check src/window/startupSplash.js && node --check src/purchaseBrowser/alipayPaymentWindowController.js && node --check src/purchaseBrowser/alipayPaymentPreload.cjs && node --check src/purchaseBrowser/cefBrowserRuntime.js && node --check src/purchaseBrowser/cefPurchaseBrowserController.js && node --check src/purchaseBrowser/purchaseBrowserControllerHelpers.js && node --check src/purchaseBrowser/purchaseBrowserBuiltinManager.js && node --check src/purchaseBrowser/purchaseBrowserBuiltinProfile.js && node --check src/purchaseBrowser/purchaseBrowserCefWindowController.js && node --check src/purchaseBrowser/purchaseBrowserExternalLinkRouter.js && node --check src/purchaseBrowser/purchaseOrderWorkbench.js && node --check src/purchaseBrowser/purchaseBrowserPolicy.js && node --check src/purchaseBrowser/purchaseBrowserProfileStore.js && node --check src/purchaseBrowser/purchasePaymentCredentialStore.js && node --check src/purchaseBrowser/purchaseBrowserToolbarActions.js && npm run check:openclaw-weixin-runtime && npm run check:bridge && npm run test:protected-boundary",
+    "check:bridge": "node scripts/check-purchase-bridge.mjs",
+    "test:license": "node --test src/licensing/*.test.js src/protocol/*.test.js src/runtime/*.test.js",
+    "test:local-api-authorization": "node --test src/runtime/localApiProxy.test.js",
+    "test:protected-boundary": "node --test scripts/protected-compute-semantic-audit.test.mjs scripts/protected-compute-distribution-gate.test.mjs scripts/collection-pricing-evidence-release-gate.test.mjs scripts/real-sku-evidence-release-gate.test.mjs scripts/verify-package-profile-cache-maintenance.test.mjs scripts/shared-catalog-package-smoke-proof.test.mjs ../local-api/src/domain/protectedCompute/packageBoundaryAudit.test.js",
+    "test:purchase-browser": "node --test src/purchaseBrowser/*.test.js src/purchaseBrowser/adapters/*.test.js",
+    "profile:migration:preview": "node scripts/migrate-legacy-workspace-business-data.mjs",
+    "profile:migration:apply": "node scripts/migrate-legacy-workspace-business-data.mjs --apply",
+    "profile:cache:preview": "node scripts/clear-profile-transient-cache.mjs",
+    "profile:cache:clear": "node scripts/clear-profile-transient-cache.mjs --apply",
+    "configure:distribution": "node scripts/configure-distribution.mjs",
+    "seal:distribution": "node scripts/seal-license-manifest.mjs",
+    "verify:package": "node scripts/verify-package.mjs",
+    "verify:sku-evidence": "npm --prefix ../local-api run evidence:sku",
+    "verify:collection-pricing-evidence": "node scripts/verify-collection-pricing-evidence.mjs",
+    "evidence:collection-pricing:live": "pwsh -NoProfile -File scripts/verify-live-collection-pricing.ps1",
+    "smoke:package": "node scripts/smoke-package.mjs",
+    "smoke:installer": "node scripts/smoke-package.mjs --installer",
+    "smoke:recovery-shell": "npm run build:frontend && node scripts/smoke-recovery-shell.mjs",
+    "verify:dashboard-donut": "node scripts/verify-dashboard-donut-ui.mjs",
+    "verify:dashboard-overview": "node scripts/verify-dashboard-overview-ui.mjs",
+    "verify:account-removal-settings": "node scripts/verify-account-removal-settings-ui.mjs --cycles=50",
+    "verify:purchase-account-browser-lifecycle": "node scripts/verify-purchase-account-browser-lifecycle-ui.mjs",
+    "smoke:portable": "node scripts/smoke-package.mjs --portable",
+    "perf:navigation": "npm run build:frontend && node scripts/perf-electron-navigation.mjs",
+    "perf:navigation:enforce": "npm run perf:navigation -- --enforce",
+    "perf:navigation:fixture": "npm run perf:navigation -- --fixture",
+    "perf:navigation:fixture:enforce": "npm run perf:navigation -- --fixture --enforce",
+    "perf:navigation:fixture:packaged:enforce": "node scripts/perf-electron-navigation.mjs --fixture --packaged --enforce",
+    "perf:navigation:products:5001:fixture:packaged:enforce": "node scripts/perf-electron-navigation.mjs --fixture --packaged --target=products --products=5001 --runs=10 --enforce",
+    "perf:navigation:fixture:packaged:longrun-recovery": "node scripts/perf-electron-navigation.mjs --fixture --packaged --target=products --products=5001 --orders=5000 --runs=1 --stress-switches=1000 --recovery-export-rounds=10 --enforce",
+    "perf:navigation:fixture:longrun": "npm run perf:navigation -- --fixture --runs=1 --stress-switches=1000 --enforce",
+    "perf:navigation:fixture:recovery": "npm run perf:navigation -- --fixture --runs=1 --stress-switches=1000 --recovery-export-rounds=10 --enforce",
+    "perf:navigation:sales:fixture:enforce": "npm run perf:navigation -- --fixture --target=sales-orders --orders=5000 --runs=10 --enforce",
+    "patch:openclaw-weixin-runtime": "node scripts/patch-openclaw-weixin-runtime.mjs",
+    "check:openclaw-weixin-runtime": "node scripts/patch-openclaw-weixin-runtime.mjs --check",
+    "prepare:openclaw-runtime": "npm --prefix openclaw-runtime install --omit=dev --ignore-scripts --legacy-peer-deps && npm run patch:openclaw-weixin-runtime",
+    "pack:win": "npm run test:protected-boundary && npm run test:local-api-authorization && npm run build:cef && npm run verify:sku-evidence && npm run build:frontend:clean && npm run prepare:openclaw-runtime && npm run seal:distribution && npm run clean:package:win && electron-builder --win --x64 --dir && npm run verify:package && npm run smoke:package",
+    "dist:win": "npm run test:protected-boundary && npm run test:local-api-authorization && npm run build:cef && npm run verify:sku-evidence && npm run build:frontend:clean && npm run prepare:openclaw-runtime && npm run seal:distribution && npm run clean:package:win && electron-builder --win --x64 && npm run verify:package && npm run smoke:package && npm run smoke:installer && npm run smoke:portable",
+    "dist:win:installer": "npm run test:protected-boundary && npm run test:local-api-authorization && npm run build:cef && npm run verify:sku-evidence && npm run build:frontend:clean && npm run prepare:openclaw-runtime && npm run seal:distribution && npm run clean:package:win && electron-builder --win nsis --x64 && npm run verify:package && npm run smoke:installer",
+    "dist:win:portable": "npm run test:protected-boundary && npm run test:local-api-authorization && npm run build:cef && npm run verify:sku-evidence && npm run build:frontend:clean && npm run prepare:openclaw-runtime && npm run seal:distribution && npm run clean:package:win && electron-builder --win portable --x64 && npm run verify:package && npm run smoke:portable",
+    "clean:package:win": "node scripts/clean-package-output.mjs",
+    "build:cef": "node scripts/build-cef-host.mjs",
+    "smoke:cef": "node scripts/cef-host-smoke.mjs --headless",
+    "rehearse:inventory": "node scripts/run-purchase-rehearsal.mjs --platform=inventory",
+    "rehearse:1688": "node scripts/run-purchase-rehearsal.mjs --platform=1688 --runs=10",
+    "rehearse:pinduoduo": "node scripts/run-purchase-rehearsal.mjs --platform=pinduoduo --runs=10",
+    "rehearse:tmall": "node scripts/run-purchase-rehearsal.mjs --platform=tmall --runs=10",
+    "rehearse:taobao": "node scripts/run-purchase-rehearsal.mjs --platform=taobao --runs=10",
+    "rehearse:all": "node scripts/run-purchase-rehearsal.mjs --platform=all --runs=10"
+  },
+  "devDependencies": {
+    "acorn": "^8.17.0",
+    "acorn-jsx": "^5.3.2",
+    "electron": "42.8.0",
+    "electron-builder": "^26.15.3"
+  },
+  "build": {
+    "appId": "com.wangzai.assistant.desktop",
+    "productName": "旺崽助手",
+    "copyright": "Copyright © 2026 旺崽助手",
+    "asar": true,
+    "compression": "normal",
+    "directories": {
+      "buildResources": "resources",
+      "output": "dist-current-5.0"
+    },
+    "files": [
+      "src/**/*",
+      "!src/**/*.test.js",
+      "!src/**/*.spec.js",
+      "!src/**/{__tests__,test,tests,fixture,fixtures}/**/*",
+      "package.json",
+      "current-version.json"
+    ],
+    "extraResources": [
+      {
+        "from": "../shared/profitCoreWire.js",
+        "to": "shared/profitCoreWire.js"
+      },
+      {
+        "from": "../frontend/dist-package",
+        "to": "frontend-dist"
+      },
+      {
+        "from": "../local-api/src",
+        "to": "local-api/src",
+        "filter": [
+          "**/*",
+          "!**/*.test.js",
+          "!**/*.spec.js",
+          "!**/{__tests__,test,tests,fixture,fixtures}/**/*"
+        ]
+      },
+      {
+        "from": "../local-api/config",
+        "to": "local-api/config"
+      },
+      {
+        "from": "../local-api/package.json",
+        "to": "local-api/package.json"
+      },
+      {
+        "from": "../local-api/node_modules",
+        "to": "local-api/node_modules",
+        "filter": [
+          "**/*",
+          "!**/.bin/**/*",
+          "!**/.v8-cache/**/*",
+          "!**/*.map",
+          "!**/*.test.*",
+          "!**/*.spec.*",
+          "!**/{__tests__,test,tests,fixture,fixtures}/**/*"
+        ]
+      },
+      {
+        "from": "../local-api/assets/ozonCategoryTree.zh.json",
+        "to": "local-api/assets/ozonCategoryTree.zh.json"
+      },
+      {
+        "from": "../local-cache-agent",
+        "to": "local-cache-agent",
+        "filter": [
+          "src/**/*",
+          "package.json",
+          "!**/*.test.js",
+          "!test/**/*"
+        ]
+      },
+      {
+        "from": "../frontend/scripts/purchase-search-bridge.mjs",
+        "to": "bridge/purchase-search-bridge.mjs"
+      },
+      {
+        "from": "../frontend/scripts/purchase-bridge",
+        "to": "bridge/purchase-bridge",
+        "filter": [
+          "**/*",
+          "!**/*.test.mjs",
+          "!**/*.spec.mjs",
+          "!**/{__tests__,test,tests,fixture,fixtures}/**/*"
+        ]
+      },
+      {
+        "from": "resources/icon.png",
+        "to": "tray/icon.png"
+      },
+      {
+        "from": "src/preload.cjs",
+        "to": "preload/preload.cjs"
+      },
+      {
+        "from": "resources/browser-extensions",
+        "to": "browser-extensions",
+        "filter": [
+          "**/*"
+        ]
+      },
+      {
+        "from": "resources/project.json",
+        "to": "license/project.json"
+      },
+      {
+        "from": "resources/distribution.json",
+        "to": "license/distribution.json"
+      },
+      {
+        "from": "resources/protected-compute",
+        "to": "license/protected-compute",
+        "filter": [
+          "protected-compute.signed-public.json",
+          "configuration-public.pem"
+        ]
+      },
+      {
+        "from": "resources/ui-updates",
+        "to": "license/ui-updates",
+        "filter": [
+          "public.pem"
+        ]
+      }
+    ],
+    "win": {
+      "icon": "resources/icon.ico",
+      "executableName": "旺崽助手",
+      "requestedExecutionLevel": "asInvoker",
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": "always",
+      "createStartMenuShortcut": true,
+      "deleteAppDataOnUninstall": false,
+      "shortcutName": "旺崽助手",
+      "uninstallDisplayName": "旺崽助手",
+      "artifactName": "旺崽助手-${version}-安装版-${arch}.${ext}"
+    },
+    "portable": {
+      "artifactName": "旺崽助手-${version}-便携版-${arch}.${ext}"
+    },
+    "extraFiles": [
+      {
+        "from": "native/Wangzai.CefBrowserHost/publish",
+        "to": "cef-browser-host",
+        "filter": [
+          "**/*",
+          "!**/*.log",
+          "!**/*.dmp",
+          "!**/*.tmp"
+        ]
+      },
+      {
+        "from": "openclaw-runtime/package.json",
+        "to": "openclaw-runtime/package.json"
+      },
+      {
+        "from": "openclaw-runtime/package-lock.json",
+        "to": "openclaw-runtime/package-lock.json"
+      },
+      {
+        "from": "openclaw-runtime/node_modules",
+        "to": "openclaw-runtime/node_modules",
+        "filter": [
+          "**/*",
+          "!**/.bin/**/*",
+          "!**/*.map",
+          "!**/*.test.*",
+          "!**/*.spec.*",
+          "!**/{__tests__,test,tests,fixture,fixtures}/**/*"
+        ]
+      },
+      {
+        "from": "resources/openclaw-workspace",
+        "to": "openclaw-workspace",
+        "filter": [
+          "**/*"
+        ]
+      }
+    ]
+  }
+}

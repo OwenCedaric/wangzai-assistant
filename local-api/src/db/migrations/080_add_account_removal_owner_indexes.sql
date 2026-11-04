@@ -1,0 +1,42 @@
+-- Account-removal preview and execution always constrain the canonical owner.
+-- These leading indexes prevent full scans of large technical/fact tables.
+CREATE INDEX IF NOT EXISTS idx_catalog_attribute_values_shop_owner ON catalog_attribute_values(shop_id);
+CREATE INDEX IF NOT EXISTS idx_catalog_attributes_shop_owner ON catalog_attributes(shop_id);
+CREATE INDEX IF NOT EXISTS idx_catalog_cache_key_registry_shop_owner ON catalog_cache_key_registry(shop_id);
+CREATE INDEX IF NOT EXISTS idx_catalog_cache_sync_state_shop_owner ON catalog_cache_sync_state(shop_id);
+CREATE INDEX IF NOT EXISTS idx_catalog_category_nodes_shop_owner ON catalog_category_nodes(shop_id);
+CREATE INDEX IF NOT EXISTS idx_cross_border_account_shop_bindings_shop_owner ON cross_border_account_shop_bindings(shop_id);
+CREATE INDEX IF NOT EXISTS idx_cross_border_charge_links_shop_owner ON cross_border_charge_links(shop_id);
+CREATE INDEX IF NOT EXISTS idx_cross_border_charge_records_shop_owner ON cross_border_charge_records(shop_id);
+CREATE INDEX IF NOT EXISTS idx_data_backup_imports_shop_owner ON data_backup_imports(shop_id);
+CREATE INDEX IF NOT EXISTS idx_ozon_cache_keys_shop_owner ON ozon_cache_keys(shop_id);
+CREATE INDEX IF NOT EXISTS idx_ozon_cache_merge_log_shop_owner ON ozon_cache_merge_log(shop_id);
+CREATE INDEX IF NOT EXISTS idx_ozon_error_events_shop_owner ON ozon_error_events(shop_id);
+CREATE INDEX IF NOT EXISTS idx_ozon_notification_settings_shop_owner ON ozon_notification_settings(shop_id);
+CREATE INDEX IF NOT EXISTS idx_ozon_request_attempts_shop_owner ON ozon_request_attempts(shop_id);
+CREATE INDEX IF NOT EXISTS idx_ozon_request_jobs_shop_owner ON ozon_request_jobs(shop_id);
+CREATE INDEX IF NOT EXISTS idx_ozon_response_cache_shop_owner ON ozon_response_cache(shop_id);
+CREATE INDEX IF NOT EXISTS idx_ozon_scheduler_trace_events_shop_owner ON ozon_scheduler_trace_events(shop_id);
+CREATE INDEX IF NOT EXISTS idx_ozon_sync_locks_shop_owner ON ozon_sync_locks(shop_id);
+CREATE INDEX IF NOT EXISTS idx_ozon_sync_snapshots_shop_owner ON ozon_sync_snapshots(shop_id);
+CREATE INDEX IF NOT EXISTS idx_ozon_sync_state_shop_owner ON ozon_sync_state(shop_id);
+CREATE INDEX IF NOT EXISTS idx_ozon_write_audit_log_shop_owner ON ozon_write_audit_log(shop_id);
+CREATE INDEX IF NOT EXISTS idx_product_acquiring_facts_shop_owner ON product_acquiring_facts(shop_id);
+CREATE INDEX IF NOT EXISTS idx_product_attribute_facts_shop_owner ON product_attribute_facts(shop_id);
+CREATE INDEX IF NOT EXISTS idx_product_commission_facts_shop_owner ON product_commission_facts(shop_id);
+CREATE INDEX IF NOT EXISTS idx_product_detail_facts_shop_owner ON product_detail_facts(shop_id);
+CREATE INDEX IF NOT EXISTS idx_product_image_facts_shop_owner ON product_image_facts(shop_id);
+CREATE INDEX IF NOT EXISTS idx_product_price_facts_shop_owner ON product_price_facts(shop_id);
+CREATE INDEX IF NOT EXISTS idx_product_status_facts_shop_owner ON product_status_facts(shop_id);
+CREATE INDEX IF NOT EXISTS idx_product_stock_facts_shop_owner ON product_stock_facts(shop_id);
+CREATE INDEX IF NOT EXISTS idx_product_sync_outbox_shop_owner ON product_sync_outbox(shop_id);
+CREATE INDEX IF NOT EXISTS idx_product_sync_page_proofs_shop_owner ON product_sync_page_proofs(shop_id);
+CREATE INDEX IF NOT EXISTS idx_product_sync_stage_batches_shop_owner ON product_sync_stage_batches(shop_id);
+CREATE INDEX IF NOT EXISTS idx_product_warehouse_stock_facts_shop_owner ON product_warehouse_stock_facts(shop_id);
+CREATE INDEX IF NOT EXISTS idx_purchase_browser_receipts_shop_owner ON purchase_browser_receipts(shop_id);
+CREATE INDEX IF NOT EXISTS idx_purchase_browser_tasks_shop_owner ON purchase_browser_tasks(shop_id);
+CREATE INDEX IF NOT EXISTS idx_recovery_reconcile_state_shop_owner ON recovery_reconcile_state(shop_id);
+CREATE INDEX IF NOT EXISTS idx_shop_bootstrap_runs_shop_owner ON shop_bootstrap_runs(shop_id);
+CREATE INDEX IF NOT EXISTS idx_shop_domain_sync_state_shop_owner ON shop_domain_sync_state(shop_id);
+
+PRAGMA user_version = 80;

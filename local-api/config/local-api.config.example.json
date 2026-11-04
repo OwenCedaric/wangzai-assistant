@@ -1,0 +1,72 @@
+{
+  "server": {
+    "host": "127.0.0.1",
+    "port": 3790
+  },
+  "database": {
+    "path": "./data/wangzai-local-api.development.sqlite",
+    "enableWal": true,
+    "busyTimeoutMs": 5000
+  },
+  "security": {
+    "allowOrigins": [
+      "app://wangzai",
+      "null",
+      "http://127.0.0.1:5173",
+      "http://127.0.0.1:5188",
+      "http://127.0.0.1:5191",
+      "http://localhost:5173",
+      "http://localhost:5188",
+      "http://localhost:5191"
+    ],
+    "allowLoopbackVitePorts": [
+      5173,
+      5174,
+      5175,
+      5176,
+      5177,
+      5178,
+      5179,
+      5180,
+      5181,
+      5182,
+      5183,
+      5184,
+      5185,
+      5186,
+      5187,
+      5188,
+      5189,
+      5190,
+      5191,
+      5192,
+      5193,
+      5194,
+      5195,
+      5196,
+      5197,
+      5198,
+      5199
+    ],
+    "logSecrets": false
+  },
+  "storage": {
+    "warningBytes": 67108864,
+    "orderReadCanaryShopIds": [],
+    "orderReadAllReadyShops": true,
+    "orderDirectWriteAllShops": true,
+    "operationalDirectWriteAllShops": true,
+    "profitLedgerDirectShopIds": [],
+    "productReadCanaryShopIds": [],
+    "productDirectWriteShopIds": [],
+    "productDirectWriteAllShops": true
+  },
+  "sync": {
+    "defaultStatus": "idle",
+    "continuousEnabled": true,
+    "continuousIntervalMs": 300000
+  },
+  "ozon": {
+    "enableRealWrite": true
+  }
+}

@@ -1,0 +1,435 @@
+{
+  "schemaVersion": 1,
+  "featureVersion": "follow-seller-scheme1-v27-cef150-visible-session-20260828",
+  "frozenAt": "2026-08-28",
+  "route": [
+    "页面选择当前店铺和待处理商品",
+    "复用或生成并校验方案1材料",
+    "打开精确店铺的卖家浏览器",
+    "进入新工单或锁定并续接原工单",
+    "按机器人提示提交SKU、文案和证据",
+    "处理一次性重复提示并保存完整回读",
+    "保存submissionStarted、工单和案件结果",
+    "用户主动复查并只扫描当前商品",
+    "跟卖数量减少即标记剔除成功"
+  ],
+  "files": {
+    "src/features/followSellerDefense/services/followSellerDefenseService.js": "6bb396cda13e0317368fdb6208f41e75b9cca18c3e929261c2d752e94a64f82e",
+    "src/features/followSellerDefense/model/useFollowSellerDefense.js": "e8cc33428d01cba0fb0e09654b3a399d655e8e3a340f1c5e4eb2403286479621",
+    "src/features/followSellerDefense/FollowSellerDefensePage.jsx": "674ce43e897a65eabb39dde2013428329f7f2aea25624aabec738aef636c13d8",
+    "src/features/followSellerDefense/lib/followSellerDefenseDisplay.js": "a6f57801be0acb10f9f3c9cef42072bee2019f96d8fa3247ff637521e8780912",
+    "../local-api/src/domain/followSellerDefense/followSellerDefenseService.js": "195b867f76cba3c3394a55a1194c2c1197bd001dfe2dd8c4b1047fc0a31be650",
+    "../local-api/src/domain/followSellerDefense/followSellerDefenseRoutes.js": "5719363f3cfb998d6e1c731bb579fdf7ec81fb2bc45a627b230ee606aa358e0c",
+    "../local-api/src/domain/followSellerDefense/followSellerQuickComplaintService.js": "bb0f23b090ae21687d3e3a1fd8f7314af94933b627df832c2d52532c772c6d72",
+    "../local-api/src/db/repositories/followSellerDefenseRepository.js": "31208c9cf16b723a0c5a3bacbb9592c0433ccccdb45e243ea25f38e2a32d0875",
+    "../local-api/src/db/migrations/092_normalize_follow_seller_verification_status.sql": "d0b36cfe2da881fcc82810f413d698a571f27783c9ea048fb3e347fac6c969fd",
+    "../desktop/src/main.js": "0532e140695d67955fa68aecbf2b84fdb9284a35ad66489ce6de9504938f414f",
+    "../desktop/src/purchaseBrowser/cefPurchaseBrowserController.js": "8e469a5800a9e916fe3eaebe53dd6d2989ed533b32336fffa9b9365e237bcb78",
+    "../desktop/src/purchaseBrowser/cefFollowSellerInternalBrowser.test.js": "3f6dd1cd6f32fcdbd8bc678a628b8566188a22ee86d8fb43778dc3622aef4175",
+    "../desktop/src/purchaseBrowser/purchaseBrowserProfileStore.js": "b394fa57992db47ccde713a2bda018dec016127fec08788861a5a5b31fd01445",
+    "../desktop/src/purchaseBrowser/followSellerNetworkRoute.js": "9f9dcbbb82514db67e9f3bb444cab3d6b4bc9c404237bbd35c7a191ef64f5254",
+    "../desktop/native/Wangzai.CefBrowserHost/BrowserProfile.cs": "c003e346d9bd7a042327168c39660f57cb3f205c4d974f5e2ae465c82f8857c5",
+    "../desktop/native/Wangzai.CefBrowserHost/Wangzai.CefBrowserHost.csproj": "f58f76385ad6e3cdba840932ee95d86447d764bdbc05b0faf9071d5583d2ead1",
+    "../desktop/native/Wangzai.CefBrowserHost/Program.cs": "397730cba2b988d28d5e7ff0700f388125520767e3d27397f98cf5bd95ee052a",
+    "../desktop/native/Wangzai.CefBrowserHost/InternalRequestHandler.cs": "8eb2258dec26efa7eb644fdc2399f693ffdb66703e0fa60ad2e9c3680fce82db",
+    "../desktop/native/Wangzai.CefBrowserHost/FingerprintScript.cs": "de2240be8a6169a69ff4d439e533e103b0a0c1c212ed571d2abd3b5a47a82c5a",
+    "../desktop/native/Wangzai.CefBrowserHost/FingerprintRenderProcessMessageHandler.cs": "df446bfca42b27550685132744789b66f74e802b689201361aa5ee24a8282795",
+    "../desktop/native/Wangzai.CefBrowserHost/FingerprintResourceRequestHandler.cs": "ffebbd803e58c088de369d91bbdbedcfe6d8626de092f493d98140c282a44181",
+    "../desktop/native/Wangzai.CefBrowserHost/BrowserSession.cs": "01cfccb5fff9bdba2142ce5d142c90b9e598660b303138ffcc2e9189b0f9e677",
+    "../desktop/native/Wangzai.CefBrowserHost/OzonFollowSellerCapture.cs": "b4c6e68571eae37e64b4b06822b8208490a6c6dc7b675899d01f1c54e62879cc",
+    "../desktop/native/Wangzai.CefBrowserHost/BrowserHostForm.FollowSellerQuickComplaint.cs": "a8e7619e885064210ea322666e8545c4ea7b1a9a80f184c870d26c72b3092248",
+    "../desktop/native/Wangzai.CefBrowserHost/BrowserHostForm.FollowSellerComplaint.cs": "6e984fa5dc13688a662be8cc3918bc813eb81498932587a3c39bd630aa09b53b",
+    "../desktop/native/Wangzai.CefBrowserHost/BrowserHostForm.cs": "293095c61928b5ca3c8c465eaa92b67ddad444276d12987ddefc881f316fb597"
+  },
+  "contracts": [
+    {
+      "file": "src/features/followSellerDefense/services/followSellerDefenseService.js",
+      "required": [
+        "FOLLOW_SELLER_SCHEME1_FREEZE_VERSION",
+        "prepareFollowSellerQuickCases",
+        "recordFollowSellerSubmissionResult",
+        "prepareFollowSellerVerification",
+        "verifyFollowSellerCase",
+        "submitFollowSellerQuickBatchInBrowser",
+        "resolveExactSellerProfileId",
+        "manualVerificationAttemptLimit = Math.max(1, cooldowns.length)",
+        "CAPTCHA_REQUIRED",
+        "FOLLOW_SELLER_VERIFICATION_WINDOW_NOT_VISIBLE",
+        "followSellerVerificationVisible !== true",
+        "read-follow-seller-verification",
+        "challengeObserved",
+        "verification.verificationReady !== true",
+        "toggleActiveFollowSellerVerificationBrowser",
+        "manualVerificationPresented",
+        "shouldCloseBrowser",
+        "reusePreparedEvidence: item.reusePreparedEvidence || attempt > 0 || retryContinuation.requested",
+        "submissionStarted"
+      ],
+      "forbidden": [
+        "resumeFollowSellerReadBack",
+        "recordFollowSellerReadBackResult",
+        "readFollowSellerComplaintInBrowser",
+        "ozon-read-follow-seller-complaint"
+      ]
+    },
+    {
+      "file": "src/features/followSellerDefense/model/useFollowSellerDefense.js",
+      "required": [
+        "const runScheme1",
+        "prepareFollowSellerQuickCases",
+        "submitFollowSellerQuickBatchInBrowser",
+        "recordFollowSellerSubmissionResult",
+        "prepareFollowSellerVerification",
+        "targets: [target]",
+        "concurrency: 1",
+        "cooldownDelaysMs: []",
+        "verifyFollowSellerCase",
+        "mode: 'standalone'",
+        "const recheck",
+        "toggleOperationBrowser",
+        "onBrowserState",
+        "operationBrowserAvailable",
+        "cancelCurrentTask",
+        "canStopTask",
+        "本次只扫描一个商品",
+        "本次不消耗积分"
+      ],
+      "forbidden": [
+        "流程已执行到等待客服回复",
+        "awaiting_support_review",
+        "awaiting_verification",
+        "evidence_required",
+        "readback_mismatch",
+        "resumeFollowSellerReadBack",
+        "readFollowSellerComplaintInBrowser",
+        "followSellerBillingService"
+      ]
+    },
+    {
+      "file": "../local-api/src/domain/followSellerDefense/followSellerDefenseService.js",
+      "required": [
+        "const VERIFIABLE_STATUSES",
+        "async function prepareQuick",
+        "legacyScheme1Ready",
+        "function recordSubmission",
+        "function prepareVerification",
+        "function verify",
+        "followCountBefore",
+        "decreasedBy",
+        "STANDALONE_RECHECK_BLOCKED_STATUSES",
+        "action: standalone ? 'standalone_recheck' : 'verify'",
+        "standalone ? capture.count === 0",
+        "status: submitted ? 'verification_ready'",
+        "stage: submitted ? 'awaiting_manual_verification'",
+        "reusePreparedEvidence: true",
+        "recoversMissingContinuation",
+        "savedContinuation.previousSubmissionStarted",
+        "reused_unsent_material",
+        "resumeExisting === true && hasPreparedScheme1Flow",
+        "freshScheme1Restart"
+      ],
+      "forbidden": [
+        "function applyReadBack",
+        "function resumeReadBack",
+        "function recordReadBack",
+        "requiresBrowserReadBack",
+        "complaint_readback",
+        "awaiting_support_review",
+        "awaiting_verification",
+        "evidence_required",
+        "readback_mismatch"
+      ]
+    },
+    {
+      "file": "../local-api/src/domain/followSellerDefense/followSellerDefenseRoutes.js",
+      "required": [
+        "`${PREFIX}/prepare-quick`",
+        "`${PREFIX}/submission-result`",
+        "`${PREFIX}/verify/prepare`",
+        "`${PREFIX}/verify`"
+      ],
+      "forbidden": [
+        "`${PREFIX}/readback`",
+        "`${PREFIX}/readback-result`"
+      ]
+    },
+    {
+      "file": "../desktop/src/purchaseBrowser/cefPurchaseBrowserController.js",
+      "required": [
+        "ozon-submit-follow-seller-quick-complaint",
+        "validatedFollowSellerQuickFollowers",
+        "validatedFollowSellerQuickEvidenceFollowers",
+        "show-follow-seller-quick-browser",
+        "show-follow-seller-verification-browser",
+        "hide-follow-seller-verification-browser",
+        "event === 'window-hidden'",
+        "followSellerVerificationPresentation",
+        "followSellerVerificationVisible",
+        "follow-seller-verification-status",
+        "read-follow-seller-verification",
+        "targetUrl",
+        "visible: false",
+        "reusePreparedEvidence",
+        "stopAfterRepeatedPromptDetection",
+        "follow-seller-scheme1-progress",
+        "const persistLoginVerification = false;",
+        "stopBeforeFirstMessage: command === 'ozon-submit-follow-seller-quick-complaint'"
+      ],
+      "forbidden": [
+        "ozon-read-follow-seller-complaint",
+        "FOLLOW_SELLER_READBACK_RECEIPT_REQUIRED"
+      ]
+    },
+    {
+      "file": "../desktop/native/Wangzai.CefBrowserHost/BrowserSession.cs",
+      "required": [
+        "RenderProcessMessageHandler = new FingerprintRenderProcessMessageHandler(profile)",
+        "case \"ozon-support-status\"",
+        "conversationListVisible",
+        "emptyConversationVisible",
+        "case \"ozon-data-follow-sellers\"",
+        "case \"follow-seller-verification-status\"",
+        "GetFollowSellerVerificationStatusAsync",
+        "case \"ozon-submit-follow-seller-quick-complaint\"",
+        "SubmitOzonFollowSellerQuickComplaintAsync",
+        "SubmitOzonFollowSellerQuickComplaintAsync(\n\t\t\t\tBrowser"
+      ],
+      "forbidden": [
+        "ozon-read-follow-seller-complaint",
+        "ReadOzonFollowSellerComplaintAsync",
+        "ozon-support-websocket-probe",
+        "ozon-support-refresh-stale-sid",
+        "supportWebSocketLastHandshakeStatus",
+        "__wangzaiSupportDiagnostic",
+        "resourceStatusFailures",
+        "activeResourcePaths",
+        "serviceWorkerPath"
+      ]
+    },
+    {
+      "file": "../desktop/native/Wangzai.CefBrowserHost/Wangzai.CefBrowserHost.csproj",
+      "required": [
+        "CefSharp.WinForms.NETCore\" Version=\"150.0.110\""
+      ],
+      "forbidden": [
+        "CefSharp.WinForms.NETCore\" Version=\"151.3.170\""
+      ]
+    },
+    {
+      "file": "../desktop/native/Wangzai.CefBrowserHost/Program.cs",
+      "required": [
+        "Chrome/150.0.0.0",
+        "Cef.EnableWaitForBrowsersToClose()",
+        "Cef.WaitForBrowsersToClose()"
+      ]
+    },
+    {
+      "file": "../desktop/native/Wangzai.CefBrowserHost/OzonFollowSellerCapture.cs",
+      "required": [
+        "internal static partial class OzonFollowSellerCapture",
+        "public static async Task<object> ExecuteAsync(",
+        "followSellerConfirmed",
+        "followSellerCount",
+        "followSellers",
+        "OZON_FOLLOW_SELLERS_RESULT_MISSING"
+      ]
+    },
+    {
+      "file": "../desktop/native/Wangzai.CefBrowserHost/BrowserHostForm.FollowSellerQuickComplaint.cs",
+      "required": [
+        "ChromiumWebBrowser sessionBrowser",
+        "ChromiumWebBrowser? browser = sessionBrowser",
+        "PrepareQuickEvidenceScreenshotsAsync",
+        "ReviewQuickFollowerProductPageAsync",
+        "SetQuickComplaintTicketSearchAsync",
+        "QuickComplaintPageAdapterExpression",
+        "const ticketNumber = value =>",
+        "freshRequestTicketId",
+        "freshRequestConfirmed",
+        "freshRouteConfirmed",
+        "observedFreshRequestTicketId === observedTicketId",
+        "pageAdapter.ticketId(conversation)",
+        "pageAdapter.input(composer)",
+        "pageAdapter.sendButton(composer)",
+        "composerInputPresent: !!textarea",
+        "restore-ticket-search",
+        "ticket-search-results",
+        "start-new-request",
+        "seller-entry",
+        "ticket-view-stable",
+        "repeat-answer-required",
+        "repeated-prompt-limit",
+        "legacyReplayPrompt",
+        "legacyPromptsExactMatch",
+        "ticket-history-load-required",
+        "DispatchQuickTrustedScrollAsync",
+        "SubmitQuickComplaintBundleAsync",
+        "send-residual-text",
+        "repair-initial-text",
+        "repair-supplement-text",
+        "FOLLOW_SELLER_COMPLAINT_DAILY_LIMIT",
+        "https://seller.ozon.ru/app/messenger?group=support_v2",
+        "OzonSellerQuickComplaintUrl = \"https://seller.ozon.ru/app/messenger?channel=SCRM\"",
+        "OzonSellerQuickComplaintStartUrl = \"https://seller.ozon.ru/app/dashboard/main\"",
+        "QuickComplaintEntryUrl(resumeExisting, resumePageUrl)",
+        "const exactSupportScope =",
+        "currentUrl.searchParams.get('group') === 'support_v2'",
+        "QuickComplaintTransportCookieNames",
+        "__Secure-sid",
+        "__Secure-sso-state",
+        "__Secure-token",
+        "__Secure-ETC",
+        "conversationRefreshAttempts >= 3",
+        "RefreshQuickComplaintTransportSessionAsync(requestContext)",
+        "DispatchQuickSessionPageClickAsync",
+        "document.elementFromPoint",
+        "RestoreSessionForObservation(ownerRef)",
+        "stopBeforeFirstMessage",
+        "route-ready-observed",
+        "submissionStarted",
+        "Volatile.Read(ref submissionStarted)",
+        "browser-surface-ready",
+        "FOLLOW_SELLER_SCHEME1_BROWSER_TARGET_INVALID",
+        "IsQuickComplaintOzonUrl",
+        "WaitForQuickComplaintHumanVerificationAsync",
+        "captcha-required",
+        "stableClearReads >= 3",
+        "人机验证已通过，正在从当前步骤自动继续"
+      ],
+      "forbidden": [
+        "BuildQuickFollowerBatchMessages",
+        "ClickQuickComplaintAttachmentSendAsync",
+        "ClearQuickComplaintComposerAsync",
+        "runtime.routeStep += 1",
+        "url.searchParams.get('helpCenter') === 'page'",
+        "new ChromiumWebBrowser(OzonSellerQuickComplaintStartUrl",
+        "IBrowser cefBrowser = browser.GetBrowser()",
+        "IBrowserHost browserHost = cefBrowser.GetHost()",
+        "browser.Dispose()",
+        "__Secure-access-token",
+        "__Secure-refresh-token",
+        "\"sc_company_id\"",
+        "supportDiagnostics",
+        "activeChatResources",
+        "bodyExcerpt"
+      ]
+    },
+    {
+      "file": "../desktop/src/purchaseBrowser/cefFollowSellerInternalBrowser.test.js",
+      "required": [
+        "scheme1 completes all three route steps when the same fresh ticket is visible from the first read",
+        "scheme1 locks the new ticket when its first readable state is already the completed fresh request",
+        "scheme1 does not lock a historical request without the confirmed three-step route",
+        "scheme1 replays one exact answer once when Ozon repeats the identical prompt",
+        "scheme1 real-machine observation mode stops after detecting two identical evidence prompts without sending",
+        "scheme1 restores the saved ticket from an unselected support conversation list",
+        "scheme1 searches the saved ticket before waiting on an unselected support list",
+        "scheme1 reuses the original seller and create-request entries before the frozen complaint route",
+        "scheme1 opens new complaints through the original SCRM entry and resumes saved support tickets directly",
+        "scheme1 preserves seller credentials and only rebuilds transient support cookies after confirmed chat failure",
+        "scheme1 visualization reveals the exact temporary browser without interrupting automation",
+        "scheme1 clicks support controls inside the reused page without disposing the session browser",
+        "standalone follow-seller verification explicitly observes the same background CEF session"
+      ]
+    },
+    {
+      "file": "../desktop/native/Wangzai.CefBrowserHost/BrowserHostForm.FollowSellerComplaint.cs",
+      "required": [
+        "RenderProcessMessageHandler = new FingerprintRenderProcessMessageHandler(profile)",
+        "SubmitOzonFollowSellerComplaintAsync",
+        "submissionStarted",
+        "Volatile.Read(ref submissionStarted)"
+      ],
+      "forbidden": [
+        "ReadOzonFollowSellerComplaintAsync",
+        "ReadOzonFollowSellerComplaintCoreAsync",
+        "EvaluateComplaintReadBackAsync",
+        "FOLLOW_SELLER_READBACK_"
+      ]
+    },
+    {
+      "file": "src/features/followSellerDefense/FollowSellerDefensePage.jsx",
+      "required": [
+        "可视化操作页面",
+        "隐藏操作页面",
+        "flow.toggleOperationBrowser",
+        "复查剔除结果",
+        "flow.continueScheme1",
+        "flow.runScheme1",
+        "verification_ready",
+        "shop.shopAlias || shop.alias",
+        "scheme1-feedback",
+        "visibleEntries",
+        "单独复查",
+        "flow.recheck",
+        "停止任务",
+        "flow.cancelCurrentTask"
+      ],
+      "forbidden": [
+        "读取客服结果",
+        "检测并选中",
+        "runSavedManualCheck",
+        "FOLLOW_SELLER_POINTS_PER_CASE",
+        "awaiting_support_review",
+        "awaiting_verification",
+        "evidence_required",
+        "readback_mismatch",
+        "shop.name || shop.label || shop.alias"
+      ]
+    },
+    {
+      "file": "../local-api/src/db/migrations/092_normalize_follow_seller_verification_status.sql",
+      "required": [
+        "status = 'verification_ready'",
+        "stage = 'awaiting_manual_verification'",
+        "'awaiting_support_review'",
+        "'awaiting_verification'",
+        "'evidence_required'",
+        "'readback_mismatch'",
+        "PRAGMA user_version = 92"
+      ]
+    },
+    {
+      "file": "package.json",
+      "required": [
+        "\"check:follow-seller-scheme1-freeze\": \"node scripts/follow-seller-scheme1-freeze.mjs\"",
+        "scripts/follow-seller-scheme1-freeze.node.mjs",
+        "npm run check:follow-seller-scheme1-freeze"
+      ]
+    },
+    {
+      "file": "../.agents/references/frozen-contracts.md",
+      "required": [
+        "follow-seller-scheme1-v27-cef150-visible-session-20260828",
+        "npm run check:follow-seller-scheme1-freeze",
+        "提交取得工单后不轮询、不读取 Ozon 客服审核状态",
+        "店铺选择器必须优先显示用户配置的内部店铺简称",
+        "legacyReplayPrompt",
+        "legacyScheme1Ready",
+        "从未开始发送则复用原证据并创建新工单"
+      ]
+    }
+  ],
+  "sequences": [
+    {
+      "file": "src/features/followSellerDefense/model/useFollowSellerDefense.js",
+      "markers": [
+        "const prepared = await prepareFollowSellerQuickCases({",
+        "const browserBatch = await submitFollowSellerQuickBatchInBrowser({",
+        "const recordResults = await Promise.allSettled((browserBatch.results || []).map((item) => recordFollowSellerSubmissionResult({",
+        "const prepared = await prepareFollowSellerVerification({",
+        "const capture = await captureFollowSellersForTargets({",
+        "const result = await verifyFollowSellerCase({"
+      ]
+    },
+    {
+      "file": "../local-api/src/domain/followSellerDefense/followSellerDefenseService.js",
+      "markers": [
+        "async function prepareQuick",
+        "function recordSubmission",
+        "function prepareVerification",
+        "function verify"
+      ]
+    }
+  ]
+}

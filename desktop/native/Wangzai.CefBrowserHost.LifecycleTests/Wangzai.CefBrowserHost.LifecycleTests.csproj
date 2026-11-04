@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="../Wangzai.CefBrowserHost/ProtocolServer.cs" Link="Production/ProtocolServer.cs" />
+    <Compile Include="../Wangzai.CefBrowserHost/NativeApplicationDiagnostics.cs" Link="Production/NativeApplicationDiagnostics.cs" />
+    <Compile Include="../Wangzai.CefBrowserHost/ProtocolWriter.cs" Link="Production/ProtocolWriter.cs" />
+    <Compile Include="../Wangzai.CefBrowserHost/JsonDefaults.cs" Link="Production/JsonDefaults.cs" />
+    <Compile Include="../Wangzai.CefBrowserHost/ErrorCode.cs" Link="Production/ErrorCode.cs" />
+    <Compile Include="../Wangzai.CefBrowserHost/BrowserRendererHealth.cs" Link="Production/BrowserRendererHealth.cs" />
+    <Compile Include="../Wangzai.CefBrowserHost/BrowserNavigationReadiness.cs" Link="Production/BrowserNavigationReadiness.cs" />
+  </ItemGroup>
+</Project>

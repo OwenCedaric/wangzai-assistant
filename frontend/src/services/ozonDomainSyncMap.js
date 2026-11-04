@@ -1,0 +1,38 @@
+﻿export const ozonDomainSyncMap = Object.freeze({
+  '/v1/description-category/tree': { domain: 'catalog', endpointKey: 'catalog.categoryTree', action: 'sync', access: 'read' },
+  '/v1/description-category/attribute': { domain: 'catalog', endpointKey: 'catalog.attributes', action: 'sync', access: 'read' },
+  '/v1/description-category/attribute/values/search': { domain: 'catalog', endpointKey: 'catalog.attributeValuesSearch', action: 'sync', access: 'read' },
+  '/v3/product/list': { domain: 'products', endpointKey: 'products.list', action: 'sync', access: 'read' },
+  '/v3/product/info/list': { domain: 'products', endpointKey: 'products.infoList', action: 'sync', access: 'read' },
+  '/v4/product/info/attributes': { domain: 'products', endpointKey: 'products.attributes', action: 'sync', access: 'read' },
+  '/v2/product/pictures/info': { domain: 'images', endpointKey: 'products.pictures', action: 'sync', access: 'read' },
+  '/v5/product/info/prices': { domain: 'products', endpointKey: 'products.prices', action: 'sync', access: 'read' },
+  '/v4/product/info/stocks': { domain: 'products', endpointKey: 'products.stocks', action: 'sync', access: 'read' },
+  '/v3/product/import': { domain: 'products', endpointKey: 'products.import', action: 'product.updateInfo', access: 'write' },
+  '/v1/product/import/prices': { domain: 'products', endpointKey: 'products.updatePrices', action: 'product.updatePrice', access: 'write' },
+  '/v2/products/stocks': { domain: 'products', endpointKey: 'products.updateStocks', action: 'product.updateStock', access: 'write' },
+  '/v1/product/archive': { domain: 'products', endpointKey: 'products.archive', action: 'product.archive', access: 'write' },
+  '/v1/product/unarchive': { domain: 'products', endpointKey: 'products.unarchive', action: 'product.unarchive', access: 'write' },
+  '/v3/posting/fbs/list': { domain: 'orders', endpointKey: 'orders.fbsList', action: 'sync', access: 'read' },
+  '/v3/posting/fbs/unfulfilled/list': { domain: 'orders', endpointKey: 'orders.fbsUnfulfilledList', action: 'sync', access: 'read' },
+  '/v2/posting/fbo/list': { domain: 'orders', endpointKey: 'orders.fboList', action: 'sync', access: 'read' },
+  '/v3/posting/fbs/get': { domain: 'orders', endpointKey: 'orders.fbsGet', action: 'sync', access: 'read' },
+  '/v2/posting/fbo/get': { domain: 'orders', endpointKey: 'orders.fboGet', action: 'sync', access: 'read' },
+  '/v3/finance/transaction/list': { domain: 'finance', endpointKey: 'finance.transactionList', action: 'sync', access: 'read' },
+  '/v1/finance/accrual/by-day': { domain: 'finance', endpointKey: 'finance.accrualByDay', action: 'sync', access: 'read' },
+  '/v1/finance/cash-flow-statement/list': { domain: 'profit-report', endpointKey: 'profitReport.cashFlowStatement', action: 'sync', access: 'read' },
+  '/v1/finance/balance': { domain: 'profit-report', endpointKey: 'profitReport.balance', action: 'sync', access: 'read' },
+  '/v1/rating/index/fbs/posting/list': { domain: 'profit', endpointKey: 'rating.fbsPostingList', action: 'sync', access: 'read' },
+  '/v1/returns/list': { domain: 'returns', endpointKey: 'returns.list', action: 'sync', access: 'read' },
+  '/v2/returns/rfbs/list': { domain: 'returns', endpointKey: 'returns.rfbsList', action: 'sync', access: 'read' },
+  '/v2/returns/rfbs/get': { domain: 'returns', endpointKey: 'returns.rfbsGet', action: 'sync', access: 'read' },
+  '/v2/conditional-cancellation/list': { domain: 'returns', endpointKey: 'returns.conditionalCancellationList', action: 'sync', access: 'read' },
+  '/v2/warehouse/list': { domain: 'logistics', endpointKey: 'warehouse.list', action: 'sync', access: 'read' },
+  '/v2/delivery-method/list': { domain: 'logistics', endpointKey: 'deliveryMethod.list', action: 'sync', access: 'read' },
+  '/v1/actions': { domain: 'marketing', endpointKey: 'actions.list', action: 'sync', access: 'read' },
+  '/v1/seller-actions/list': { domain: 'marketing', endpointKey: 'sellerActions.list', action: 'sync', access: 'read' },
+});
+
+export function getOzonDomainSyncMapping(endpoint) {
+  return ozonDomainSyncMap[endpoint] || null;
+}

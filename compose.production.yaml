@@ -1,0 +1,230 @@
+name: license-center-production
+
+# One backend image, four roles (see 服务器多人并发改造方案-2026-10-11.md):
+#   migrate        one-shot `alembic upgrade head`, then exits
+#   backend        light API: login, heartbeat, points, admin (fast requests only)
+#   backend-heavy  slow API: core-v2 models/cross-border, protected compute, paid
+#                  capabilities, recovery uploads (Caddy routes these paths here)
+#   worker         smart-reply and maintenance loops; receives no traffic
+# Postgres connection budget (max_connections 100):
+#   backend 4 workers x (5+5) + heavy 2 x (10+10) + worker 1 x (3+2) = 85
+x-backend-environment: &backend-environment
+  APP_ENV: production
+  DEBUG: "false"
+  DOCS_ENABLED: "false"
+  AUTO_CREATE_TABLES: "false"
+  DATABASE_URL: postgresql+psycopg://license_center:${POSTGRES_PASSWORD}@postgres:5432/license_center
+  REDIS_URL: redis://redis:6379/0
+  REDIS_REQUIRED: "true"
+  CORS_ORIGINS: https://${LICENSE_DOMAIN}
+  TRUSTED_HOSTS: ${LICENSE_DOMAIN},backend,backend-heavy,localhost,127.0.0.1
+  JWT_SECRET_KEY_FILE: /run/secrets/jwt_secret
+  CARD_HASH_SECRET_FILE: /run/secrets/card_hash_secret
+  CARD_ENCRYPTION_KEY_FILE: /run/secrets/card_encryption_key
+  IDENTITY_HASH_SECRET_FILE: /run/secrets/identity_hash_secret
+  IDENTITY_ENCRYPTION_KEY_FILE: /run/secrets/identity_encryption_key
+  OZON_NOTIFICATION_CALLBACK_TOKEN_FILE: /run/secrets/ozon_notification_callback_token
+  SMART_REPLY_WORKER_INTERVAL_SECONDS: ${SMART_REPLY_WORKER_INTERVAL_SECONDS:-5}
+  OTP_HASH_SECRET_FILE: /run/secrets/otp_hash_secret
+  REFRESH_TOKEN_SECRET_FILE: /run/secrets/refresh_token_secret
+  CHANNEL_TOKEN_SECRET_FILE: /run/secrets/channel_token_secret
+  OFFLINE_SIGNING_PRIVATE_KEY_FILE: /run/secrets/offline_signing_private_key.pem
+  PROTECTED_COMPUTE_SIGNING_PRIVATE_KEY_FILE: /run/secrets/protected_compute_ed25519_private.pem
+  PAID_TEXT_API_KEY_FILE: /run/secrets/paid_text_api_key
+  PAID_IMAGE_API_KEY_FILE: /run/secrets/paid_image_api_key
+  PAID_SEERFAR_API_KEY_FILE: /run/secrets/paid_seerfar_api_key
+  API_POOL_HASH_SECRET_FILE: /run/secrets/api_pool_hash_secret
+  API_POOL_ENCRYPTION_KEY_FILE: /run/secrets/api_pool_encryption_key
+  CROSS_BORDER_COMPANY_SECRET_FILE: /run/secrets/cross_border_company_secret
+  CROSS_BORDER_TOKEN_STATE_FILE: /tmp/cross-border-enterprise-token.enc
+  BACKEND_KEEP_ALIVE_SECONDS: ${BACKEND_KEEP_ALIVE_SECONDS:-10}
+  FORWARDED_ALLOW_IPS: "*"
+  RUN_MIGRATIONS: "false"
+
+x-backend: &backend
+  build:
+    context: ./server
+  image: license-center-backend:${BACKEND_IMAGE_TAG:-local}
+  restart: unless-stopped
+  env_file: ./deploy/.env.production
+  volumes:
+    - ./deploy/secrets:/run/secrets:ro
+  networks: [private, egress]
+  init: true
+  read_only: true
+  tmpfs: [/tmp]
+  stop_grace_period: 45s
+  security_opt: ["no-new-privileges:true"]
+  logging:
+    driver: json-file
+    options:
+      max-size: "20m"
+      max-file: "5"
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    command:
+      - postgres
+      - -c
+      - max_connections=${POSTGRES_MAX_CONNECTIONS:-100}
+      - -c
+      - shared_buffers=${POSTGRES_SHARED_BUFFERS:-256MB}
+      - -c
+      - effective_cache_size=${POSTGRES_EFFECTIVE_CACHE_SIZE:-2GB}
+      - -c
+      - work_mem=${POSTGRES_WORK_MEM:-8MB}
+    environment:
+      POSTGRES_DB: license_center
+      POSTGRES_USER: license_center
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD in deploy/.env.production}
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U license_center -d license_center"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    networks: [private]
+    shm_size: 256mb
+    stop_grace_period: 60s
+    security_opt: ["no-new-privileges:true"]
+    logging: &default-logging
+      driver: json-file
+      options:
+        max-size: "20m"
+        max-file: "5"
+
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+    command:
+      - redis-server
+      - --appendonly
+      - "yes"
+      - --appendfsync
+      - everysec
+      - --save
+      - "60"
+      - "1000"
+      - --maxmemory
+      - ${REDIS_MAXMEMORY:-512mb}
+      - --maxmemory-policy
+      - noeviction
+    volumes:
+      - redis-data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    networks: [private]
+    stop_grace_period: 30s
+    security_opt: ["no-new-privileges:true"]
+    logging: *default-logging
+
+  migrate:
+    <<: *backend
+    restart: "no"
+    environment:
+      <<: *backend-environment
+      BACKEND_ROLE: migrate
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  backend:
+    <<: *backend
+    environment:
+      <<: *backend-environment
+      BACKEND_WORKERS: ${BACKEND_WORKERS:-4}
+      DB_POOL_SIZE: ${BACKEND_DB_POOL_SIZE:-5}
+      DB_MAX_OVERFLOW: ${BACKEND_DB_MAX_OVERFLOW:-5}
+      THREADPOOL_TOKENS: ${BACKEND_THREADPOOL_TOKENS:-40}
+      BACKGROUND_LOOPS_ENABLED: "false"
+    mem_limit: ${BACKEND_MEM_LIMIT:-1g}
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+      redis:
+        condition: service_healthy
+
+  backend-heavy:
+    <<: *backend
+    environment:
+      <<: *backend-environment
+      BACKEND_WORKERS: ${HEAVY_BACKEND_WORKERS:-2}
+      DB_POOL_SIZE: ${HEAVY_DB_POOL_SIZE:-10}
+      DB_MAX_OVERFLOW: ${HEAVY_DB_MAX_OVERFLOW:-10}
+      THREADPOOL_TOKENS: ${HEAVY_THREADPOOL_TOKENS:-100}
+      BACKGROUND_LOOPS_ENABLED: "false"
+    mem_limit: ${HEAVY_BACKEND_MEM_LIMIT:-2g}
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+      redis:
+        condition: service_healthy
+
+  worker:
+    <<: *backend
+    environment:
+      <<: *backend-environment
+      BACKEND_WORKERS: "1"
+      DB_POOL_SIZE: "3"
+      DB_MAX_OVERFLOW: "2"
+      BACKGROUND_LOOPS_ENABLED: "true"
+    mem_limit: ${WORKER_MEM_LIMIT:-512m}
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+      redis:
+        condition: service_healthy
+
+  admin:
+    build:
+      context: ./frontend
+    restart: unless-stopped
+    depends_on:
+      backend:
+        condition: service_healthy
+      backend-heavy:
+        condition: service_healthy
+    networks: [private]
+    init: true
+    security_opt: ["no-new-privileges:true"]
+    logging: *default-logging
+
+  gateway:
+    image: caddy:2.10-alpine
+    restart: unless-stopped
+    environment:
+      LICENSE_DOMAIN: ${LICENSE_DOMAIN:?set LICENSE_DOMAIN in deploy/.env.production}
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    volumes:
+      - ./deploy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy-data:/data
+      - caddy-config:/config
+    depends_on:
+      admin:
+        condition: service_healthy
+    networks: [edge, private]
+    init: true
+    stop_grace_period: 30s
+    security_opt: ["no-new-privileges:true"]
+    logging: *default-logging
+
+networks:
+  edge:
+  egress:
+  private:
+    internal: true
+
+volumes:
+  postgres-data:
+  redis-data:
+  caddy-data:
+  caddy-config:

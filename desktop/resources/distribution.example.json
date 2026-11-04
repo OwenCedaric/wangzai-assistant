@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "project_code": "wangzai_desktop",
+  "channel_code": "",
+  "campaign_code": "",
+  "distribution_token": "",
+  "license_mode": "enforce",
+  "license_center_url": "https://license.example.invalid",
+  "jwt_issuer": "license-center",
+  "jwt_audience": "license-center-clients",
+  "offline_key_sha256": ""
+}

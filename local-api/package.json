@@ -1,0 +1,36 @@
+{
+  "name": "wangzai-local-api",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "旺崽助手本地 API 服务底座：SQLite、migration、health，不直连前端 UI。",
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "start:safe": "node scripts/check-port.mjs && node src/server.js",
+    "dev": "node src/server.js",
+    "migrate": "node src/db/migrate.js",
+    "health": "node scripts/check-health.mjs",
+    "status": "node scripts/check-status.mjs",
+    "port:check": "node scripts/check-port.mjs",
+    "storage:check": "node scripts/check-storage.mjs",
+    "oss:check": "node scripts/check-product-image-oss.mjs",
+    "db:inspect": "node scripts/inspect-db.mjs",
+    "perf:baseline": "node scripts/perf-baseline.mjs",
+    "test": "node --test",
+    "test:account-removal:stress": "node scripts/verify-account-removal-stress.mjs --cycles=50",
+    "security:protected-compute": "node scripts/scan-protected-compute-boundary.mjs",
+    "evidence:sku": "node scripts/verify-real-sku-evidence.mjs",
+    "evidence:sku:build": "node scripts/build-real-sku-evidence-bundle.mjs",
+    "charges:reconcile": "node scripts/reconcile-cross-border-charges.mjs",
+    "provenance:smoke": "node scripts/test-image-provenance-smoke.mjs"
+  },
+  "dependencies": {
+    "ag-psd": "^30.2.0",
+    "ali-oss": "^6.23.0",
+    "sharp": "^0.35.3"
+  },
+  "license": "SEE LICENSE IN ../LICENSE"
+}

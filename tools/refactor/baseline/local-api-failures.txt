@@ -1,0 +1,12 @@
+✖ B1 production source scanner consumes all eight roots, frozen anchors, and the catalog without a manual inventory
+✖ orders HTTP route persists TEST-SPLIT child rows through test split simulation endpoint
+✖ orders HTTP routes expose /api/sync/orders and /api/cache/orders
+✖ orders service sends detail posting number as scalar Ozon payload
+✖ orders service starts background sync through scheduler and preserves old cache on empty later result
+✖ orders split write records relation and waits for real readback before merged status
+✖ orders split write treats Ozon parent plus children readback as three actual postings
+✖ returns background sync does not notify every row during first cache bootstrap
+✖ returns service default sync can continue past the first page for 90-day ranges
+✖ reviewed browser cleanup source window rejects relocation even when the unchanged owner proof remains elsewhere
+✖ six post-B0 owner task Sets are source-bound to exact owner resources and consumer barriers, never system preservation
+✖ versioned purchase and integration source compatibility preserves frozen Catalog identity and exact owner-scoped behavior

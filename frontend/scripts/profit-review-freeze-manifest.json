@@ -1,0 +1,137 @@
+{
+    "schemaVersion":  1,
+    "featureVersion":  "profit-order-review-v2-server-template-20260828",
+    "frozenAt":  "2026-08-28",
+    "storageReadRepair": "2026-09-04: published-snapshot-only; shop-scoped deduplication; no formula changes",
+    "files":  {
+                  "src/features/profitReview/constants/profitOrderReviewContract.js":  "f842afdfb70034c85e8df19cb3af41112af83a3bf13f731c1573e284c02d24c2",
+                  "src/features/profitReview/components/ProfitOrderReviewRun.jsx":  "58a86a8be9ef29925bbf25c9c21c9dd45878f253d17613043f48c5af7e4552af",
+                  "src/features/profitReview/components/ProfitOrderReviewReport.jsx":  "e56f0914d2a1e5a6e0ed4f3c9657b5f2d0c9332037b9666265baefcd612594ce",
+                  "src/features/profitReview/lib/profitOrderReviewAnalysis.js":  "1abe575fb6c8b93478cda16891ad2eb4b919fe8d3038e6f443754724a5482e1a",
+                  "src/features/profitReview/lib/profitOrderReviewText.js":  "9b52eb1117bde9c9c9ca34e534cf4f9122ab4004b16c155d6f948ae76f251e17",
+                  "src/features/profitReview/services/profitOrderReviewService.js":  "92e07cd523d2eaca02343e6b44970cabf9d36bf27439aab04eb7f14a0c3379ac",
+                  "src/features/promptLibrary/lib/smartToolProfitReviewConfig.js":  "31981b182494dfc60b41f714851c672495e96559fb0ccdc2d7660f3eb66b748a",
+                  "src/features/promptLibrary/lib/smartToolServerTemplates.js":  "2108d463f0040406569a3577785ea94929b7bbf0ddbf9bf5cc12d1a0513c411e",
+                  "../local-api/src/domain/profit/profitOrderReviewReadModel.js":  "3f761120f77f683aadd07437cbdddf0a85a05d0ea4e5efe18a2bdea10982f9d3"
+              },
+    "segments":  [
+                     {
+                         "name":  "profit-order-review-styles",
+                         "file":  "src/styles.css",
+                         "startMarker":  "/* PROFIT_ORDER_REVIEW_FREEZE:BEGIN */",
+                         "endMarker":  "/* PROFIT_ORDER_REVIEW_FREEZE:END */",
+                         "sha256":  "1a6ac996eb325d776c5e2fafb99cde5cc3abb21bc15e6634bdb6c759b8d26b0d"
+                     }
+                 ],
+    "contracts":  [
+                      {
+                          "file":  "src/features/promptLibrary/components/PromptLibraryQuickRunPanel.jsx",
+                          "required":  [
+                                           "../../profitReview/components/ProfitOrderReviewRun.jsx",
+                                           "../../profitReview/constants/profitOrderReviewContract.js",
+                                           "selectedPrompt.id === PROFIT_ORDER_REVIEW_SKILL_ID",
+                                           "modelOptions={textModelOptions}"
+                                       ]
+                      },
+                      {
+                          "file":  "src/features/promptLibrary/PromptLibraryPage.jsx",
+                          "required":  [
+                                           "../profitReview/constants/profitOrderReviewContract.js",
+                                           "selectedPrompt?.id === PROFIT_ORDER_REVIEW_SKILL_ID",
+                                           "normalizeProfitReviewPresentation(editorForm.profitReviewPresentation)"
+                                       ]
+                      },
+                      {
+                          "file":  "src/features/promptLibrary/lib/promptLibraryStore.jsx",
+                          "required":  [
+                                           "../../profitReview/constants/profitOrderReviewContract.js",
+                                           "item?.id === PROFIT_ORDER_REVIEW_SKILL_ID",
+                                           "PROFIT_ORDER_REVIEW_TITLE = \u0027订单利润与商品投入评估\u0027"
+                                       ]
+                      },
+                      {
+                          "file":  "src/features/promptLibrary/lib/smartToolSkillCatalog.js",
+                          "required":  [
+                                           "\u0027profit-risk-review\u0027: {",
+                                           "usageInputs: [\u0027订单号\u0027]",
+                                           "\u0027Seerfar 市场数据（可选）\u0027",
+                                           "\u0027不改利润公式\u0027"
+                                       ]
+                      },
+                      {
+                          "file":  "src/features/promptLibrary/lib/smartToolRuntime.js",
+                          "required":  [
+                                           "\u0027profit-risk-review\u0027: {",
+                                           "\u0027Seerfar（市场数据可选）\u0027",
+                                           "全程只读，不改订单和金额"
+                                       ]
+                      },
+                      {
+                          "file":  "src/features/promptLibrary/lib/smartToolServerTemplates.js",
+                          "required":  [
+                                           "\u0027profit-risk-review\u0027: {",
+                                           "templateId: \u0027profit-order-review.v1\u0027",
+                                           "modelPurpose: \u0027订单利润与商品投入评估\u0027",
+                                           "systemPrompt: \u0027\u0027"
+                                       ]
+                      },
+                      {
+                          "file":  "src/features/promptLibrary/lib/smartToolSkillAdapters.js",
+                          "required":  [
+                                           "[PROFIT_ORDER_REVIEW_SKILL_ID]: createProfitReviewEntryResult",
+                                           "专用运行器读取真实利润账本和同 SKU 店内历史"
+                                       ],
+                          "forbidden":  [
+                                            "function runProfitReviewSkill",
+                                            "当前粗算利润",
+                                            "const estimate = price - cost - commission - logistics - extra"
+                                        ]
+                      },
+                      {
+                          "file":  "src/api/localApiClient.js",
+                          "required":  [
+                                           "export function getProfitOrderReview",
+                                           "/api/profit/order-review",
+                                           "method: \u0027GET\u0027"
+                                       ]
+                      },
+                      {
+                          "file":  "../local-api/src/app/createApp.js",
+                          "required":  [
+                                           "requestUrl.pathname === \"/api/profit/order-review\"",
+                                           "profitService?.readOrderReview?.(query)",
+                                           "externalDataInsightRoutes.handleRequest"
+                                       ]
+                      },
+                      {
+                          "file":  "../local-api/src/domain/profit/profitService.js",
+                          "required":  [
+                                           "createProfitOrderReviewReadModel",
+                                           "function readOrderReview(query = {})",
+                                           "return orderReviewReadModel.read(query)"
+                                       ]
+                      },
+                      {
+                          "file":  "src/features/promptLibrary/services/smartToolExternalOzonDataService.js",
+                          "required":  [
+                                           "EXTERNAL_OZON_PRODUCT_DETAIL_OPERATION = \u0027seerfar-ozon-product-detail-search\u0027",
+                                           "EXTERNAL_OZON_PRODUCT_REPORT_OPERATION = \u0027seerfar-ozon-product-report-search\u0027"
+                                       ]
+                      },
+                      {
+                          "file":  "../local-api/src/domain/externalDataInsights/externalDataInsightRoutes.js",
+                          "required":  [
+                                           "requestUrl.pathname !== \"/api/integrations/analyze\"",
+                                           "service.generate(body, paidCapabilityContextFromRequest(req))"
+                                       ]
+                      },
+                      {
+                          "file":  "package.json",
+                          "required":  [
+                                           "\"check:profit-review-freeze\": \"node scripts/profit-review-freeze.mjs\"",
+                                           "scripts/profit-review-freeze.node.mjs",
+                                           "npm run check:profit-review-freeze"
+                                       ]
+                      }
+                  ]
+}

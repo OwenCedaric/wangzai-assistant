@@ -1,0 +1,25 @@
+name: 问题反馈
+description: 使用脱敏信息报告可复现的问题
+body:
+  - type: markdown
+    attributes:
+      value: 安全漏洞请按 SECURITY.md 私下反馈。不要粘贴账号、密钥、Cookie、数据库或真实订单。
+  - type: input
+    id: version
+    attributes:
+      label: 系统与软件版本
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: 复现步骤
+      description: 使用合成数据说明。
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: 期望结果与实际结果
+    validations:
+      required: true

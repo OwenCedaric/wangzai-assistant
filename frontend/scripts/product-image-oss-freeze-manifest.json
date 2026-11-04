@@ -1,0 +1,1428 @@
+{
+  "schemaVersion": 1,
+  "featureVersion": "product-image-oss-v94-server-template-current-flow-20260828",
+  "frozenAt": "2026-08-28",
+  "files": {
+    "src/features/products/services/productImageAssetService.js": "5addd2d5f2dca6f5416a3c833c881af404fb18d9ef3ad9102633928410839f32",
+    "../local-api/src/domain/productImages/aliyunOssProductImageStorage.js": "337061fe6b4fbef6932be130aba9dfeeac59a91cddc7a37e812cd223a7cfb4af",
+    "../local-api/src/domain/productImages/productImageAssetService.js": "7015f196fb5fc94c1d18166745d23b99b031e7b0d5dde9e62c44384cec423aaa",
+    "../local-api/src/domain/productImages/productImageAssetRoutes.js": "23bdc02229ffc0b757a7553ec57351000811dbde603b8d2cfa575a4f42aa75da",
+    "../local-api/src/domain/productImages/productImageUploadCoordinator.js": "6503b0519927632911f9a4a4f07d52e2fd813453d29c9a773fce344208455c8d",
+    "../local-api/src/domain/productImages/productImageValidation.js": "fe716b3fd98f7468455371e48aabe91fd0be84e9e94403402d55b96731021e85",
+    "../local-api/src/db/repositories/productImageAssetRepository.js": "2af0412d7ae4bcd74ac504d0337f6d7640e8474fcc611bc0a81ade08b8fd5962",
+    "../local-api/src/db/migrations/086_create_product_image_assets.sql": "71d455bebb6bfcdd899dce38fdda0a15a416611ad47218805a2919c941c11020",
+    "../local-api/src/domain/accountRemoval/accountRemovalProductImageCleanup.js": "ab33a15c7df33037f5b58939545409622f05757e2c3f7cdfb6c280d4bfab9215",
+    "../local-api/src/domain/products/productWriteService.js": "0ad23d71496ceedd00de00090cd06c7d834e4ebdad114062b5d39260c8bebcb1",
+    "../local-api/scripts/check-product-image-oss.mjs": "bbc5ee3954489876c09908df981e5c935662e01fc0b88deab86cc5ac97b77a79",
+    "src/entities/product/productRichContent.js": "4e16abb67e2e8ba6aeba1a4909b3452bb9de3c64eee91fdaa88a4f7e97340497",
+    "src/features/products/model/useProductWriteState.jsx": "64a84f012cdf34b295fe6653d06358c1a8a48f06e5b1e3b24c21ae761ca3ad18",
+    "../local-api/src/domain/productImages/productImageLifecycleScheduler.js": "85ed7ec625e8567d35b3a2eeeb97fc51a7515116f069de0994db6f9c7825c92d",
+    "../desktop/package.json": "3d7d37b3738354c7f452c72d690c27d95d55c9401d089f87f2eb2d818a2e736e",
+    "../desktop/scripts/verify-package.mjs": "0bb8c8c3cbb366ccecf854863ced485f3f3ec12dd0ac4b775ee3129338a9edd6",
+    "src/features/collectionPricing/lib/collectionProductImageHistory.js": "a5c09391c6b7dfab997207138a532fd55264b65f654a2fd5bcad84853a98b756",
+    "src/features/collectionPricing/lib/collectionProductListingWorkflow.js": "b5d91290725d1282574c7d6d8c7334470af1aff135d7335fc5d448df2a55e82f",
+    "src/features/collectionPricing/model/useCollectionProductListingWorkflow.js": "7241f68dc2dcfbd6e18e713838815d369b7a48ab9a76d2c5893bcf65160c1af9",
+    "src/features/collectionPricing/components/CollectionProductImageWorkspace.jsx": "61cc9d03496107ba60ae9e446da2d64167abf7cf2b0ebe916b470cb8fe0e3424",
+    "src/features/collectionPricing/components/CollectionProductImageHistoryDialog.jsx": "f800f65658a76d2bb9cc03d3d8eccc4348a2cce558396c08929a0242804a50a6",
+    "src/features/collectionPricing/components/CollectionProductEditDialog.jsx": "12b34d89fdd61ceca685554db9e83b5a219dda9a6890b56248ea1370ee04dcb3",
+    "src/features/collectionPricing/services/collectionProductGeneratedImageService.js": "63b0b020c2451234adc6b87572288e0ff9c686f53a7813225132b73ca1db5744",
+    "src/features/collectionPricing/services/collectionListingMultiShopService.js": "8c4c682645c9b979518345b1d86d476f003c4f8bc4f2094ce18e3a56cf913ce1",
+    "src/features/collectionPricing/components/CollectionProductListingSteps.jsx": "84f5fc3a67f41fecd67a616ef2dc873c612c3331718c4da0d9f3ff94f3c14d87",
+    "src/features/collectionPricing/lib/collectionProductShopInventory.js": "af6add4903a21ce817d656efc24995a53a1bf4db7221207ddbe95e07f1ccb75a",
+    "src/features/collectionPricing/model/useCollectionProductBatchStock.js": "129a036db1f7baa1ef0608e6e1326b0be6b379e9a6696809c36af0944880265f",
+    "src/features/collectionPricing/components/CollectionProductBatchStockDialog.jsx": "acc5f93d39ac7735acb7420cc810d0f37ee71cde86ea7d007a46bdaf51b6ebc2",
+    "src/features/collectionPricing/components/ListingTaskStatusCard.jsx": "4192a4bc79d0c000901c9b89db4b1aac1ee922a415aefaad2e58afb503854ecf",
+    "src/features/collectionPricing/components/CollectionProductList.jsx": "1c247867b9692a1056be4d1f707ad8bed01bffa20eb4fb83e3dba4c8fb1270c3",
+    "src/features/collectionPricing/model/useCollectionPricingDraft.js": "aa3da146a3a5daf78903e1e9167c775506569ae2bbf74884440aa6a6fb27f1bb",
+    "src/features/collectionPricing/lib/collectionProductAttributeSchema.js": "0c615510fe1f08d4cc588efb7a10c8e87d034b2a917896d4016f275e5425e24d",
+    "src/features/collectionPricing/lib/collectionListingDraft.js": "40bef265dfb8a6c3a3350944cd5247eda7320997a8b4021232d7c74177cd315e",
+    "src/features/collectionPricing/lib/collectionListingErrorMessage.js": "b8f98437ee94fa13c848316493ad0212dc4214a475fa8af719a886fc1c3bff9f",
+    "src/features/collectionPricing/lib/collectionShopLabel.js": "8331b33b516935329f5a3d5c77340076b89ddb852b82d700ed19dea1714b1271",
+    "src/features/collectionPricing/services/collectionListingService.js": "a416a8ab6f65169d9e0bd051a28959b40e7c706bee2d6571d6f6b24c46e75cce",
+    "src/features/collectionPricing/lib/collectionProductGeneratedImageApplication.js": "7b470ab2a122ff8f9d5a353505480ee6dfdc24e330b1eff7f88a7c139bfa93ed",
+    "src/features/collectionPricing/components/CollectionProductDeferredImage.jsx": "fef5f3e78f62283e40193a8f96213d608f1c93f4b34b8d24e473db5161e25e09",
+    "../desktop/src/protocol/appProtocol.js": "c30c771ce852041a1c432fd21770599026fbb1a7a27aa38412834d784f97013c",
+    "../local-api/src/domain/paidCapabilities/paidCapabilityClient.js": "58246a538559b4dd5a553adec5e902989972f6792570993361c9428e7943490c",
+    "src/features/collectionPricing/services/collectionAttributeAutofillService.js": "abe170d302250534eb21da6e252f65bc1ab727723c945e621ce1eeedd962f18e",
+    "src/features/collectionPricing/lib/collectionBeixiongFallbacks.js": "1ffd88849f07951c98333a6c314259cb9d0586265d68e3702619a3e436b9dcf5",
+    "src/features/collectionPricing/lib/collectionProductPublication.js": "5be99aa0e2af483524791c1614db5d0532442d91d6867d68a28d32987b63ebdc",
+    "src/features/collectionPricing/lib/collectionProductNormalizer.js": "d49d95c67fd215e459083e6ba07404c728951d0402884361ee7c5cc86cd4013f",
+    "src/features/collectionPricing/services/collectionProductPublicationBackfillService.js": "249a07b29b1f53db2b0ef8b0e74bc584f29cbbb32782152db3ab6953a4b91274",
+    "src/features/promptLibrary/services/smartToolImageGenerationMode.js": "b2aecd2393cd612b582329b6d963e87d7ffd7c728438566f1e9e627981e22d66",
+    "src/features/promptLibrary/services/smartToolImagePromptPlanService.js": "b915c0ba7c59737f400788e9e22d41aba6b088ad737bf51e2e2ad852d54c2ee8",
+    "src/features/promptLibrary/services/smartToolImageGenerationService.js": "f90230d9cd0dfe27ad6a5ab16388759a4eafad6055afee8b0f50930f98b107ae",
+    "src/features/promptLibrary/model/usePromptLibraryExecution.js": "04a37ab1e54c6cf1309e65c9378ad7dfd02a116023cd6c99539744cdc58c2a3f",
+    "src/features/promptLibrary/components/PromptLibraryImageGenerationRun.jsx": "8134d581d32900f86584d4673ad3678190d530121f4197917904e2764c276ff7",
+    "src/features/imageProvenance/services/imageProvenanceShadowService.js": "0e9937d84301f911126f546c8815dc65108b7ee6d34c926a45c423e8d393007b",
+    "../local-api/src/config/loadConfig.js": "ae419303b15ca342b7d529b018a300092aa2e62aa391658e41f7c65ec74270b1",
+    "../local-api/.env.example": "155ec24c8f843b31fd2ae4bf6035d6fb23fea1856b493031957059d17e3a16cb",
+    "../local-api/src/domain/imageProvenance/imageEvidencePdf.js": "4f0171c88668e752c0c6d643af30f5a55784d9ac6b76770a790ed0d2588dd27f",
+    "../local-api/src/domain/imageProvenance/imageEvidencePsd.js": "0063cc61edb2d0b96169712a0e10cafa8b954e3511992ac964aa48294993538b",
+    "../local-api/src/domain/imageProvenance/imageProvenanceFileRepository.js": "b4e9723540b2ac608d3d8e36c37c856541c691f77e411b4448c9607fb2abae55",
+    "../local-api/src/domain/imageProvenance/imageProvenanceRoutes.js": "de174d44a85b9e0f11d58d1f1a91d96c6c58ad87f328b4b3c0a9cee02381c2b6",
+    "../local-api/src/domain/imageProvenance/imageProvenanceService.js": "7963d3aca15b5aca819b94b7fa0bbfdcbdbc98dbe1c46f23bb0e99fbb96e18a0",
+    "../local-api/src/domain/imageProvenance/imageProvenanceWorker.js": "4368159c831f9e86155ffae92fb86cacee88c0e2b10096014aa8d2be057f6f8f",
+    "../local-api/src/domain/imageProvenance/imageProvenanceWorkerRunner.js": "edc0afc7b5b1b4557480c61478f940939f20d530edbf7c6a7b66bd98fcdf4707",
+    "../local-api/src/domain/imageProvenance/watermarkDct.js": "83df1991d999f108a098ae87e8983ab83c30ea83723387bed317992d4416517b",
+    "../local-api/src/app/createApp.js": "7762cc0e1fea00df2f0f1d35d897d0b592d8471edf2b29251613303a3c140de0",
+    "src/features/followSellerDefense/services/followSellerDefenseService.js": "6bb396cda13e0317368fdb6208f41e75b9cca18c3e929261c2d752e94a64f82e",
+    "src/features/followSellerDefense/model/useFollowSellerDefense.js": "e8cc33428d01cba0fb0e09654b3a399d655e8e3a340f1c5e4eb2403286479621",
+    "src/features/followSellerDefense/FollowSellerDefensePage.jsx": "674ce43e897a65eabb39dde2013428329f7f2aea25624aabec738aef636c13d8",
+    "src/features/followSellerDefense/lib/followSellerDefenseDisplay.js": "a6f57801be0acb10f9f3c9cef42072bee2019f96d8fa3247ff637521e8780912",
+    "../local-api/src/domain/followSellerDefense/followSellerEvidenceBundleService.js": "ed1bac0c403d488baff71a26560eeffdae3fbc13135d2d8e1c2a44e465dd8e88",
+    "../local-api/src/domain/followSellerDefense/followSellerDefenseService.js": "195b867f76cba3c3394a55a1194c2c1197bd001dfe2dd8c4b1047fc0a31be650",
+    "../local-api/src/domain/followSellerDefense/followSellerDefenseRoutes.js": "5719363f3cfb998d6e1c731bb579fdf7ec81fb2bc45a627b230ee606aa358e0c",
+    "../desktop/src/main.js": "0532e140695d67955fa68aecbf2b84fdb9284a35ad66489ce6de9504938f414f",
+    "../desktop/src/purchaseBrowser/cefPurchaseBrowserController.js": "8e469a5800a9e916fe3eaebe53dd6d2989ed533b32336fffa9b9365e237bcb78",
+    "../desktop/src/purchaseBrowser/purchaseBrowserProfileStore.js": "b394fa57992db47ccde713a2bda018dec016127fec08788861a5a5b31fd01445",
+    "../desktop/src/purchaseBrowser/followSellerNetworkRoute.js": "9f9dcbbb82514db67e9f3bb444cab3d6b4bc9c404237bbd35c7a191ef64f5254",
+    "../desktop/src/purchaseBrowser/purchaseBrowserLocalApiClient.js": "8dfa743287281576f114a140cf8b97b5ad65ea94c589de7557de1ceb0a5b48f5",
+    "../desktop/native/Wangzai.CefBrowserHost/BrowserHostForm.FollowSellerComplaint.cs": "6e984fa5dc13688a662be8cc3918bc813eb81498932587a3c39bd630aa09b53b",
+    "../desktop/native/Wangzai.CefBrowserHost/BrowserSession.cs": "01cfccb5fff9bdba2142ce5d142c90b9e598660b303138ffcc2e9189b0f9e677",
+    "../desktop/native/Wangzai.CefBrowserHost/BrowserProfile.cs": "c003e346d9bd7a042327168c39660f57cb3f205c4d974f5e2ae465c82f8857c5",
+    "../desktop/native/Wangzai.CefBrowserHost/InternalRequestHandler.cs": "8eb2258dec26efa7eb644fdc2399f693ffdb66703e0fa60ad2e9c3680fce82db",
+    "../desktop/native/Wangzai.CefBrowserHost/FingerprintScript.cs": "de2240be8a6169a69ff4d439e533e103b0a0c1c212ed571d2abd3b5a47a82c5a",
+    "../desktop/native/Wangzai.CefBrowserHost/FingerprintRenderProcessMessageHandler.cs": "df446bfca42b27550685132744789b66f74e802b689201361aa5ee24a8282795",
+    "../desktop/native/Wangzai.CefBrowserHost/FingerprintResourceRequestHandler.cs": "ffebbd803e58c088de369d91bbdbedcfe6d8626de092f493d98140c282a44181",
+    "../desktop/native/Wangzai.CefBrowserHost/OzonFollowSellerCapture.cs": "b4c6e68571eae37e64b4b06822b8208490a6c6dc7b675899d01f1c54e62879cc",
+    "../local-api/src/domain/followSellerDefense/followSellerQuickComplaintService.js": "bb0f23b090ae21687d3e3a1fd8f7314af94933b627df832c2d52532c772c6d72",
+    "../local-api/src/db/repositories/followSellerDefenseRepository.js": "31208c9cf16b723a0c5a3bacbb9592c0433ccccdb45e243ea25f38e2a32d0875",
+    "../local-api/src/db/migrations/092_normalize_follow_seller_verification_status.sql": "d0b36cfe2da881fcc82810f413d698a571f27783c9ea048fb3e347fac6c969fd",
+    "../desktop/native/Wangzai.CefBrowserHost/BrowserHostForm.FollowSellerQuickComplaint.cs": "a8e7619e885064210ea322666e8545c4ea7b1a9a80f184c870d26c72b3092248",
+    "../desktop/native/Wangzai.CefBrowserHost/BrowserHostForm.cs": "293095c61928b5ca3c8c465eaa92b67ddad444276d12987ddefc881f316fb597",
+    "../local-api/src/db/repositories/integrationProfileRepository.js": "572ba0aa203d4b0db1f7d569bbdfc9b296f8621c0b7a9eb57bcea4987dfede14"
+  },
+  "contracts": [
+    {
+      "file": "src/features/products/services/productImageAssetService.js",
+      "required": [
+        "PRODUCT_IMAGE_OSS_FREEZE_VERSION",
+        "export async function prepareProductImagesForOzon",
+        "shopId: options.shopId",
+        "storageScope: 'permanent'",
+        "variant: options.variant",
+        "export async function releaseProductImage",
+        "await promoteProductImage",
+        "export async function readProductImageAssetPreview",
+        "export async function readProductImageAssetPreviews",
+        "productImagePreviewLookup",
+		"product-image-oss-v94-server-template-current-flow-20260828"
+      ],
+      "forbidden": [
+        "ALIYUN_OSS_ACCESS_KEY_ID",
+        "ALIYUN_OSS_ACCESS_KEY_SECRET"
+      ]
+    },
+    {
+      "file": "../local-api/src/app/createApp.js",
+      "required": [
+        "tenantId: shopRepository.tenantId",
+        "userId: shopRepository.userId",
+        ".listShopsForContext(context)",
+        "error.code = \"PRODUCT_IMAGE_SCOPE_FORBIDDEN\";",
+        "createAccountRemovalProductImageCleanup",
+        "createProductImageLifecycleScheduler",
+        "refreshProductImagePayloadUrls:",
+        "productImageAssetService.refreshProductWritePayloadUrls",
+        "serverResourceCleanup: accountRemovalProductImageCleanup",
+        "productImageAssetService.setProvenanceProtector",
+        "imageProvenanceService.protectAsset(input, context)"
+      ],
+      "forbidden": [
+        "tenantId: body?.tenantId",
+        "userId: body?.userId"
+      ]
+    },
+    {
+      "file": "../local-api/src/domain/accountRemoval/accountRemovalSqliteCatalog.js",
+      "required": [
+        "registry:product-image-usage-events",
+        "table: 'product_image_usage_events'",
+        "registry:product-image-assets",
+        "table: 'product_image_assets'"
+      ]
+    },
+    {
+      "file": "../local-api/src/domain/accountRemoval/accountRemovalOrchestrator.js",
+      "required": [
+        "serverResourceCleanup = null",
+        "await serverResourceCleanup.cleanupOwner(confirm.owner)",
+        "remoteObjectStorage: operation.payload.remoteObjectStorage"
+      ]
+    },
+    {
+      "file": "../desktop/src/runtime/localApiProxy.js",
+      "required": [
+        "[\"POST /api/follow-seller-defense/prepare-quick\", 300_000]",
+        "[\"POST /api/follow-seller-defense/submission-result\", 180_000]",
+        "[\"POST /api/product-images/edit\", 180_000]",
+        "[\"POST /api/product-images/generate\", 180_000]",
+        "^\\/api\\/(?:products|product-images)(?:\\/|$)",
+        "permission: \"products.view\""
+      ]
+    },
+    {
+      "file": "../local-api/src/data/dataDomainRegistry.js",
+      "required": [
+        "domain: 'product-image-assets'",
+        "canonicalTable: 'product_image_assets'",
+        "domain: 'product-image-usage-events'",
+        "canonicalTable: 'product_image_usage_events'"
+      ]
+    },
+    {
+      "file": "../desktop/src/runtime/profileCachePolicy.js",
+      "required": [
+        "\"product_image_assets\"",
+        "\"product_image_usage_events\""
+      ]
+    },
+    {
+      "file": "../local-api/src/domain/productImages/productImageAssetService.js",
+      "required": [
+        "storageScope === 'permanent'",
+        "uploadCoordinator.run",
+        "async function promoteAsset",
+        "async function releaseAsset",
+        "async function cleanupExpiredAssets",
+        "async function refreshProductWritePayloadUrls",
+        "markDeleteFailed",
+        "function getUsageStatus",
+        "budgetWarning",
+        "budgetExceeded",
+        "async function readAssetBuffer",
+        "source = input.assetId ? await readAssetBuffer(input.assetId, context)",
+        "form.set('image', new Blob([source.data]",
+        "if (typeof objectStorage.createSignedOzonReadUrl === 'function')",
+        "return objectStorage.createSignedOzonReadUrl(objectKey, ozonTtlSeconds);",
+        "function readAssetPreview",
+        "reason: 'collection-history-read'",
+        "previewUrlTtlSeconds: previewTtlSeconds",
+        "function readAssetPreviews",
+        "MAX_PREVIEW_BATCH_SIZE",
+        "async function readAssetThumbnail",
+        "thumbnailBufferCache",
+        "loadAssetThumbnail",
+        "thumbnailUrlExpiresInSeconds",
+        "const thumbnailCacheVersion = 'v3'",
+        "width: 320, quality: 85",
+        "DEFAULT_THUMBNAIL_READ_ATTEMPTS = 2",
+        "DEFAULT_THUMBNAIL_RETRY_DELAY_MS = 180",
+        "attempt < DEFAULT_THUMBNAIL_READ_ATTEMPTS",
+        "const createOzonUrl",
+        "createSignedOzonReadUrl",
+        "let provenanceProtector = null",
+        "permanentRequested && provenanceProtector",
+        "PRODUCT_IMAGE_PROVENANCE_REQUIRED",
+        "variant: protectedVariant ? 'provenance-watermarked'",
+        "setProvenanceProtector"
+      ],
+      "forbidden": []
+    },
+    {
+      "file": "../local-api/src/domain/productImages/aliyunOssProductImageStorage.js",
+      "required": [
+        "createSignedThumbnailUrl",
+        "async function getThumbnail",
+        "image/resize,m_lfit",
+        "format,webp",
+        "private, max-age=${cacheMaxAgeSeconds}",
+        "DEFAULT_THUMBNAIL_WIDTH = 320",
+        "DEFAULT_THUMBNAIL_QUALITY = 85",
+        "ALIYUN_OSS_ACCELERATION_ENABLED",
+        "oss-accelerate.aliyuncs.com",
+        "withAccelerationFallback",
+        "createSignedStandardReadUrl",
+        "createSignedOzonReadUrl",
+        "ACCELERATION_FALLBACK_STATUSES"
+      ],
+      "forbidden": []
+    },
+    {
+      "file": "../local-api/src/domain/productImages/productImageAssetRoutes.js",
+      "required": [
+        "signedPreviewMatch",
+        "service.readAssetPreview",
+        "PRODUCT_IMAGE_ASSET_NOT_FOUND",
+        "'/api/product-images/assets/previews'",
+        "service.readAssetPreviews",
+        "thumbnailMatch",
+        "service.readAssetThumbnail",
+        "private, max-age=86400, immutable"
+      ]
+    },
+    {
+      "file": "../local-api/src/domain/products/productWriteService.js",
+      "required": [
+        "function verifySubmittedImages",
+        "refreshProductImagePayloadUrls(rawPayload, { shopId })",
+        "collectTrackedImageUrls",
+        "products.importInfo",
+        "isRealProductInfoWrite",
+        "OZON_PRODUCT_DAILY_CREATION_LIMIT_EXCEEDED",
+        "product_daily_creation_limit_exceeded",
+        "normalizeProductInfoPayload",
+        "normalizeManagedProductAttributes",
+        "readBackEndpointRows",
+        "products.infoList",
+        "products.attributes",
+        "dictionaryValueId > 0",
+        "action === 'product.updateInfo' && verification.ok && !writeResult.dryRun",
+        "productImageAssetRepository.markPublishedByUrls",
+        "stableProductModelScopeToken",
+        "collectProductModelScopeTokens",
+        "verifyImportedProductSkuReadiness",
+        "reason: 'product_sku_not_ready'",
+        "PRODUCT_STOCK_VISIBILITY_RETRY_DELAYS_MS",
+        "collectRetryableStockVisibilityOfferIds",
+        "narrowStockPayloadToOfferIds",
+        "existingProductModels",
+        "collectPreferredExistingProductModels",
+        "preferredModelName",
+        "function normalizeOzonProductName",
+        "normalizeOzonProductName(row.name)",
+        ".replace(/[°º]/gu, ' ')"
+      ]
+    },
+    {
+      "file": "src/entities/product/productRichContent.js",
+      "required": [
+        "OZON_RICH_CONTENT_ATTRIBUTE_ID = 11254",
+        "export function syncProductRichContentImages",
+        "export function replaceProductRichContentAttribute"
+      ]
+    },
+    {
+      "file": "src/features/products/model/useProductWriteState.jsx",
+      "required": [
+        "variant: 'detail'",
+        "syncProductRichContentImages",
+        "replaceProductRichContentAttribute"
+      ],
+      "forbidden": [
+        "详情图当前只回读展示和本地预览"
+      ]
+    },
+    {
+      "file": "../desktop/package.json",
+      "required": [
+        "\"from\": \"../local-api/node_modules\"",
+        "\"to\": \"local-api/node_modules\""
+      ]
+    },
+    {
+      "file": "../desktop/scripts/verify-package.mjs",
+      "required": [
+        "packagedAliOssPackagePath",
+        "packagedRequire.resolve('ali-oss')",
+        "packagedRequire('ali-oss')",
+        "protectedSemanticRoots",
+        "if (localApiEntry.name === 'node_modules') continue;",
+        "clientRoots: protectedClientRoots"
+      ]
+    },
+    {
+      "file": "../local-api/scripts/check-product-image-oss.mjs",
+      "required": [
+        "Array.from({ length: 12 }",
+        "index < 6 ? 'temporary' : 'permanent'",
+        "cases: cases.length",
+        "signedThumbnailRead: true"
+      ]
+    },
+    {
+      "file": "package.json",
+      "required": [
+        "\"check:product-image-oss-freeze\": \"node scripts/product-image-oss-freeze.mjs\"",
+        "scripts/product-image-oss-freeze.node.mjs",
+        "npm run check:product-image-oss-freeze"
+      ]
+    },
+    {
+      "file": "../.agents/references/frozen-contracts.md",
+      "required": [
+        "## 已冻结模块：Ozon 商品图 OSS 闭环",
+        "内置积分图生图必须优先把当前店铺临时私有 OSS 签名图交给付费网关",
+        "采集商品图片生成历史必须按精确来源商品与当前 `shopId`",
+        "npm run check:product-image-oss-freeze",
+        "重新应用本批",
+        "采集商品必须在 SKU/价格步骤、库存按钮旁多选目标店铺",
+        "采集商品仓库和库存必须按精确 `shopId` 与 SKU 分开保存",
+        "“保存修改”必须保持页面打开并等待采集草稿真实落盘",
+        "最多 29 张不含主图的 `images`",
+        "`Company is blocked` 必须终止",
+        "当前勾选的上传店铺作为库存与仓库的唯一展示和提交来源",
+        "字符串 `\"true\"/\"false\"`",
+        "禁止向属性 `value` 写入原生 JSON 布尔值",
+        "按精确 `shopId + offer_id/product_id` 聚合",
+        "禁止把缺失值转成 `0`",
+        "只有当前分片全部 SKU 回读一致才能继续价格和库存",
+        "同一 Ozon 商品卡的型号属性 `9048` 必须作为不可拆分的原子组一次写入",
+        "`products.infoList` 为当前批次每个货号返回正数 Ozon `sku`",
+        "已成功货号不得重复写入",
+        "320px 高质量 WebP 缩略图",
+        "可视区延迟加载",
+        "Chromium 私有 HTTP 缓存",
+        "桌面主进程精确代理到本地 API",
+        "二进制 WebP 回传",
+        "禁止落入 SPA 静态页",
+        "单个生成图预览固定为 112px 高",
+        "禁止缩略图自然尺寸撑大卡片",
+        "一次短退避重试",
+		"product-image-oss-v94-server-template-current-flow-20260828",
+        "店铺选择器必须优先显示用户配置的内部店铺简称",
+        "内联 `inset: 0`",
+        "`position: relative`",
+        "私有图片资产所属店铺 `assetShopId` 是三个独立作用域",
+        "生成图历史签名、预览和持久化必须按图片实际 `assetShopId` 执行",
+        "必须自动回退到第一个有效店铺",
+        "鼠标悬浮大图预览",
+        "`document.body` portal 使用完整签名图",
+        "悬浮不得改变网格尺寸",
+        "取消全选只控制下一次生图的来源图片",
+        "历史类目快照已经证明为变体字段的属性",
+        "`10096/10097/8414/8416`",
+        "两次拦截重复变体组合",
+        "`double_without_merger_offer` 必须去重翻译为中文",
+        "Rich Content 只能保留文字布局",
+        "同一个 `normalizeOzonProductName`",
+        "非终态回读不一致只能按原 `task_id` 继续回读",
+        "禁止重复调用 `products.import`",
+        "原始生成图只作为本地证据底稿",
+        "禁止暴露未加暗水印的永久 Ozon URL",
+		"可视化操作页面",
+		"点击必须立即显示当前自动流程正在使用的同一个 CEF 窗口",
+		"用户关闭观察窗口只能把它移回后台",
+		"继续入口找到可信工单号和客服地址后必须自动续接并保留原断点",
+		"新工单建立后必须锁死本次工单号",
+		"连续两次发送字符完全相同的索要信息",
+		"第三次相同索要必须停止"
+      ],
+      "forbidden": []
+    },
+    {
+      "file": "../local-api/src/domain/paidCapabilities/paidCapabilityClient.js",
+      "required": [
+        "PAID_CAPABILITY_SOURCE_IMAGE_REJECTED",
+        "生图源图片无法被网关读取，请刷新图片后重试。",
+        "POINTS_INSUFFICIENT",
+        "积分不足，请先充值积分。",
+        "fail(code, remoteErrorMessage(code), response.status)"
+      ],
+      "forbidden": [
+        "fail(code, 'Paid capability server rejected the request.', response.status)"
+      ]
+    },
+    {
+      "file": "src/features/collectionPricing/services/collectionListingMultiShopService.js",
+      "required": [
+        "prepareCollectionListingTargetDraft",
+        "previewCollectionListingsForShops",
+        "confirmCollectionListingsForShops",
+        "releaseCollectionListingsForShops",
+        "sourceType: 'collection-multi-shop-listing'",
+        "Promise.all(ready.map",
+        "COLLECTION_LISTING_TARGET_WAREHOUSE_REQUIRED",
+        "COLLECTION_LISTING_TARGET_WAREHOUSE_INVALID",
+        "getCollectionSkuShopInventory(sku, normalizedTargetShopId",
+        "formatCollectionShopLabel(shopById.get(shopId), shopId)",
+        "normalizeCollectionListingErrorMessage(result.message)",
+        "const promoteImported = async",
+        "storageScope: 'temporary'",
+        "storageScope: 'permanent'",
+        "不能生成暗水印"
+      ],
+      "forbidden": []
+    },
+    {
+      "file": "src/features/collectionPricing/lib/collectionProductShopInventory.js",
+      "required": [
+        "normalizeCollectionSkuInventoryByShop",
+        "getCollectionSkuShopInventory",
+        "setCollectionSkuShopInventories",
+        "sharedCollectionSkuShopInventory",
+        "getCollectionSkuShopInventory(sku, shopId)"
+      ],
+      "forbidden": [
+        "localStorage",
+        "sessionStorage",
+        "sku.stock",
+        "sku.warehouseId"
+      ]
+    },
+    {
+      "file": "src/features/collectionPricing/model/useCollectionProductBatchStock.js",
+      "required": [
+        "warehousesByShopId",
+        "warehouseStatesByShopId",
+        "shopInventories",
+        "setCollectionSkuShopInventories",
+        "function normalizeShopIds(shopIds, fallbackShopId",
+        "const source = Array.isArray(shopIds) ? shopIds : [fallbackShopId]",
+        "Object.entries(current).filter(([targetShopId]) => selected.has(targetShopId))"
+      ],
+      "forbidden": [
+        "warehouseId: primaryInventory.warehouseId",
+        "stock: primaryInventory.stock"
+      ]
+    },
+    {
+      "file": "src/features/collectionPricing/components/CollectionProductBatchStockDialog.jsx",
+      "required": [
+        "按店铺批量设置库存",
+        "selectedShopIds.map",
+        "warehousesByShopId",
+        "warehouseStatesByShopId",
+        "每家店铺独立读取自己的仓库并保存库存"
+      ],
+      "forbidden": [
+        "defaultStock"
+      ]
+    },
+    {
+      "file": "src/features/collectionPricing/lib/collectionProductImageHistory.js",
+      "required": [
+        "COLLECTION_PRODUCT_IMAGE_HISTORY_RETENTION_MS = 3 * 24 * 60 * 60 * 1000",
+        "normalizeCollectionProductImageHistory",
+        "upsertCollectionProductImageHistory",
+        "countCollectionProductImageHistoryImages",
+        "resolveCollectionProductImageHistoryUrl",
+        "shopId=",
+        "normalizeCollectionProductGeneratedImageSelections",
+        "withCollectionProductGeneratedImageSelection",
+        "removeCollectionProductGeneratedImageSelection",
+        "sourceSkuId",
+        "thumbnailUrl",
+        "resolveCollectionProductImageAssetShopId",
+        "assetShopId"
+      ],
+      "forbidden": [
+        "localStorage",
+        "sessionStorage"
+      ]
+    },
+    {
+      "file": "src/features/collectionPricing/lib/collectionProductListingWorkflow.js",
+      "required": [
+        "generatedImageSelections: _generatedImageSelections",
+        "const imageGenerationHistory = normalizeCollectionProductImageHistory(source.imageGenerationHistory)",
+        "if (!generatedImageSelections[entry.group])",
+        "let generatedImageSelections = normalizeCollectionProductGeneratedImageSelections(source.generatedImageSelections)",
+        "stock: ''",
+        "warehouseId: ''",
+        "const hasCanonicalDraft = sourceProduct.ozonListingDraft",
+        "const saved = (hasCanonicalDraft ? legacy : newestSavedDraft)",
+        "const uploadShopIds = savedUploadShopIds.length",
+        "if (!uploadShopIds.length) errors.push('请至少选择一个上传店铺。')",
+        "availableShopIds.has(requestedActiveShopId)",
+        "firstAvailableShopId",
+        "export function requireManualCollectionProductCategorySelection",
+        "draft.categorySelectionSource !== 'manual'",
+        "请先通过完整类目库选择并确认 Ozon 类目。",
+        "不能选择“平光眼镜/无度数眼镜”",
+        "SKU 变体属性组合重复",
+        "function stableNumericOfferToken",
+        "function sourceSkuNumericId",
+        "return `WZ-${numericToken.slice(-27)}`",
+        "savedOfferId === legacyOfferId",
+        "ensureUniqueGeneratedOfferIds",
+        "export function repairCollectionProductSkuVariantValues",
+        "const SOURCE_COLOR_TRANSLATIONS",
+        "skuAttributeIds: sku.map((definition) => String(definition.id)).filter(Boolean)",
+        "delete attributeValues['10096']"
+      ],
+      "forbidden": [
+        "legacyShopId: draft.shopId",
+        "savedByShop[preferredShopId]",
+        "errors.push('请选择要上架的 Ozon 店铺。')"
+      ]
+    },
+    {
+      "file": "src/features/collectionPricing/model/useCollectionProductListingWorkflow.js",
+      "required": [
+        "historyItemsBySourceIndex",
+        "persistHistoryItems",
+        "productKey: historyProductKey",
+        "imageCount: countCollectionProductImageHistoryImages",
+        "restoreImageHistoryBatch",
+        "normalized.productKey !== currentProductKey",
+        "restoredFromHistory: true",
+        "hydrateCollectionProductGeneratedImageSelections",
+        "persistCollectionProductGeneratedImageSelections",
+        "prepareGeneratedImagesForSave",
+        "applyCollectionProductGeneratedImagesToListingDraft",
+        "sourceImageUrl",
+        "updateOriginalImageSelection",
+        "refreshImageUploadPayload",
+        "removeGeneratedImage",
+        "thumbnailUrl",
+        "const { shopId: _ignoredShopId, ...masterChanges } = changes || {}",
+        "const optimistic = { ...current, ...masterChanges, shopId: current.shopId }",
+        "setDraft((latest) => {",
+        "const next = { ...latest, ...masterChanges, shopId: latest.shopId }",
+        "update({ uploadShopIds: normalized })",
+        "assetShopId: historyShopId",
+        "createConfirmedCategoryDraft",
+        "normalizeConfirmedCategoryDrafts",
+        "请先通过完整类目库选择并确认 Ozon 类目，再进行一键分析填充。",
+        "repairCollectionProductSkuVariantValues(",
+        "productRef.current,",
+        "activeDefinitions,",
+        "persistPublicationResult",
+        "await persistPublicationResult(result)"
+      ],
+      "forbidden": [
+        "localStorage",
+        "sessionStorage",
+        "activeShopId: requestedShopId",
+        "setGenerationState(generationStateFromDraft(target))",
+        "resolveCollectedProductCategory",
+        "shouldReplaceAutoCollectedProductCategory"
+      ]
+    },
+    {
+      "file": "src/features/collectionPricing/components/CollectionProductImageWorkspace.jsx",
+      "required": [
+        "SMART_TOOL_IMAGE_GENERATION_MODE_STANDARD",
+        "SMART_TOOL_IMAGE_GENERATION_MODE_FAST",
+        "BoltRounded"
+      ],
+      "forbidden": []
+    },
+    {
+      "file": "src/features/collectionPricing/components/CollectionProductImageHistoryDialog.jsx",
+      "required": [
+        "仅显示当前采集链接和当前 Ozon 店铺的记录",
+        "成功图片保留 3 天",
+        "resolveCollectionProductImageHistoryUrl",
+        "readProductImageAssetPreviews",
+        "重新应用本批",
+        "CollectionProductDeferredImage",
+        "assetPreview.thumbnailUrl",
+        "imageUrl={fullPreviewUrl}"
+      ]
+    },
+    {
+      "file": "src/features/collectionPricing/components/CollectionProductEditDialog.jsx",
+      "required": [
+        "onRestoreHistory={listing.restoreImageHistoryBatch}",
+        "await prepareGeneratedImagesForSave({ ...product, ...draft })",
+        "originalImageSelections={listing.draft.originalImageSelections}",
+        "onToggleOriginalImage",
+        "onRemoveGeneratedImage",
+        "listing.refreshImageUploadPayload({ ...product, ...nextDraft })",
+        "saveState.status === 'saving'",
+        "draft={listing.draft}",
+        "onChangeSelectedShops={listing.updateUploadShopIds}"
+      ],
+      "forbidden": [
+        "warehouses={batchStock.warehouses}"
+      ]
+    },
+    {
+      "file": "src/features/collectionPricing/services/collectionProductGeneratedImageService.js",
+      "required": [
+        "hydrateCollectionProductGeneratedImageSelections",
+        "persistCollectionProductGeneratedImageSelections",
+        "waitForProductImagePersistenceTask",
+        "promoteProductImage",
+        "storageScope: 'permanent'",
+        "shopId",
+        "thumbnailUrl: text(asset.thumbnailUrl",
+        "resolveCollectionProductImageAssetShopId",
+        "assetIdsByShop",
+        "byScopedId",
+        "existingAssetsByScopedId"
+      ],
+      "forbidden": [
+        "localStorage",
+        "sessionStorage"
+      ]
+    },
+    {
+      "file": "src/features/collectionPricing/components/CollectionProductList.jsx",
+      "required": [
+        "getCollectionProductPublicationSummary",
+        "<PublicationStatus item={item} shops={shops} />",
+        "DeleteOutlineRounded",
+        "window.confirm"
+      ],
+      "forbidden": [
+        "onSave={(id, changes) =>"
+      ]
+    },
+    {
+      "file": "src/features/collectionPricing/model/useCollectionPricingDraft.js",
+      "required": [
+        "return persistCollectionItems(next)",
+        "completeCollectionCapture",
+        "collectCollectionProductFromLink(collectorDraft.sourceUrl)"
+      ],
+      "forbidden": []
+    },
+    {
+      "file": "src/features/collectionPricing/lib/collectionProductAttributeSchema.js",
+      "required": [
+        "export function isBooleanListingAttribute",
+        "export function parseListingBooleanValue",
+        ".filter((value) => typeof value === 'boolean')",
+        "if (typeof value === 'boolean') return value ? 'true' : 'false'",
+        ".map((value) => ({ value: value ? 'true' : 'false' }))",
+        "必须填写“是”或“否”",
+        "export const KNOWN_OZON_SKU_ASPECT_ATTRIBUTE_IDS",
+        "'10096', // product colour (dictionary)",
+        "'10097', // seller colour/variant name",
+        "KNOWN_OZON_SKU_ASPECT_ATTRIBUTE_IDS.has(attributeId)",
+        "UNSUPPORTED_COLLECTION_VIDEO_ATTRIBUTE_IDS",
+        "RICH_CONTENT_MEDIA_WIDGET_PATTERN"
+      ]
+    },
+    {
+      "file": "src/features/collectionPricing/lib/collectionListingDraft.js",
+      "required": [
+        "export function buildCollectionListingImagePayload",
+        ".filter((value) => value && value !== primary)",
+        ".slice(0, 29)",
+        "...commonImages",
+        "...images",
+        "function duplicateListingSkuVariantGroup",
+        "SKU 变体属性组合重复",
+        "本次不会提交 Ozon"
+      ]
+    },
+    {
+      "file": "src/features/collectionPricing/lib/collectionListingErrorMessage.js",
+      "required": [
+        "export function normalizeCollectionListingErrorMessage",
+        "VALUE_MUST_BE_BOOLEAN",
+        "invalid\\s+value\\s+for\\s+string\\s+field",
+        "字符串 true/false",
+        "pics_PIC_limit_exceeded",
+        "Company is blocked",
+        "软件无法代为解封",
+        "double_without_merger_offer",
+        "变体属性完全相同",
+        "重新执行一键分析填充后再上传"
+      ]
+    },
+    {
+      "file": "src/features/collectionPricing/lib/collectionShopLabel.js",
+      "required": [
+        "export function formatCollectionShopLabel",
+        "shop.displayName",
+        "shop.shopAlias",
+        "shop.sellerName",
+        "`Ozon 店铺 · ${id}`"
+      ]
+    },
+    {
+      "file": "src/features/collectionPricing/services/collectionListingService.js",
+      "required": [
+        "import { normalizeCollectionListingErrorMessage }",
+        "return normalizeCollectionListingErrorMessage(error)",
+        "readBackMismatchMessage",
+        "READBACK_FIELD_LABELS",
+        "buildAtomicCommandRowGroups",
+        "COLLECTION_LISTING_CARD_GROUP_TOO_LARGE",
+        "verification?.reason === 'product_sku_not_ready'",
+        "COLLECTION_LISTING_CONFIRM_TIMEOUT_MS = 240_000",
+        "['pending', 'mismatch'].includes(readBackStatus)"
+      ]
+    },
+    {
+      "file": "src/features/collectionPricing/components/ListingTaskStatusCard.jsx",
+      "required": [
+        "import { normalizeCollectionListingErrorMessage }",
+        "normalizeCollectionListingErrorMessage(item.error)"
+      ]
+    },
+    {
+      "file": "src/features/collectionPricing/components/CollectionProductListingSteps.jsx",
+      "required": [
+        "const selectedShopRows = React.useMemo",
+        "selectedShopRows.map((shop)",
+        "getCollectionSkuShopInventory(sku, shop.shopId)",
+        "warehousesByShopId[normalizedShopId] || []",
+        "changeShopInventory(sku, index, shop.shopId",
+        "上传店铺在 SKU/价格步骤统一选择",
+        "aria-label=\"选择上传店铺\"",
+        "draft.categorySelectionSource === 'manual'",
+        "类目只能从完整类目库确认；一键分析不会替你切换类目。",
+        "尚未选择正式 Ozon 类目",
+        "更换完整类目",
+        "readOnly: true",
+        "['pending', 'mismatch'].includes(readBackStatus)"
+      ],
+      "forbidden": [
+        "主店库存",
+        "主店仓库",
+        "currentShopWarehouses",
+        "changeCurrentShopInventory",
+        "legacyShopId",
+        "label=\"上架店铺\"",
+        "onChange({ shopId: event.target.value })",
+        "onChange={(event) => onChangeSku(index, { offerId: event.target.value })}"
+      ]
+    },
+    {
+      "file": "src/features/collectionPricing/lib/collectionProductGeneratedImageApplication.js",
+      "required": [
+        "export function applyCollectionProductGeneratedImagesToListingDraft",
+        "generated images are upload-ready by default",
+        "normalizeCollectionProductOriginalImageSelections",
+        "withCollectionProductOriginalImageSelection",
+        "originalImageSelections",
+        "slice(0, 30)"
+      ],
+      "forbidden": [
+        "...selectedUrls, ...latest.images",
+        "...draft.images"
+      ]
+    },
+    {
+      "file": "src/features/collectionPricing/components/CollectionProductDeferredImage.jsx",
+      "required": [
+        "globalThis.IntersectionObserver",
+        "rootMargin",
+        "shouldLoad && src",
+        "data-image-deferred",
+        "maxWidth: '100%'",
+        "maxHeight: '100%'",
+        "overflow: 'hidden'",
+        "objectFit: 'contain'",
+        "style={{",
+        "width: '100%'",
+        "height: '100%'",
+        "position: 'relative'",
+        "position: 'absolute'",
+        "inset: 0"
+      ],
+      "forbidden": [
+        "localStorage",
+        "sessionStorage"
+      ]
+    },
+    {
+      "file": "../desktop/src/protocol/appProtocol.js",
+      "required": [
+        "PRODUCT_IMAGE_THUMBNAIL_ROUTE",
+        "export async function proxyProductImageThumbnail",
+        "'x-wangzai-local-api-token': localApi.authToken",
+        "'cache-control': response.headers.get('cache-control') || 'private, max-age=86400, immutable'",
+        "PRODUCT_IMAGE_THUMBNAIL_ROUTE.test(requestUrl.pathname)"
+      ]
+    },
+    {
+      "file": "../desktop/src/main.js",
+      "required": [
+        "localApi: runtimeInfo.localApi"
+      ]
+    },
+    {
+      "file": "src/features/collectionPricing/lib/collectionProductListingWorkflow.js",
+      "required": [
+        "SKU_VARIANT_TEXT_ATTRIBUTE_ID = '10097'",
+        "delete attributeValues['10096'];",
+        "SKU 变体属性组合重复"
+      ]
+    },
+    {
+      "file": "src/features/collectionPricing/lib/collectionBeixiongFallbacks.js",
+      "required": [
+        "widgetName: 'raTextBlock'",
+        "Rich Content is deliberately text-only",
+        "video.*cover.*(?:url|link)",
+        "video.*(?:name|title)",
+        "products?.*video"
+      ]
+    },
+    {
+      "file": "src/features/collectionPricing/lib/collectionProductPublication.js",
+      "required": [
+        "normalizeCollectionProductPublication",
+        "mergeCollectionProductPublicationResult",
+        "getCollectionProductPublicationSummary",
+        "readBackVerified",
+        "state: 'uploaded'",
+        "state: 'not-uploaded'"
+      ],
+      "forbidden": []
+    },
+    {
+      "file": "src/features/collectionPricing/services/collectionProductPublicationBackfillService.js",
+      "required": [
+        "collectCollectionProductPublicationCandidates",
+        "backfillCollectionProductPublications",
+        "readProductListCache",
+        "draftTargetsShop",
+        "persistedUploadShopIds",
+        "matcher.aliases.some((offerId) => matched.has(offerId))",
+        "matchedSkuCount",
+        "legacy-product-cache-backfill"
+      ],
+      "forbidden": [
+        "startProductListSync",
+        "products.import"
+      ]
+    },
+    {
+      "file": "src/features/promptLibrary/services/smartToolImageGenerationMode.js",
+      "required": [
+        "SMART_TOOL_IMAGE_GENERATION_MODE_STANDARD = 'standard'",
+        "SMART_TOOL_IMAGE_GENERATION_MODE_FAST = 'fast'",
+        "normalizeSmartToolImageGenerationMode"
+      ],
+      "forbidden": []
+    },
+    {
+      "file": "src/features/promptLibrary/services/smartToolImagePromptPlanService.js",
+      "required": [
+        "templateId: 'image-plan.v1'",
+        "templateInput: {",
+        "customRules: ''",
+        "referenceImagePolicy: plannerReadsReferenceImages ? 'vision-planner' : 'deferred-to-image-model'",
+        "generationMode: normalizedGenerationMode"
+      ],
+      "forbidden": []
+    },
+    {
+      "file": "src/features/promptLibrary/services/smartToolImageGenerationService.js",
+      "required": [
+        "promptTemplateInput: createImageTemplateInput({",
+        "promptTemplateId: IMAGE_TEMPLATE_ID",
+        "generationMode: request.generationMode",
+        "scheduleGeneratedImageProvenanceShadow",
+        "sourceType: normalizedGenerationMode === SMART_TOOL_IMAGE_GENERATION_MODE_FAST"
+      ],
+      "forbidden": []
+    },
+    {
+      "file": "src/features/promptLibrary/components/PromptLibraryImageGenerationRun.jsx",
+      "required": [
+        "SMART_TOOL_IMAGE_GENERATION_MODE_STANDARD",
+        "SMART_TOOL_IMAGE_GENERATION_MODE_FAST",
+        "BoltRounded"
+      ],
+      "forbidden": []
+    },
+    {
+      "file": "../local-api/src/config/loadConfig.js",
+      "required": [
+        "imageProvenance.enabled !== false",
+        "'image-provenance'",
+        "mode: 'upload-enforced'",
+        "protectionWaitMs",
+        "1.1.0-upload"
+      ],
+      "forbidden": []
+    },
+    {
+      "file": "../local-api/src/domain/imageProvenance/imageProvenanceWorker.js",
+      "required": [
+        "createImageEvidencePdf",
+        "generationMode",
+        "pdfSha256",
+        "files:",
+        "pdf: input.pdfPath"
+      ],
+      "forbidden": []
+    },
+    {
+      "file": "../local-api/src/domain/imageProvenance/imageEvidencePdf.js",
+      "required": [
+        "export async function createImageEvidencePdf",
+        "Buffer.from('%PDF-1.4",
+        "watermarkedThumbnail",
+        "PSD SHA-256"
+      ],
+      "forbidden": []
+    },
+    {
+      "file": "../local-api/src/domain/imageProvenance/imageProvenanceService.js",
+      "required": [
+        "mode: 'upload-enforced'",
+        "async function protectAsset",
+        "variant: 'provenance-watermarked'",
+        "uploadPolicy: 'watermarked-only'",
+        "IMAGE_PROVENANCE_PROTECTION_TIMEOUT",
+        "uploadsWatermarkedImage: true"
+      ],
+      "forbidden": []
+    },
+    {
+      "file": "../local-api/src/domain/imageProvenance/imageProvenanceFileRepository.js",
+      "required": [
+        "sourceIndexPath",
+        "writeSourceIndex",
+        "findLatestBySourceAssetId",
+        "findLatestCompletedForProduct"
+      ],
+      "forbidden": []
+    },
+    {
+      "file": "../local-api/src/domain/followSellerDefense/followSellerEvidenceBundleService.js",
+      "required": [
+        "findLatestCompletedForProduct",
+        "uploadPolicy !== 'watermarked-only'",
+        "FOLLOW_SELLER_EVIDENCE_WATERMARK_NOT_EXACT",
+        "finalizeBrowserEvidence",
+        "ozon-own-product-page",
+        "ozon-follower-pages",
+        "own-seller-list.png",
+        "archive: false"
+      ],
+      "forbidden": [
+        ".zip"
+      ]
+    },
+    {
+      "file": "../local-api/src/domain/followSellerDefense/followSellerDefenseService.js",
+      "required": [
+        "requiresBrowserSubmission: true",
+        "requiresEvidenceCapture: true",
+        "finalizeEvidence",
+        "prepareVerification",
+        "VERIFIABLE_STATUSES",
+        "async function prepareQuick",
+		"SCHEME1_BACKEND_ROUTE",
+		"'质量监督'",
+        "workflow: 'ozon-seller-backend-content-complaint-v2'",
+		"followers: evidence.followers",
+		"['submission_ready', 'submission_failed'].includes(item.status)",
+		"waiting_seller_backend_continuation",
+		"resumeExisting === true && hasPreparedScheme1Flow",
+		"continuation.requested",
+		"previousSubmissionStarted",
+		"recoversMissingContinuation",
+		"savedContinuation.previousSubmissionStarted",
+		"reused_unsent_material",
+        "reusePreparedEvidence: true",
+        "status: submitted ? 'verification_ready'",
+        "stage: submitted ? 'awaiting_manual_verification'",
+        "evidenceFollowers",
+        "status: 'skipped_existing_state'"
+      ],
+      "forbidden": [
+        "products.import",
+        "function applyReadBack",
+        "function resumeReadBack",
+        "function recordReadBack",
+        "requiresBrowserReadBack",
+        "complaint_readback",
+        "awaiting_support_review",
+        "awaiting_verification",
+        "evidence_required",
+        "readback_mismatch"
+      ]
+    },
+    {
+      "file": "src/features/followSellerDefense/services/followSellerDefenseService.js",
+      "required": [
+        "submitFollowSellerComplaintInBrowser",
+        "collectFollowSellerScheme2EvidenceInBrowser",
+        "ozon-prepare-follow-seller-scheme2-evidence",
+        "command: 'force-close'",
+        "resolveExactSellerProfileId",
+		"identityVerifiedAt",
+		"browserCompanyId",
+		"apiIdentityId",
+        "submitFollowSellerQuickBatchInBrowser",
+        "prepareFollowSellerVerification",
+        "initialEvidenceRu",
+        "supplementRu",
+        "followerBatchRu",
+		"followers",
+        "evidenceFollowers",
+        "follow-seller-scheme1-progress",
+        "progressToken: item.progressToken",
+        "onProgress",
+        "SCHEME1_PRE_SUBMISSION_RETRY_CODES",
+        "PURCHASE_BROWSER_INTEGRATION_LOGIN_STATUS_PERSIST_FAILED",
+        "OZON_LOGIN_VERIFICATION_PENDING",
+        "shouldRetryQuickComplaint",
+		"showActiveFollowSellerQuickBrowser",
+		"trustedQuickComplaintContinuation",
+		"preserveQuickComplaintFirstFailure",
+		"reusePreparedEvidence: item.reusePreparedEvidence || attempt > 0 || retryContinuation.requested",
+        "case-recovering",
+        "OZON_SELLER_PROFILE_TYPE = 'ozon-browser-session'",
+        "https://seller.ozon.ru/app/dashboard/main"
+      ],
+      "forbidden": [
+		"search.includes('SELLER-BACKEND:WAITING')",
+        "resumeFollowSellerReadBack",
+        "recordFollowSellerReadBackResult",
+        "readFollowSellerComplaintInBrowser",
+        "ozon-read-follow-seller-complaint"
+	  ]
+    },
+    {
+      "file": "src/features/followSellerDefense/model/useFollowSellerDefense.js",
+      "required": [
+        "const runScheme2",
+        "collectFollowSellerScheme2EvidenceInBrowser",
+        "finalizeFollowSellerEvidence",
+        "recordFollowSellerSubmissionResult",
+        "cooldownDelaysMs: []",
+        "const runScheme1",
+		"scheme1BrowserFailure",
+		"Promise.allSettled",
+		"timeoutMs: 180_000",
+        "prepareFollowSellerQuickCases",
+        "submitFollowSellerQuickBatchInBrowser",
+        "scheme1Progress",
+		"scheme1BrowserAvailable",
+		"scheme1BrowserOpening",
+		"showScheme1Browser",
+		"browser-surface-ready",
+        "continuingExistingCount",
+        "appendScheme1Progress",
+        "formatFollowSellerError"
+      ],
+      "forbidden": [
+        "awaiting_support_review",
+        "awaiting_verification",
+        "evidence_required",
+        "readback_mismatch"
+      ]
+    },
+    {
+      "file": "src/features/followSellerDefense/FollowSellerDefensePage.jsx",
+      "required": [
+        "Scheme1ProgressPanel",
+        "scheme1-live-progress",
+        "flow.scheme1Progress",
+        "formatFollowSellerError",
+		"可视化操作页面",
+		"flow.operationBrowserAvailable",
+		"flow.toggleOperationBrowser",
+        "'submission_ready'",
+        "verification_ready",
+        "shop.shopAlias || shop.alias"
+      ],
+      "forbidden": [
+        "这里直接读取当前店铺上次已经保存的巡查结果",
+        "awaiting_support_review",
+        "awaiting_verification",
+        "evidence_required",
+        "readback_mismatch",
+        "shop.name || shop.label || shop.alias"
+      ]
+    },
+    {
+      "file": "../local-api/src/db/migrations/092_normalize_follow_seller_verification_status.sql",
+      "required": [
+        "status = 'verification_ready'",
+        "stage = 'awaiting_manual_verification'",
+        "'awaiting_support_review'",
+        "'awaiting_verification'",
+        "'evidence_required'",
+        "'readback_mismatch'",
+        "PRAGMA user_version = 92"
+      ]
+    },
+    {
+      "file": "../desktop/native/Wangzai.CefBrowserHost/OzonFollowSellerCapture.cs",
+      "required": [
+        "internal static partial class OzonFollowSellerCapture",
+        "public static async Task<object> ExecuteAsync(",
+        "followSellerConfirmed",
+        "followSellerCount",
+        "followSellers",
+        "OZON_FOLLOW_SELLERS_RESULT_MISSING"
+      ]
+    },
+    {
+      "file": "src/features/followSellerDefense/lib/followSellerDefenseDisplay.js",
+      "required": [
+        "formatFollowSellerError",
+        "FOLLOW_SELLER_SCHEME1_BACKEND_ROUTE_CHANGED",
+        "PURCHASE_BROWSER_CEF_FAILED",
+        "FOLLOW_SELLER_SCHEME1_BROWSER_TRANSIENT_FAILED",
+		"PURCHASE_BROWSER_INTEGRATION_LOGIN_STATUS_PERSIST_FAILED",
+		"FOLLOW_SELLER_SCHEME1_ROUTE_REPLY_TIMEOUT",
+		"FOLLOW_SELLER_SCHEME1_TICKET_VIEW_MISMATCH",
+		"FOLLOW_SELLER_SCHEME1_REPEATED_PROMPT_LIMIT",
+		"FOLLOW_SELLER_SCHEME1_PROMPT_REPLAY_STATE_INVALID",
+        "FOLLOW_SELLER_COMPLAINT_DAILY_LIMIT",
+		"OZON_SELLER_BROWSER_PROFILE_REQUIRED",
+        "OZON_LOGIN_VERIFICATION_PENDING"
+      ],
+      "forbidden": []
+    },
+    {
+      "file": "../local-api/src/db/repositories/integrationProfileRepository.js",
+      "required": [
+        "preservedApiProof",
+        "identity_verified_at IS NOT NULL",
+        "SET config_status = '连接成功', identity_status = 'verified'",
+        "expectedConfigStatus"
+      ],
+      "forbidden": []
+    },
+    {
+      "file": "../desktop/src/purchaseBrowser/cefPurchaseBrowserController.js",
+      "required": [
+        "validatedFollowSellerEvidenceAttachments",
+        "validatedFollowSellerEvidenceManifest",
+        "ozon-submit-follow-seller-complaint",
+        "validatedFollowSellerQuickAttachments",
+        "validatedFollowSellerQuickEvidenceFollowers",
+        "validatedFollowSellerQuickFollowers",
+        "ozon-submit-follow-seller-quick-complaint",
+        "FOLLOW_SELLER_SCHEME1_IMAGE_TAMPERED",
+        "follow-seller-scheme1-progress",
+		"showFollowSellerQuickBrowser",
+		"show-follow-seller-quick-browser",
+		"show-follow-seller-verification-browser",
+		"hide-follow-seller-verification-browser",
+		"follow-seller-verification-status",
+		"read-follow-seller-verification",
+		"purchase_quick_browser_",
+		"progressToken: cleanOptionalText(details.progressToken, 200)"
+		,"reusePreparedEvidence: command === 'ozon-submit-follow-seller-quick-complaint'",
+		"stopAfterRepeatedPromptDetection: command === 'ozon-submit-follow-seller-quick-complaint'",
+		"PURCHASE_BROWSER_INTEGRATION_LOGIN_STATUS_PERSIST_FAILED",
+		"ozon login gate error",
+        "OZON_LOGIN_SETTLE_ATTEMPTS",
+        "waitForOzonLoginVerification",
+        "OZON_LOGIN_VERIFICATION_PENDING"
+      ],
+      "forbidden": [
+        "ozon-read-follow-seller-complaint",
+        "FOLLOW_SELLER_READBACK_RECEIPT_REQUIRED"
+      ]
+    },
+    {
+      "file": "../desktop/src/purchaseBrowser/purchaseBrowserLocalApiClient.js",
+      "required": [
+        "DEFAULT_LOGIN_STATUS_TIMEOUT_MS = 5_000",
+        "DEFAULT_LOGIN_STATUS_TRANSPORT_RETRIES = 2",
+        "PURCHASE_BROWSER_LOCAL_API_TRANSPORT_FAILED",
+        "transportRetries: DEFAULT_LOGIN_STATUS_TRANSPORT_RETRIES",
+        "timeoutMs: DEFAULT_LOGIN_STATUS_TIMEOUT_MS",
+        "saveIntegrationProfileLoginStatus"
+      ],
+      "forbidden": []
+    },
+    {
+      "file": "../desktop/native/Wangzai.CefBrowserHost/BrowserHostForm.FollowSellerComplaint.cs",
+      "required": [
+        "RenderProcessMessageHandler = new FingerprintRenderProcessMessageHandler(profile)",
+        "SetFileInputFilesAsync",
+        "SetInterceptFileChooserDialogAsync",
+        "FileChooserOpened",
+        "PrepareOzonFollowSellerScheme2EvidenceAsync",
+        "SubmitComplaintDocumentBundleAsync",
+        "WaitForComplaintDocumentSubmissionReadbackAsync",
+        "scheme2-browser-evidence.json",
+        "scheme2-diagnostic.json",
+        "submissionStarted",
+        "Volatile.Read(ref submissionStarted)"
+      ],
+      "forbidden": [
+        "ReadOzonFollowSellerComplaintAsync",
+        "ReadOzonFollowSellerComplaintCoreAsync",
+        "EvaluateComplaintReadBackAsync",
+        "FOLLOW_SELLER_READBACK_"
+      ]
+    },
+    {
+      "file": "../local-api/src/domain/followSellerDefense/followSellerQuickComplaintService.js",
+      "required": [
+        "createFollowSellerQuickComplaintService",
+        "scheme: 'scheme1-seller-backend'",
+        "FOLLOW_SELLER_SCHEME1_FOLLOWER_DATA_INCOMPLETE",
+        "current-image-",
+        "speech",
+        "initialEvidenceRu",
+        "supplementRu",
+        "followerBatchRu",
+		"const followers = capturedFollowers.map",
+        "evidenceFollowers",
+        "compactOzonProductUrl",
+        "ozon-seller-backend-content-complaint-v2"
+      ],
+      "forbidden": [
+        "products.import",
+        ".zip"
+      ]
+    },
+    {
+      "file": "../local-api/src/db/repositories/followSellerDefenseRepository.js",
+      "required": [
+        "getProductComplaintMaterial",
+        "product_image_facts",
+        "product.shop_id = ?",
+        "完整图片只在生成投诉材料时按单品读取"
+      ],
+      "forbidden": [
+        "LEFT JOIN product_image_facts AS primary_image"
+      ]
+    },
+    {
+      "file": "../desktop/native/Wangzai.CefBrowserHost/BrowserHostForm.FollowSellerQuickComplaint.cs",
+      "required": [
+        "SubmitOzonFollowSellerQuickComplaintAsync",
+        "https://seller.ozon.ru/app/messenger?channel=SCRM",
+		"OzonSellerQuickComplaintStartUrl",
+        "PrepareQuickEvidenceScreenshotsAsync",
+		"ParseQuickFollowers",
+		"ReviewQuickFollowerProductPageAsync",
+		"FOLLOW_SELLER_SCHEME1_ALL_FOLLOWERS_NOT_FOUND",
+		"BuildQuickLiveFollowerBatchText",
+        "own-product-page.png",
+        "own-seller-list.png",
+        "SubmitQuickComplaintBundleAsync",
+		"SubmitQuickComplaintSupplementBundleAsync",
+		"WaitForQuickSupplementSubmissionReadbackAsync",
+		"WaitForQuickBundleSubmissionReadbackAsync",
+		"SetQuickComplaintRoutePendingAsync",
+		"pendingRouteKey",
+		"routeVerified",
+		"nextMenuConfirmed",
+		"finalPromptConfirmed",
+		"routeMatches = route.map",
+		"latestRouteDomIndex",
+		"observedTicketId",
+		"QuickComplaintPageAdapterExpression",
+		"const ticketNumber = value =>",
+		"pageAdapter.ticketId(conversation)",
+		"pageAdapter.input(composer)",
+		"pageAdapter.sendButton(composer)",
+		"composerInputPresent: !!textarea",
+		"ticketLocked",
+		"baselineTicketId",
+		"ticket-view-match",
+		"SetQuickComplaintTicketSearchAsync",
+		"restore-ticket-search",
+		"action: 'restore-ticket'",
+		"action: 'ticket-view-stable'",
+		"status: 'ticket-search-required'",
+		"dailyLimitPattern.test(currentReplySource)",
+		"repeat-answer-required",
+		"prompt-replay-baseline-required",
+		"ticket-history-load-required",
+		"ticketHistoryLoadAttempts >= 6",
+		"DispatchQuickTrustedScrollAsync",
+		"findHistoryScrollPoint",
+		"composerRect.top - 8",
+		"legacyReplayPrompt",
+		"initialMessageMarkerCount === 1",
+		"legacyPromptBeforeInitialEvidence === legacyCurrentPrompt",
+		"NormalizeQuickBotPromptText",
+		"legacyPromptsExactMatch",
+		"repeated-prompt-observed",
+		"stopAfterRepeatedPromptDetection",
+		"restore-prompt-replay-baseline",
+		"repeated-prompt-limit",
+		"QuickPromptReplayStateLedgerName",
+		"LoadQuickPromptReplayState",
+		"SaveQuickPromptReplayStateAsync",
+		"scheme1-initial-evidence-repeat-before.png",
+		"FOLLOW_SELLER_SCHEME1_TICKET_VIEW_MISMATCH",
+		"FOLLOW_SELLER_SCHEME1_REPEATED_PROMPT_LIMIT",
+		"phaseStartedAt",
+		"QuickPreparedEvidenceLedgerName",
+		"ThrowIfQuickComplaintWaitExpired",
+		"scheme1-backend-diagnostic-{diagnosticStamp}-{diagnosticCode}",
+		"const originalReply = afterMarker(originalSku)",
+		"const followerReply = afterMarker(followerSkus[0] || '')",
+		"ExecuteQuickEvidenceStepWithRetryAsync",
+		"TypeQuickComplaintMessageAsync(browser, message)",
+		"WaitForQuickAttachmentSendReadinessAsync",
+		"const attachmentsStaged = composerImages >= expectedCount",
+		"const attachmentsAlreadyInHistory = completedAttachmentCount >= expectedCount",
+		"const attachmentsReady = attachmentsStaged || attachmentsAlreadyInHistory",
+		"attachmentsReady && activeUploadSignals === 0",
+		"resumePhase === 'wait-evidence-prompt'",
+		"historyAttachmentImages.length >= expectedInitialAttachmentCount",
+		"initialImagesAlreadySent && runtime.phase !== 'repair-initial-text'",
+		"!uploadError && messagePresent && sendReady",
+		"stableReads >= 12",
+		"onSubmissionStarted?.Invoke()",
+		"QuickBundleSubmissionReadback",
+		"requireMessageReadback: false",
+		"residualTextReady: attachmentsSent && messageStillInComposer && sendReady && !confirm",
+		"confirmationClicks < 4",
+		"send-residual-text",
+		"residualTextSent = true",
+		"Ozon 要求二次确认，正在确认发送当前证据内容",
+		"messageSent && inputText === '' && attachmentsSent",
+		"repair-initial-text",
+		"repair-supplement-text",
+		"supplementResidualTextCleared",
+        "supplement-required",
+        "submitted-awaiting-support-reply",
+        "FOLLOW_SELLER_COMPLAINT_DAILY_LIMIT",
+		"submissionStarted",
+		"Volatile.Read(ref submissionStarted)",
+        "conversation-refresh-required",
+		"activeFollowSellerQuickBrowser",
+		"RestoreSessionForObservation(ownerRef)",
+		"HideBrowser(fenceVisibility: false)",
+		"ShowFollowSellerQuickBrowserAsync",
+		"browser-surface-ready",
+        "conversationRefreshAttempts >= 3",
+		"IsQuickConversationSkeletonStalled",
+		"DateTimeOffset.UtcNow.ToUnixTimeMilliseconds() - waitStartedAt >= 15000L",
+		"Ozon 客服持续停留在加载页面",
+		"无法加载聊天列表",
+		"ws1006",
+		"browser.Reload()",
+		"在这一天内",
+        "QuickTransitionGuard",
+        "IsQuickBackendStateTransient",
+        "seller-backend:browser-recovery",
+        "seller-backend:login-transition",
+        "FOLLOW_SELLER_SCHEME1_BROWSER_TRANSIENT_FAILED",
+        "follow-seller-scheme1-progress",
+        "正在选择“商品和价格”",
+        "正在选择“质量监督”",
+        "正在选择“卖家使用我的内容”",
+        "scheme1-initial-evidence-before.png",
+        "scheme1-supplement-before.png",
+        "scheme1-submission-after.png"
+      ],
+      "forbidden": [
+        "products.import",
+        "BuildQuickFollowerBatchMessages",
+        "ClickQuickComplaintAttachmentSendAsync",
+        "WaitForQuickAttachmentReadbackAsync",
+        "ClearQuickComplaintComposerAsync",
+		"botReplyAdvanced",
+		"runtime.routeStep += 1",
+        "own-product-evidence.png",
+		"WaitForQuickAttachmentPreparationAsync",
+		"WaitForQuickAttachmentUploadCompletionAsync",
+		"GetQuickComposerImageCountAsync",
+		"addedImages",
+		"attachmentCountExact",
+		"WaitForQuickAttachmentHistoryUploadCompletionAsync",
+		"attachmentsUploaded && activeUploadSignals === 0"
+      ]
+    },
+    {
+      "file": "../desktop/native/Wangzai.CefBrowserHost/BrowserHostForm.cs",
+      "required": [
+        "RenderProcessMessageHandler = new FingerprintRenderProcessMessageHandler(profile)",
+        "show-follow-seller-quick-browser",
+        "ShowFollowSellerQuickBrowserAsync(ownerRef)",
+        "show-follow-seller-verification-browser",
+        "ShowFollowSellerVerificationBrowserAsync(ownerRef)",
+        "FOLLOW_SELLER_VERIFICATION_WINDOW_NOT_VISIBLE"
+      ],
+      "forbidden": []
+    },
+    {
+      "file": "src/App.jsx",
+      "required": [
+        "const [followSellerShopId, setFollowSellerShopId]",
+        "activeShopId={followSellerShopId}",
+        "onActiveShopChange={setFollowSellerShopId}",
+        "readableOzonShops.some((shop) => shop.id === current)"
+      ],
+      "forbidden": []
+    }
+  ]
+}
