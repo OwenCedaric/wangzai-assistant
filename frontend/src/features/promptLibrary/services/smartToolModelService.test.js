@@ -168,7 +168,7 @@ describe('smartToolModelService', () => {
       id: 'builtin-points-image',
       accountId: 'builtin-points',
       model: 'gpt-image-2',
-      provider: 'images.example.invalid API（服务端）',
+      provider: '已配置的图片服务（服务端）',
       ready: true,
     });
     expect(JSON.stringify(options)).not.toContain('gemini-banana-2.0-pro');
@@ -201,7 +201,7 @@ describe('smartToolModelService', () => {
       accountId: 'builtin-points',
       model: 'gpt-image-2',
       label: '内置图片生成模型',
-      provider: 'images.example.invalid API（服务端）',
+      provider: '已配置的图片服务（服务端）',
       ready: true,
     });
     expect(options.at(-1)).toMatchObject({

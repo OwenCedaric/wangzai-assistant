@@ -71,7 +71,7 @@ function discoveryText(item) {
     const discoveredImageModels = filterImageGenerationModels(item?.availableModels);
     const imageModelCount = imageModels(item).length;
     if (discoveredImageModels.length > 0 && imageModelCount === 0) {
-      return `该接口不符合固定生图策略。生图只允许 images.example.invalid API 的 ${APPROVED_IMAGE_MODEL_ID}。`;
+      return `该接口不符合固定生图策略。生图只允许 已配置的图片服务 的 ${APPROVED_IMAGE_MODEL_ID}。`;
     }
     return imageModelCount > 0
       ? '已自动识别 ' + imageModelCount + ' 个生图模型，可在图片编辑中选择。'

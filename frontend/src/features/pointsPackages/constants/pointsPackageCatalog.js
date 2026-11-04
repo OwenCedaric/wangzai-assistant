@@ -37,7 +37,7 @@ export const POINTS_FAQ_ITEMS = Object.freeze([
   {
     question: '为什么链接数量会变化？',
     answer:
-      '每条链接可选择 10、13 或 16 张成品图。图片越多或重试次数越多，单条链接消耗的积分越高。所有生图固定使用 images.example.invalid API 的 gpt-image-2。',
+      '每条链接可选择 10、13 或 16 张成品图。图片越多或重试次数越多，单条链接消耗的积分越高。所有生图固定使用 已配置的图片服务 的 gpt-image-2。',
   },
   {
     question: '积分和有效期从什么时候开始？',
@@ -49,6 +49,6 @@ export const POINTS_FAQ_ITEMS = Object.freeze([
   },
   {
     question: '图片生成使用哪个模型？',
-    answer: '全部固定使用 images.example.invalid API 的 gpt-image-2，不会切换或回退到其他图片接口。',
+    answer: '全部固定使用 已配置的图片服务 的 gpt-image-2，不会切换或回退到其他图片接口。',
   },
 ]);

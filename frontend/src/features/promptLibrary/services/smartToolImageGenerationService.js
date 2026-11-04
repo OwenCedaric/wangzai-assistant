@@ -223,7 +223,7 @@ export function createSmartToolImageGenerationRequest({
     model: text(selectedModel.model),
   };
   if (!modelCandidate.accountId || !isApprovedImageModel(modelCandidate.model) || selectedModel.ready === false) {
-    throw new Error(`图片生成已锁定为 images.example.invalid API 的 ${APPROVED_IMAGE_MODEL_ID}，请先完成该接口配置。`);
+    throw new Error(`图片生成已锁定为 已配置的图片服务 的 ${APPROVED_IMAGE_MODEL_ID}，请先完成该接口配置。`);
   }
   const normalizedGroup = imageGroup === 'detail' ? 'detail' : 'main';
   const normalizedSourceIndex = Number(sourceIndex);

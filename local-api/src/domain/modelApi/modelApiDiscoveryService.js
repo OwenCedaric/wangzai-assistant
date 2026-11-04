@@ -1,6 +1,7 @@
 import { lookup as dnsLookup } from 'node:dns/promises';
 import { isIP } from 'node:net';
 import { isKnownImageGenerationModelId } from './modelApiCapabilities.js';
+import { APPROVED_IMAGE_API_BASE_URL } from './imageGenerationProviderPolicy.js';
 
 const DEFAULT_TIMEOUT_MS = 6_000;
 const DEFAULT_DNS_TIMEOUT_MS = 4_000;
@@ -81,7 +82,7 @@ function joinUrl(baseUrl, path) {
 
 function knownProfile(url) {
   const hostname = normalizeLower(url.hostname);
-  if (hostname === 'images.example.invalid' || hostname.endsWith('.codesonline.dev')) {
+  if (hostname === new URL(APPROVED_IMAGE_API_BASE_URL).hostname) {
     return {
       provider: 'codesonline',
       alias: 'codesonline 中转站',

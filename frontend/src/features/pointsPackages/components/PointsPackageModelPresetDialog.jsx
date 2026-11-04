@@ -134,7 +134,7 @@ export function PointsPackageModelPresetDialog({ model }) {
                     <Typography sx={{ color: '#343238', fontSize: 17, fontWeight: 900 }}>{group.label}</Typography>
                     <Typography sx={{ color: '#807980', fontSize: 12 }}>
                       {group.capabilityKind === 'image'
-                        ? '图片生成已固定使用 images.example.invalid API 的 gpt-image-2。'
+                        ? '图片生成已固定使用 已配置的图片服务 的 gpt-image-2。'
                         : `已启用 ${group.enabledModels.length} 个；每次调用优先使用默认模型。`}
                     </Typography>
                   </Box>

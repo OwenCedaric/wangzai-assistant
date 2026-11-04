@@ -10,6 +10,7 @@ from urllib.parse import urlparse
 import httpx
 
 from app.schemas.core_v2 import ModelApiDiscoveryRequest
+from app.paid_capabilities.image_model_policy import APPROVED_IMAGE_API_HOST
 
 MAX_RESPONSE_BYTES = 2 * 1024 * 1024
 MAX_MODELS = 100
@@ -100,7 +101,7 @@ def _assert_public_host(
 
 
 def _known_profile(hostname: str, origin: str) -> dict[str, Any] | None:
-    if hostname == "images.example.invalid" or hostname.endswith(".codesonline.dev"):
+    if hostname == APPROVED_IMAGE_API_HOST:
         return {
             "provider": "codesonline",
             "alias": "codesonline 中转站",
