@@ -6,6 +6,16 @@
 
 当前为实验性源码首发，仍有已知回归失败和未完成的产品验收，不提供稳定安装包或生产可用承诺。请先阅读 [验证状态与已知限制](docs/PUBLICATION_STATUS.md)。
 
+## 交流群
+
+欢迎加入 QQ 交流群，交流本地部署、使用经验和项目开发。
+
+**QQ群号：645887185**。可在 QQ 中搜索群号，或扫描下方二维码加入。
+
+<a href="docs/images/qq-community.png"><img src="docs/images/qq-community.png" alt="QQ 交流群二维码，群号 645887185" width="320" /></a>
+
+点击图片可查看原图。
+
 ## 环境与部署
 
 - Windows 10/11 x64，Node.js 24，Python 3.12，.NET 8 SDK（仅 .NET Runtime 不够）。
