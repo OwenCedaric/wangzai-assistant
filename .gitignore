@@ -77,3 +77,15 @@ deploy/jeepay/.keepalive.pid
 .mypy_cache/
 *.egg-info/
 .license-cache/
+!.env.example
+!server/.env.example
+admin-runtime/*.pid
+admin-runtime/logs/
+test-runtime/*.pid
+test-runtime/data/
+test-runtime/private/
+test-runtime/backups/
+test-runtime/logs/
+test-runtime/public-bundle/
+!frontend/.env.example
+!frontend/.chart-review.html

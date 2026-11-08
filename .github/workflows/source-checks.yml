@@ -16,6 +16,8 @@ jobs:
       - run: node tools/verify-source-completeness.mjs
       - run: node frontend/scripts/scan-secrets.mjs --all
       - run: node --test tools/test-suite-boundary.test.mjs tools/audit-public-source.test.mjs desktop/src/licensing/localSelfHosting.test.js desktop/src/licensing/protectedComputeDistribution.test.js desktop/src/licensing/licenseConfig.test.js
+      - run: node --test tools/verify-source-completeness.test.mjs desktop/scripts/server-source-root.test.mjs desktop/src/licensing/licenseServerBootstrap.test.js
+      - run: ./tools/owned-runtime.test.ps1
   frontend:
     runs-on: windows-latest
     steps:
@@ -81,3 +83,11 @@ jobs:
       - run: python -m pip install "./sdk/python[test]"
       - run: python -m ruff check sdk/python
       - run: python -m pytest -c sdk/python/pyproject.toml sdk/python/tests
+  container:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build backend and complete profit runtime from public source
+        run: docker build -f server/Dockerfile -t wangzai-source-check .
+      - name: Exercise actual worker offline with no business volumes
+        run: docker run --rm --network none --read-only --tmpfs /tmp --entrypoint gosu wangzai-source-check license python scripts/container-profit-smoke.py

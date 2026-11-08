@@ -7,10 +7,13 @@ import { createHash } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import { withManagedDevScratch } from '../../tools/managed-dev-scratch.mjs';
 import { parsePerformanceOptions, runPerformanceNavigation } from './perf-electron-navigation.mjs';
+import { resolveServerSourceRoot } from './server-source-root.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
-const backend = path.resolve(process.argv.find(arg => arg.startsWith('--backend-root='))?.split('=')[1] || path.join(root, '..', '管理系统/backend'));
-const python = path.join(backend, '.venv/Scripts/python.exe');
+const backendOverride = process.argv.find(arg => arg.startsWith('--backend-root='))?.slice('--backend-root='.length);
+const backend = resolveServerSourceRoot({ workspaceRoot: root,
+  env: backendOverride ? { ...process.env, WANGZAI_LICENSE_BACKEND_ROOT: backendOverride } : process.env });
+const python = path.join(backend, process.platform === 'win32' ? '.venv/Scripts/python.exe' : '.venv/bin/python');
 const output = path.join(root, '.codex-temp/license-integration-20260907');
 fs.mkdirSync(output, { recursive: true });
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));

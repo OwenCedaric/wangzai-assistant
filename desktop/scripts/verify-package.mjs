@@ -18,12 +18,11 @@ import {
   verifyProfileCacheMaintenanceAsarWiring,
 } from './profile-cache-maintenance-package-proof.mjs';
 import { currentPackageOutputRoot } from './current-version-identity.mjs';
+import { resolveServerSourceRoot } from './server-source-root.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const desktopRoot = path.resolve(path.dirname(__filename), '..');
-const managementSystemRoot = process.env.LICENSE_CENTER_ROOT
-  ? path.resolve(process.env.LICENSE_CENTER_ROOT)
-  : path.resolve(desktopRoot, '..', '..', '管理系统');
+const serverSourceRoot = resolveServerSourceRoot({ workspaceRoot: path.resolve(desktopRoot, '..') });
 const packageConfigArgument = process.argv.find(argument => argument.startsWith('--package-config='));
 const packageConfigPath = packageConfigArgument ? path.resolve(packageConfigArgument.slice('--package-config='.length)) : path.join(desktopRoot, 'package.json');
 const packageConfig = JSON.parse(await fs.readFile(packageConfigPath, 'utf8'));
@@ -418,8 +417,7 @@ try {
       clientRoots: protectedClientRoots,
       includeIgnoredDirectories: true,
       serverCoreRoot: path.join(
-        managementSystemRoot,
-        'backend',
+        serverSourceRoot,
         'app',
         'protected_compute',
         'core',

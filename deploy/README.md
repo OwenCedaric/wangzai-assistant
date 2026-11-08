@@ -3,6 +3,8 @@
 本目录提供单机服务器部署基线：PostgreSQL、Redis、FastAPI、Vue 管理端和 Caddy HTTPS
 网关。后端不对公网直接暴露，所有公网请求都经过 `https://<LICENSE_DOMAIN>`。
 
+后端镜像必须从仓库根目录构建：`docker build -f server/Dockerfile .`。镜像内包含从公开源码编译的完整利润执行器和 Node 24，启动时验证摘要；无需取得作者的私有编译产物。运维脚本与断网检查命令见 [运维公开说明](../docs/OPERATIONS_PUBLICATION.md)。
+
 ## 1. 准备服务器
 
 - 安装 Docker Engine 和 Compose v2。

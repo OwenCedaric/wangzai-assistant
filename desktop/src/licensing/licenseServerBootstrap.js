@@ -52,6 +52,7 @@ export function resolveDevelopmentLicenseBackend({
   const configuredRoot = normalizePath(env.WANGZAI_LICENSE_BACKEND_ROOT);
   const candidates = [
     configuredRoot,
+    workspaceRoot ? path.resolve(workspaceRoot, "server") : "",
     workspaceRoot
       ? path.resolve(workspaceRoot, "..", "管理系统", "backend")
       : "",

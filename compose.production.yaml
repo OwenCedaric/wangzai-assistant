@@ -43,7 +43,8 @@ x-backend-environment: &backend-environment
 
 x-backend: &backend
   build:
-    context: ./server
+    context: .
+    dockerfile: server/Dockerfile
   image: license-center-backend:${BACKEND_IMAGE_TAG:-local}
   restart: unless-stopped
   env_file: ./deploy/.env.production

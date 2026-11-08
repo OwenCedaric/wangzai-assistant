@@ -1,6 +1,10 @@
 #!/bin/sh
 set -eu
 
+# Verify the source-built runtime before migrations or API startup.
+profit_runtime_hash="$(python /app/scripts/container-profit-environment.py)"
+export PRIVATE_PROFIT_CORE_SHA256="$profit_runtime_hash"
+
 secret_root=/tmp/license-secrets
 install -d -m 0700 -o license -g license "$secret_root"
 

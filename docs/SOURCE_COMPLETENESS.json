@@ -1,7 +1,7 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "reviewDate": "2026-11-08",
-  "scope": "Current client project and associated management backend/admin/SDK/deployment source, not production data or historical backups.",
+  "scope": "Current runtime and deployment source; repository-wide discovery plus optional original-directory comparison. Historical baselines, private data and external dependencies excluded.",
   "files": [
     {
       "origin": "management-frontend",
@@ -12982,15 +12982,257 @@
     {
       "origin": "desktop-project",
       "path": "tools/verify-restored-business-pages.mjs"
+    },
+    {
+      "origin": "publication-support",
+      "path": ".dockerignore"
+    },
+    {
+      "origin": "publication-support",
+      "path": ".env.example"
+    },
+    {
+      "origin": "publication-support",
+      "path": ".github/ISSUE_TEMPLATE/bug_report.yml"
+    },
+    {
+      "origin": "publication-support",
+      "path": ".github/workflows/release-readiness.yml"
+    },
+    {
+      "origin": "publication-support",
+      "path": ".github/workflows/source-checks.yml"
+    },
+    {
+      "origin": "management-operations",
+      "path": "admin-runtime/install-autostart.ps1"
+    },
+    {
+      "origin": "management-operations",
+      "path": "admin-runtime/start-admin-frontend.ps1"
+    },
+    {
+      "origin": "management-operations",
+      "path": "admin-runtime/status-admin-frontend.ps1"
+    },
+    {
+      "origin": "management-operations",
+      "path": "admin-runtime/stop-admin-frontend.ps1"
+    },
+    {
+      "origin": "management-operations",
+      "path": "admin-runtime/uninstall-autostart.ps1"
+    },
+    {
+      "origin": "publication-support",
+      "path": "admin/backendProxy.js"
+    },
+    {
+      "origin": "publication-support",
+      "path": "admin/backendProxy.test.js"
+    },
+    {
+      "origin": "publication-support",
+      "path": "compose.production.yaml"
+    },
+    {
+      "origin": "publication-support",
+      "path": "compose.yaml"
+    },
+    {
+      "origin": "publication-support",
+      "path": "deploy/.env.production.example"
+    },
+    {
+      "origin": "publication-support",
+      "path": "deploy/generate_secrets.py"
+    },
+    {
+      "origin": "publication-support",
+      "path": "deploy/preflight.py"
+    },
+    {
+      "origin": "publication-support",
+      "path": "desktop/scripts/server-source-root.mjs"
+    },
+    {
+      "origin": "publication-support",
+      "path": "desktop/scripts/server-source-root.test.mjs"
+    },
+    {
+      "origin": "publication-support",
+      "path": "desktop/src/licensing/localSelfHosting.test.js"
+    },
+    {
+      "origin": "publication-support",
+      "path": "desktop/src/runtime/selfHostedTls.cjs"
+    },
+    {
+      "origin": "publication-support",
+      "path": "frontend/.chart-review.html"
+    },
+    {
+      "origin": "publication-support",
+      "path": "frontend/.env.example"
+    },
+    {
+      "origin": "publication-support",
+      "path": "frontend/src/shared/ui/CommunityChart.jsx"
+    },
+    {
+      "origin": "publication-support",
+      "path": "frontend/src/shared/ui/communityChartOptions.js"
+    },
+    {
+      "origin": "publication-support",
+      "path": "frontend/src/shared/ui/communityChartOptions.test.js"
+    },
+    {
+      "origin": "publication-support",
+      "path": "frontend/src/test/fixtures/listingSkillPackage.js"
+    },
+    {
+      "origin": "publication-support",
+      "path": "frontend/src/test/fixtures/purchaseForecastFixture.js"
+    },
+    {
+      "origin": "publication-support",
+      "path": "local-api/.env.example"
+    },
+    {
+      "origin": "publication-support",
+      "path": "local-api/src/domain/accountRemoval/accountOwnershipCurrentDiscoveryReviews.js"
+    },
+    {
+      "origin": "publication-support",
+      "path": "local-api/src/domain/accountRemoval/accountOwnershipCurrentDiscoveryReviews.test.js"
+    },
+    {
+      "origin": "publication-support",
+      "path": "server/.env.example"
+    },
+    {
+      "origin": "publication-support",
+      "path": "server/alembic.ini"
+    },
+    {
+      "origin": "publication-support",
+      "path": "server/docker-entrypoint.sh"
+    },
+    {
+      "origin": "publication-support",
+      "path": "server/Dockerfile"
+    },
+    {
+      "origin": "publication-support",
+      "path": "server/pyproject.toml"
+    },
+    {
+      "origin": "publication-support",
+      "path": "server/requirements-lock.txt"
+    },
+    {
+      "origin": "publication-support",
+      "path": "server/requirements.txt"
+    },
+    {
+      "origin": "publication-support",
+      "path": "server/scripts/container-profit-environment.py"
+    },
+    {
+      "origin": "publication-support",
+      "path": "server/scripts/container-profit-smoke.py"
+    },
+    {
+      "origin": "publication-support",
+      "path": "server/scripts/self_host.py"
+    },
+    {
+      "origin": "publication-support",
+      "path": "server/tests/test_container_profit_runtime.py"
+    },
+    {
+      "origin": "publication-support",
+      "path": "server/tests/test_published_operations.py"
+    },
+    {
+      "origin": "publication-support",
+      "path": "server/tests/test_self_host.py"
+    },
+    {
+      "origin": "management-operations",
+      "path": "test-runtime/install-autostart.ps1"
+    },
+    {
+      "origin": "management-operations",
+      "path": "test-runtime/scripts/prepare_test_database.py"
+    },
+    {
+      "origin": "management-operations",
+      "path": "test-runtime/scripts/sync_primary_admin_to_test.py"
+    },
+    {
+      "origin": "management-operations",
+      "path": "test-runtime/start-test-server.ps1"
+    },
+    {
+      "origin": "management-operations",
+      "path": "test-runtime/status-test-server.ps1"
+    },
+    {
+      "origin": "management-operations",
+      "path": "test-runtime/stop-test-server.ps1"
+    },
+    {
+      "origin": "management-operations",
+      "path": "test-runtime/uninstall-autostart.ps1"
+    },
+    {
+      "origin": "publication-support",
+      "path": "tools/audit-public-source.mjs"
+    },
+    {
+      "origin": "publication-support",
+      "path": "tools/audit-public-source.test.mjs"
+    },
+    {
+      "origin": "publication-support",
+      "path": "tools/owned-runtime.ps1"
+    },
+    {
+      "origin": "publication-support",
+      "path": "tools/owned-runtime.test.ps1"
+    },
+    {
+      "origin": "publication-support",
+      "path": "tools/smoke-admin-selfhost.py"
+    },
+    {
+      "origin": "publication-support",
+      "path": "tools/start-self-hosted.mjs"
+    },
+    {
+      "origin": "publication-support",
+      "path": "tools/test-suite-boundary.test.mjs"
+    },
+    {
+      "origin": "publication-support",
+      "path": "tools/verify-source-completeness.mjs"
+    },
+    {
+      "origin": "publication-support",
+      "path": "tools/verify-source-completeness.test.mjs"
     }
   ],
   "countsByOrigin": {
-    "desktop-project": 2852,
-    "management-backend": 251,
+    "publication-support": 47,
+    "management-operations": 12,
     "management-frontend": 98,
-    "management-sdk": 24,
+    "management-deploy": 16,
+    "desktop-project": 2852,
     "management-examples": 4,
-    "management-deploy": 16
+    "management-sdk": 24,
+    "management-backend": 251
   },
   "omissions": [
     {
@@ -13015,5 +13257,26 @@
       "category": "runtime-data-and-dependencies",
       "reason": "Credentials, databases, proof snapshots, installers, runtime replicas, caches and downloaded dependencies are not application source. Dependency manifests and real-evidence verifier source are public."
     }
-  ]
+  ],
+  "originalSourceMappings": {
+    "client": {
+      "frontend": "frontend",
+      "desktop": "desktop",
+      "local-api": "local-api",
+      "local-cache-agent": "local-cache-agent",
+      "shared": "shared",
+      "tools": "tools"
+    },
+    "management": {
+      "backend": "server",
+      "frontend": "admin",
+      "sdk": "sdk",
+      "examples": "examples",
+      "deploy": "deploy",
+      "admin-runtime": "admin-runtime",
+      "test-runtime": "test-runtime",
+      ".env.example": ".env.example",
+      "compose.yaml": "compose.yaml"
+    }
+  }
 }
