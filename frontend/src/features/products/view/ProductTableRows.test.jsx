@@ -1,4 +1,4 @@
-import { cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { act, cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react';
 import React from 'react';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { getProductSelectionKey } from '../../../entities/product/productWriteHelpers.jsx';
@@ -25,6 +25,8 @@ import { getProductStockCellPresentation, ProductTableRows } from './ProductTabl
 afterEach(() => {
   cleanup();
   imageRenders.clear();
+  vi.useRealTimers();
+  vi.unstubAllGlobals();
 });
 
 const firstProduct = { productId: '1', sku: 'SKU-1', name: '商品一', status: '正常', tone: 'success' };
@@ -102,6 +104,17 @@ describe('ProductTableRows', () => {
   });
 
   it('keeps the completed page visible until the next page finishes staged rendering', async () => {
+    // Verify each scheduled task deterministically; this is a transition contract,
+    // not a one-second jsdom/CI rendering benchmark. The earlier tests exercise real timers.
+    vi.stubGlobal('scheduler', undefined);
+    vi.useFakeTimers({ toFake: ['setTimeout', 'clearTimeout'] });
+    const drainRenderTasks = async (checkTransition = () => {}) => {
+      for (let tasks = 0; vi.getTimerCount() > 0; tasks += 1) {
+        expect(tasks).toBeLessThan(100);
+        await act(async () => { await vi.runOnlyPendingTimersAsync(); });
+        checkTransition();
+      }
+    };
     const pageOne = Array.from({ length: 100 }, (_item, index) => ({
       ...firstProduct,
       productId: String(index + 1),
@@ -116,9 +129,8 @@ describe('ProductTableRows', () => {
     }));
     const view = render(renderRows({ products: pageOne }));
 
-    await waitFor(() => {
-      expect(view.container.querySelectorAll('tbody > tr.product-native-row:not([hidden])')).toHaveLength(100);
-    });
+    await drainRenderTasks();
+    expect(view.container.querySelectorAll('tbody > tr.product-native-row:not([hidden])')).toHaveLength(100);
 
     view.rerender(renderRows({ products: pageTwo }));
 
@@ -126,12 +138,20 @@ describe('ProductTableRows', () => {
     expect(retainedRows).toHaveLength(100);
     expect(retainedRows[0]).toHaveTextContent('PAGE-1-1');
 
-    await waitFor(() => {
+    await drainRenderTasks(() => {
+      const visibleRows = [...view.container.querySelectorAll('tbody > tr.product-native-row:not([hidden])')];
+      expect(visibleRows).toHaveLength(100);
+      const nextPageVisible = visibleRows[0].textContent.includes('PAGE-2-1');
+      expect(visibleRows.every(row => row.textContent.includes(nextPageVisible ? 'PAGE-2-' : 'PAGE-1-'))).toBe(true);
+    });
+    {
       const visibleRows = [...view.container.querySelectorAll('tbody > tr.product-native-row:not([hidden])')];
       expect(visibleRows).toHaveLength(100);
       expect(visibleRows[0]).toHaveTextContent('PAGE-2-1');
+      expect(visibleRows[99]).toHaveTextContent('PAGE-2-100');
       expect(visibleRows.some((row) => row.textContent.includes('PAGE-1-1'))).toBe(false);
-    });
+      expect(view.container.querySelectorAll('tbody > tr[hidden]')).toHaveLength(0);
+    }
   });
 
   it('uses native table rows and cells so the bounded first page does not create per-cell MUI component trees', () => {
