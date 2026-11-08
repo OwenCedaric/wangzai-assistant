@@ -11,4 +11,16 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
+      - run: npm ci --prefix local-api --ignore-scripts
+      # Supply reviewed evidence locally before release; public source CI does
+      # not carry business snapshots. Missing or modified evidence must fail.
+      - run: npm run test:evidence --prefix local-api
+      - run: npm run evidence:sku --prefix local-api
+  readiness:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
       - run: node tools/release-readiness.mjs --check

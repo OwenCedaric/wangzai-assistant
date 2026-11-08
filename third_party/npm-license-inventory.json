@@ -9513,5 +9513,2661 @@
     "license": "MIT",
     "development": false,
     "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "@asamuzakjp/css-color",
+    "version": "3.2.0",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "@babel/helper-string-parser",
+    "version": "7.29.13",
+    "license": "MIT",
+    "development": false,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "@babel/helper-validator-identifier",
+    "version": "7.29.7",
+    "license": "MIT",
+    "development": false,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "@babel/parser",
+    "version": "7.29.13",
+    "license": "MIT",
+    "development": false,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "@babel/types",
+    "version": "7.29.11",
+    "license": "MIT",
+    "development": false,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "@csstools/color-helpers",
+    "version": "5.1.0",
+    "license": "MIT-0",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "@csstools/css-calc",
+    "version": "2.1.4",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "@csstools/css-color-parser",
+    "version": "3.1.0",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "@csstools/css-parser-algorithms",
+    "version": "3.0.5",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "@csstools/css-tokenizer",
+    "version": "3.0.4",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "@ctrl/tinycolor",
+    "version": "4.3.0",
+    "license": "MIT",
+    "development": false,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "@element-plus/icons-vue",
+    "version": "2.3.2",
+    "license": "MIT",
+    "development": false,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "@esbuild/aix-ppc64",
+    "version": "0.25.12",
+    "license": "MIT",
+    "development": true,
+    "optional": true
+  },
+  {
+    "project": "admin",
+    "package": "@esbuild/android-arm",
+    "version": "0.25.12",
+    "license": "MIT",
+    "development": true,
+    "optional": true
+  },
+  {
+    "project": "admin",
+    "package": "@esbuild/android-arm64",
+    "version": "0.25.12",
+    "license": "MIT",
+    "development": true,
+    "optional": true
+  },
+  {
+    "project": "admin",
+    "package": "@esbuild/android-x64",
+    "version": "0.25.12",
+    "license": "MIT",
+    "development": true,
+    "optional": true
+  },
+  {
+    "project": "admin",
+    "package": "@esbuild/darwin-arm64",
+    "version": "0.25.12",
+    "license": "MIT",
+    "development": true,
+    "optional": true
+  },
+  {
+    "project": "admin",
+    "package": "@esbuild/darwin-x64",
+    "version": "0.25.12",
+    "license": "MIT",
+    "development": true,
+    "optional": true
+  },
+  {
+    "project": "admin",
+    "package": "@esbuild/freebsd-arm64",
+    "version": "0.25.12",
+    "license": "MIT",
+    "development": true,
+    "optional": true
+  },
+  {
+    "project": "admin",
+    "package": "@esbuild/freebsd-x64",
+    "version": "0.25.12",
+    "license": "MIT",
+    "development": true,
+    "optional": true
+  },
+  {
+    "project": "admin",
+    "package": "@esbuild/linux-arm",
+    "version": "0.25.12",
+    "license": "MIT",
+    "development": true,
+    "optional": true
+  },
+  {
+    "project": "admin",
+    "package": "@esbuild/linux-arm64",
+    "version": "0.25.12",
+    "license": "MIT",
+    "development": true,
+    "optional": true
+  },
+  {
+    "project": "admin",
+    "package": "@esbuild/linux-ia32",
+    "version": "0.25.12",
+    "license": "MIT",
+    "development": true,
+    "optional": true
+  },
+  {
+    "project": "admin",
+    "package": "@esbuild/linux-loong64",
+    "version": "0.25.12",
+    "license": "MIT",
+    "development": true,
+    "optional": true
+  },
+  {
+    "project": "admin",
+    "package": "@esbuild/linux-mips64el",
+    "version": "0.25.12",
+    "license": "MIT",
+    "development": true,
+    "optional": true
+  },
+  {
+    "project": "admin",
+    "package": "@esbuild/linux-ppc64",
+    "version": "0.25.12",
+    "license": "MIT",
+    "development": true,
+    "optional": true
+  },
+  {
+    "project": "admin",
+    "package": "@esbuild/linux-riscv64",
+    "version": "0.25.12",
+    "license": "MIT",
+    "development": true,
+    "optional": true
+  },
+  {
+    "project": "admin",
+    "package": "@esbuild/linux-s390x",
+    "version": "0.25.12",
+    "license": "MIT",
+    "development": true,
+    "optional": true
+  },
+  {
+    "project": "admin",
+    "package": "@esbuild/linux-x64",
+    "version": "0.25.12",
+    "license": "MIT",
+    "development": true,
+    "optional": true
+  },
+  {
+    "project": "admin",
+    "package": "@esbuild/netbsd-arm64",
+    "version": "0.25.12",
+    "license": "MIT",
+    "development": true,
+    "optional": true
+  },
+  {
+    "project": "admin",
+    "package": "@esbuild/netbsd-x64",
+    "version": "0.25.12",
+    "license": "MIT",
+    "development": true,
+    "optional": true
+  },
+  {
+    "project": "admin",
+    "package": "@esbuild/openbsd-arm64",
+    "version": "0.25.12",
+    "license": "MIT",
+    "development": true,
+    "optional": true
+  },
+  {
+    "project": "admin",
+    "package": "@esbuild/openbsd-x64",
+    "version": "0.25.12",
+    "license": "MIT",
+    "development": true,
+    "optional": true
+  },
+  {
+    "project": "admin",
+    "package": "@esbuild/openharmony-arm64",
+    "version": "0.25.12",
+    "license": "MIT",
+    "development": true,
+    "optional": true
+  },
+  {
+    "project": "admin",
+    "package": "@esbuild/sunos-x64",
+    "version": "0.25.12",
+    "license": "MIT",
+    "development": true,
+    "optional": true
+  },
+  {
+    "project": "admin",
+    "package": "@esbuild/win32-arm64",
+    "version": "0.25.12",
+    "license": "MIT",
+    "development": true,
+    "optional": true
+  },
+  {
+    "project": "admin",
+    "package": "@esbuild/win32-ia32",
+    "version": "0.25.12",
+    "license": "MIT",
+    "development": true,
+    "optional": true
+  },
+  {
+    "project": "admin",
+    "package": "@esbuild/win32-x64",
+    "version": "0.25.12",
+    "license": "MIT",
+    "development": true,
+    "optional": true
+  },
+  {
+    "project": "admin",
+    "package": "@eslint-community/eslint-utils",
+    "version": "4.9.1",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "eslint-visitor-keys",
+    "version": "3.4.3",
+    "license": "Apache-2.0",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "@eslint-community/regexpp",
+    "version": "4.12.2",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "@eslint/config-array",
+    "version": "0.21.2",
+    "license": "Apache-2.0",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "@eslint/config-helpers",
+    "version": "0.4.2",
+    "license": "Apache-2.0",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "@eslint/core",
+    "version": "0.17.0",
+    "license": "Apache-2.0",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "@eslint/eslintrc",
+    "version": "3.3.6",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "globals",
+    "version": "14.0.0",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "@eslint/js",
+    "version": "9.39.5",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "@eslint/object-schema",
+    "version": "2.1.7",
+    "license": "Apache-2.0",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "@eslint/plugin-kit",
+    "version": "0.4.1",
+    "license": "Apache-2.0",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "@floating-ui/core",
+    "version": "1.8.0",
+    "license": "MIT",
+    "development": false,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "@floating-ui/dom",
+    "version": "1.8.0",
+    "license": "MIT",
+    "development": false,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "@floating-ui/utils",
+    "version": "0.2.12",
+    "license": "MIT",
+    "development": false,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "@humanfs/core",
+    "version": "0.19.2",
+    "license": "Apache-2.0",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "@humanfs/node",
+    "version": "0.16.8",
+    "license": "Apache-2.0",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "@humanfs/types",
+    "version": "0.15.0",
+    "license": "Apache-2.0",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "@humanwhocodes/module-importer",
+    "version": "1.0.1",
+    "license": "Apache-2.0",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "@humanwhocodes/retry",
+    "version": "0.4.3",
+    "license": "Apache-2.0",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "@isaacs/cliui",
+    "version": "8.0.2",
+    "license": "ISC",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "@jridgewell/resolve-uri",
+    "version": "3.1.2",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "@jridgewell/sourcemap-codec",
+    "version": "1.6.0",
+    "license": "MIT",
+    "development": false,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "@jridgewell/trace-mapping",
+    "version": "0.3.31",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "@one-ini/wasm",
+    "version": "0.1.1",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "@pkgjs/parseargs",
+    "version": "0.11.0",
+    "license": "MIT",
+    "development": true,
+    "optional": true
+  },
+  {
+    "project": "admin",
+    "package": "@popperjs/core",
+    "version": "2.11.8",
+    "license": "MIT",
+    "development": false,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "@rollup/rollup-android-arm-eabi",
+    "version": "4.62.2",
+    "license": "MIT",
+    "development": true,
+    "optional": true
+  },
+  {
+    "project": "admin",
+    "package": "@rollup/rollup-android-arm64",
+    "version": "4.62.2",
+    "license": "MIT",
+    "development": true,
+    "optional": true
+  },
+  {
+    "project": "admin",
+    "package": "@rollup/rollup-darwin-arm64",
+    "version": "4.62.2",
+    "license": "MIT",
+    "development": true,
+    "optional": true
+  },
+  {
+    "project": "admin",
+    "package": "@rollup/rollup-darwin-x64",
+    "version": "4.62.2",
+    "license": "MIT",
+    "development": true,
+    "optional": true
+  },
+  {
+    "project": "admin",
+    "package": "@rollup/rollup-freebsd-arm64",
+    "version": "4.62.2",
+    "license": "MIT",
+    "development": true,
+    "optional": true
+  },
+  {
+    "project": "admin",
+    "package": "@rollup/rollup-freebsd-x64",
+    "version": "4.62.2",
+    "license": "MIT",
+    "development": true,
+    "optional": true
+  },
+  {
+    "project": "admin",
+    "package": "@rollup/rollup-linux-arm-gnueabihf",
+    "version": "4.62.2",
+    "license": "MIT",
+    "development": true,
+    "optional": true
+  },
+  {
+    "project": "admin",
+    "package": "@rollup/rollup-linux-arm-musleabihf",
+    "version": "4.62.2",
+    "license": "MIT",
+    "development": true,
+    "optional": true
+  },
+  {
+    "project": "admin",
+    "package": "@rollup/rollup-linux-arm64-gnu",
+    "version": "4.62.2",
+    "license": "MIT",
+    "development": true,
+    "optional": true
+  },
+  {
+    "project": "admin",
+    "package": "@rollup/rollup-linux-arm64-musl",
+    "version": "4.62.2",
+    "license": "MIT",
+    "development": true,
+    "optional": true
+  },
+  {
+    "project": "admin",
+    "package": "@rollup/rollup-linux-loong64-gnu",
+    "version": "4.62.2",
+    "license": "MIT",
+    "development": true,
+    "optional": true
+  },
+  {
+    "project": "admin",
+    "package": "@rollup/rollup-linux-loong64-musl",
+    "version": "4.62.2",
+    "license": "MIT",
+    "development": true,
+    "optional": true
+  },
+  {
+    "project": "admin",
+    "package": "@rollup/rollup-linux-ppc64-gnu",
+    "version": "4.62.2",
+    "license": "MIT",
+    "development": true,
+    "optional": true
+  },
+  {
+    "project": "admin",
+    "package": "@rollup/rollup-linux-ppc64-musl",
+    "version": "4.62.2",
+    "license": "MIT",
+    "development": true,
+    "optional": true
+  },
+  {
+    "project": "admin",
+    "package": "@rollup/rollup-linux-riscv64-gnu",
+    "version": "4.62.2",
+    "license": "MIT",
+    "development": true,
+    "optional": true
+  },
+  {
+    "project": "admin",
+    "package": "@rollup/rollup-linux-riscv64-musl",
+    "version": "4.62.2",
+    "license": "MIT",
+    "development": true,
+    "optional": true
+  },
+  {
+    "project": "admin",
+    "package": "@rollup/rollup-linux-s390x-gnu",
+    "version": "4.62.2",
+    "license": "MIT",
+    "development": true,
+    "optional": true
+  },
+  {
+    "project": "admin",
+    "package": "@rollup/rollup-linux-x64-gnu",
+    "version": "4.62.2",
+    "license": "MIT",
+    "development": true,
+    "optional": true
+  },
+  {
+    "project": "admin",
+    "package": "@rollup/rollup-linux-x64-musl",
+    "version": "4.62.2",
+    "license": "MIT",
+    "development": true,
+    "optional": true
+  },
+  {
+    "project": "admin",
+    "package": "@rollup/rollup-openbsd-x64",
+    "version": "4.62.2",
+    "license": "MIT",
+    "development": true,
+    "optional": true
+  },
+  {
+    "project": "admin",
+    "package": "@rollup/rollup-openharmony-arm64",
+    "version": "4.62.2",
+    "license": "MIT",
+    "development": true,
+    "optional": true
+  },
+  {
+    "project": "admin",
+    "package": "@rollup/rollup-win32-arm64-msvc",
+    "version": "4.62.2",
+    "license": "MIT",
+    "development": true,
+    "optional": true
+  },
+  {
+    "project": "admin",
+    "package": "@rollup/rollup-win32-ia32-msvc",
+    "version": "4.62.2",
+    "license": "MIT",
+    "development": true,
+    "optional": true
+  },
+  {
+    "project": "admin",
+    "package": "@rollup/rollup-win32-x64-gnu",
+    "version": "4.62.2",
+    "license": "MIT",
+    "development": true,
+    "optional": true
+  },
+  {
+    "project": "admin",
+    "package": "@rollup/rollup-win32-x64-msvc",
+    "version": "4.62.2",
+    "license": "MIT",
+    "development": true,
+    "optional": true
+  },
+  {
+    "project": "admin",
+    "package": "@types/chai",
+    "version": "5.2.3",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "@types/deep-eql",
+    "version": "4.0.2",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "@types/estree",
+    "version": "1.0.9",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "@types/json-schema",
+    "version": "7.0.15",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "@types/lodash",
+    "version": "4.17.24",
+    "license": "MIT",
+    "development": false,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "@types/lodash-es",
+    "version": "4.17.12",
+    "license": "MIT",
+    "development": false,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "@types/web-bluetooth",
+    "version": "0.0.21",
+    "license": "MIT",
+    "development": false,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "@vitejs/plugin-vue",
+    "version": "5.2.4",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "@vitest/mocker",
+    "version": "5.1.0",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "estree-walker",
+    "version": "3.0.3",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "magic-string",
+    "version": "1.4.5",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "@vitest/spy",
+    "version": "5.1.0",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "@vue/compiler-core",
+    "version": "3.5.42",
+    "license": "MIT",
+    "development": false,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "@vue/compiler-dom",
+    "version": "3.5.42",
+    "license": "MIT",
+    "development": false,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "@vue/compiler-sfc",
+    "version": "3.5.42",
+    "license": "MIT",
+    "development": false,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "@vue/compiler-ssr",
+    "version": "3.5.42",
+    "license": "MIT",
+    "development": false,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "@vue/devtools-api",
+    "version": "6.6.4",
+    "license": "MIT",
+    "development": false,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "@vue/reactivity",
+    "version": "3.5.42",
+    "license": "MIT",
+    "development": false,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "@vue/runtime-core",
+    "version": "3.5.42",
+    "license": "MIT",
+    "development": false,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "@vue/runtime-dom",
+    "version": "3.5.42",
+    "license": "MIT",
+    "development": false,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "@vue/server-renderer",
+    "version": "3.5.42",
+    "license": "MIT",
+    "development": false,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "@vue/shared",
+    "version": "3.5.42",
+    "license": "MIT",
+    "development": false,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "@vue/test-utils",
+    "version": "2.4.11",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "@vueuse/core",
+    "version": "15.0.0",
+    "license": "MIT",
+    "development": false,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "@vueuse/metadata",
+    "version": "15.0.0",
+    "license": "MIT",
+    "development": false,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "@vueuse/shared",
+    "version": "15.0.0",
+    "license": "MIT",
+    "development": false,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "abbrev",
+    "version": "2.0.0",
+    "license": "ISC",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "acorn",
+    "version": "8.17.0",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "acorn-jsx",
+    "version": "5.3.2",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "agent-base",
+    "version": "6.0.2",
+    "license": "MIT",
+    "development": false,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "ajv",
+    "version": "6.15.0",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "ansi-regex",
+    "version": "6.2.2",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "ansi-styles",
+    "version": "4.3.0",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "argparse",
+    "version": "2.0.1",
+    "license": "Python-2.0",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "assertion-error",
+    "version": "2.0.1",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "async-validator",
+    "version": "4.2.5",
+    "license": "MIT",
+    "development": false,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "asynckit",
+    "version": "0.4.0",
+    "license": "MIT",
+    "development": false,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "axios",
+    "version": "1.21.0",
+    "license": "MIT",
+    "development": false,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "balanced-match",
+    "version": "1.0.2",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "boolbase",
+    "version": "1.0.0",
+    "license": "ISC",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "brace-expansion",
+    "version": "1.1.21",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "call-bind-apply-helpers",
+    "version": "1.0.2",
+    "license": "MIT",
+    "development": false,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "callsites",
+    "version": "3.1.0",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "chai",
+    "version": "6.3.0",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "chalk",
+    "version": "4.1.2",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "color-convert",
+    "version": "2.0.1",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "color-name",
+    "version": "1.1.4",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "combined-stream",
+    "version": "1.0.8",
+    "license": "MIT",
+    "development": false,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "commander",
+    "version": "10.0.1",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "concat-map",
+    "version": "0.0.1",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "config-chain",
+    "version": "1.1.13",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "cross-spawn",
+    "version": "7.0.6",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "cssesc",
+    "version": "3.0.0",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "cssstyle",
+    "version": "4.6.0",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "rrweb-cssom",
+    "version": "0.8.0",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "csstype",
+    "version": "3.2.3",
+    "license": "MIT",
+    "development": false,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "data-urls",
+    "version": "5.0.0",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "dayjs",
+    "version": "1.11.21",
+    "license": "MIT",
+    "development": false,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "debug",
+    "version": "4.4.3",
+    "license": "MIT",
+    "development": false,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "decimal.js",
+    "version": "10.6.0",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "deep-is",
+    "version": "0.1.4",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "delayed-stream",
+    "version": "1.0.0",
+    "license": "MIT",
+    "development": false,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "dunder-proto",
+    "version": "1.0.1",
+    "license": "MIT",
+    "development": false,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "eastasianwidth",
+    "version": "0.2.0",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "editorconfig",
+    "version": "1.0.7",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "brace-expansion",
+    "version": "2.1.7",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "minimatch",
+    "version": "9.0.9",
+    "license": "ISC",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "element-plus",
+    "version": "2.14.8",
+    "license": "MIT",
+    "development": false,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "emoji-regex",
+    "version": "9.2.2",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "entities",
+    "version": "7.0.1",
+    "license": "BSD-2-Clause",
+    "development": false,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "es-define-property",
+    "version": "1.0.1",
+    "license": "MIT",
+    "development": false,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "es-errors",
+    "version": "1.3.0",
+    "license": "MIT",
+    "development": false,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "es-module-lexer",
+    "version": "2.3.2",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "es-object-atoms",
+    "version": "1.1.2",
+    "license": "MIT",
+    "development": false,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "es-set-tostringtag",
+    "version": "2.1.0",
+    "license": "MIT",
+    "development": false,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "esbuild",
+    "version": "0.25.12",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "escape-string-regexp",
+    "version": "4.0.0",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "eslint",
+    "version": "9.39.5",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "eslint-plugin-vue",
+    "version": "9.33.0",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "globals",
+    "version": "13.24.0",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "eslint-scope",
+    "version": "8.4.0",
+    "license": "BSD-2-Clause",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "eslint-visitor-keys",
+    "version": "4.2.1",
+    "license": "Apache-2.0",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "espree",
+    "version": "10.4.0",
+    "license": "BSD-2-Clause",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "esquery",
+    "version": "1.7.0",
+    "license": "BSD-3-Clause",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "esrecurse",
+    "version": "4.3.0",
+    "license": "BSD-2-Clause",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "estraverse",
+    "version": "5.3.0",
+    "license": "BSD-2-Clause",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "estree-walker",
+    "version": "2.0.2",
+    "license": "MIT",
+    "development": false,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "esutils",
+    "version": "2.0.3",
+    "license": "BSD-2-Clause",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "expect-type",
+    "version": "1.4.0",
+    "license": "Apache-2.0",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "fast-deep-equal",
+    "version": "3.1.3",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "fast-json-stable-stringify",
+    "version": "2.1.0",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "fast-levenshtein",
+    "version": "2.0.6",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "fdir",
+    "version": "6.5.0",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "file-entry-cache",
+    "version": "8.0.0",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "find-up",
+    "version": "5.0.0",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "flat-cache",
+    "version": "4.0.1",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "flatted",
+    "version": "3.4.2",
+    "license": "ISC",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "follow-redirects",
+    "version": "1.16.2",
+    "license": "MIT",
+    "development": false,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "foreground-child",
+    "version": "3.3.1",
+    "license": "ISC",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "form-data",
+    "version": "4.0.6",
+    "license": "MIT",
+    "development": false,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "fsevents",
+    "version": "2.3.3",
+    "license": "MIT",
+    "development": true,
+    "optional": true
+  },
+  {
+    "project": "admin",
+    "package": "function-bind",
+    "version": "1.1.2",
+    "license": "MIT",
+    "development": false,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "get-intrinsic",
+    "version": "1.3.0",
+    "license": "MIT",
+    "development": false,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "get-proto",
+    "version": "1.0.1",
+    "license": "MIT",
+    "development": false,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "glob",
+    "version": "10.5.0",
+    "license": "ISC",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "glob-parent",
+    "version": "6.0.2",
+    "license": "ISC",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "brace-expansion",
+    "version": "2.1.7",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "minimatch",
+    "version": "9.0.9",
+    "license": "ISC",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "globals",
+    "version": "15.15.0",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "gopd",
+    "version": "1.2.0",
+    "license": "MIT",
+    "development": false,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "has-flag",
+    "version": "4.0.0",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "has-symbols",
+    "version": "1.1.0",
+    "license": "MIT",
+    "development": false,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "has-tostringtag",
+    "version": "1.0.2",
+    "license": "MIT",
+    "development": false,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "hasown",
+    "version": "2.0.4",
+    "license": "MIT",
+    "development": false,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "html-encoding-sniffer",
+    "version": "4.0.0",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "http-proxy-agent",
+    "version": "7.0.2",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "agent-base",
+    "version": "7.1.4",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "https-proxy-agent",
+    "version": "5.0.1",
+    "license": "MIT",
+    "development": false,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "iconv-lite",
+    "version": "0.6.3",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "ignore",
+    "version": "5.3.2",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "import-fresh",
+    "version": "3.3.1",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "imurmurhash",
+    "version": "0.1.4",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "ini",
+    "version": "1.3.8",
+    "license": "ISC",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "is-extglob",
+    "version": "2.1.1",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "is-fullwidth-code-point",
+    "version": "3.0.0",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "is-glob",
+    "version": "4.0.3",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "is-potential-custom-element-name",
+    "version": "1.0.1",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "isexe",
+    "version": "2.0.0",
+    "license": "ISC",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "jackspeak",
+    "version": "3.4.3",
+    "license": "BlueOak-1.0.0",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "js-beautify",
+    "version": "1.15.4",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "js-cookie",
+    "version": "3.0.8",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "js-yaml",
+    "version": "4.3.2",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "jsdom",
+    "version": "25.0.1",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "agent-base",
+    "version": "7.1.4",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "https-proxy-agent",
+    "version": "7.0.6",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "xml-name-validator",
+    "version": "5.0.0",
+    "license": "Apache-2.0",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "json-buffer",
+    "version": "3.0.1",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "json-schema-traverse",
+    "version": "0.4.1",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "json-stable-stringify-without-jsonify",
+    "version": "1.0.1",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "keyv",
+    "version": "4.5.4",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "levn",
+    "version": "0.4.1",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "locate-path",
+    "version": "6.0.0",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "lodash",
+    "version": "4.18.1",
+    "license": "MIT",
+    "development": false,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "lodash-es",
+    "version": "4.18.1",
+    "license": "MIT",
+    "development": false,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "lodash-unified",
+    "version": "1.0.3",
+    "license": "MIT",
+    "development": false,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "lodash.merge",
+    "version": "4.6.2",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "lru-cache",
+    "version": "10.4.3",
+    "license": "ISC",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "magic-string",
+    "version": "0.30.21",
+    "license": "MIT",
+    "development": false,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "math-intrinsics",
+    "version": "1.1.0",
+    "license": "MIT",
+    "development": false,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "memoize-one",
+    "version": "6.0.0",
+    "license": "MIT",
+    "development": false,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "mime-db",
+    "version": "1.52.0",
+    "license": "MIT",
+    "development": false,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "mime-types",
+    "version": "2.1.35",
+    "license": "MIT",
+    "development": false,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "minimatch",
+    "version": "3.1.5",
+    "license": "ISC",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "minipass",
+    "version": "7.1.3",
+    "license": "BlueOak-1.0.0",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "ms",
+    "version": "2.1.3",
+    "license": "MIT",
+    "development": false,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "nanoid",
+    "version": "3.3.20",
+    "license": "MIT",
+    "development": false,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "natural-compare",
+    "version": "1.4.0",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "nopt",
+    "version": "7.2.1",
+    "license": "ISC",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "normalize-wheel-es",
+    "version": "1.2.0",
+    "license": "BSD-3-Clause",
+    "development": false,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "nth-check",
+    "version": "2.1.1",
+    "license": "BSD-2-Clause",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "nwsapi",
+    "version": "2.2.24",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "obug",
+    "version": "3.0.0",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "optionator",
+    "version": "0.9.4",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "p-limit",
+    "version": "3.1.0",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "p-locate",
+    "version": "5.0.0",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "package-json-from-dist",
+    "version": "1.0.1",
+    "license": "BlueOak-1.0.0",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "parent-module",
+    "version": "1.0.1",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "parse5",
+    "version": "7.3.0",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "entities",
+    "version": "6.0.1",
+    "license": "BSD-2-Clause",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "path-exists",
+    "version": "4.0.0",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "path-key",
+    "version": "3.1.1",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "path-scurry",
+    "version": "1.11.1",
+    "license": "BlueOak-1.0.0",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "picocolors",
+    "version": "1.1.1",
+    "license": "ISC",
+    "development": false,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "picomatch",
+    "version": "4.0.7",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "postcss",
+    "version": "8.5.32",
+    "license": "MIT",
+    "development": false,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "postcss-selector-parser",
+    "version": "6.1.5",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "prelude-ls",
+    "version": "1.2.1",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "proto-list",
+    "version": "1.2.4",
+    "license": "ISC",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "proxy-from-env",
+    "version": "2.1.0",
+    "license": "MIT",
+    "development": false,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "punycode",
+    "version": "2.3.1",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "resolve-from",
+    "version": "4.0.0",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "rollup",
+    "version": "4.62.2",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "rrweb-cssom",
+    "version": "0.7.1",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "safer-buffer",
+    "version": "2.1.2",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "saxes",
+    "version": "6.0.0",
+    "license": "ISC",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "semver",
+    "version": "7.8.5",
+    "license": "ISC",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "shebang-command",
+    "version": "2.0.0",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "shebang-regex",
+    "version": "3.0.0",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "signal-exit",
+    "version": "4.1.0",
+    "license": "ISC",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "source-map-js",
+    "version": "1.2.2",
+    "license": "BSD-3-Clause",
+    "development": false,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "std-env",
+    "version": "4.3.0",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "string-width",
+    "version": "5.1.2",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "string-width-cjs",
+    "version": "4.2.3",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "ansi-regex",
+    "version": "5.0.1",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "emoji-regex",
+    "version": "8.0.0",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "strip-ansi",
+    "version": "6.0.1",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "strip-ansi",
+    "version": "7.2.0",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "strip-ansi-cjs",
+    "version": "6.0.1",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "ansi-regex",
+    "version": "5.0.1",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "strip-json-comments",
+    "version": "3.1.1",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "supports-color",
+    "version": "7.2.0",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "symbol-tree",
+    "version": "3.2.4",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "tinybench",
+    "version": "6.2.3",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "tinyexec",
+    "version": "1.3.1",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "tinyglobby",
+    "version": "0.2.17",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "tldts",
+    "version": "6.1.86",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "tldts-core",
+    "version": "6.1.86",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "tough-cookie",
+    "version": "5.1.2",
+    "license": "BSD-3-Clause",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "tr46",
+    "version": "5.1.1",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "type-check",
+    "version": "0.4.0",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "type-fest",
+    "version": "0.20.2",
+    "license": "(MIT OR CC0-1.0)",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "uri-js",
+    "version": "4.4.1",
+    "license": "BSD-2-Clause",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "util-deprecate",
+    "version": "1.0.2",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "vite",
+    "version": "6.4.5",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "vitest",
+    "version": "5.1.0",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "magic-string",
+    "version": "1.4.5",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "vue",
+    "version": "3.5.42",
+    "license": "MIT",
+    "development": false,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "vue-component-type-helpers",
+    "version": "3.3.14",
+    "license": "MIT",
+    "development": false,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "vue-eslint-parser",
+    "version": "9.4.3",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "eslint-scope",
+    "version": "7.2.2",
+    "license": "BSD-2-Clause",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "eslint-visitor-keys",
+    "version": "3.4.3",
+    "license": "Apache-2.0",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "espree",
+    "version": "9.6.1",
+    "license": "BSD-2-Clause",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "vue-router",
+    "version": "4.6.4",
+    "license": "MIT",
+    "development": false,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "w3c-xmlserializer",
+    "version": "5.0.0",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "xml-name-validator",
+    "version": "5.0.0",
+    "license": "Apache-2.0",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "webidl-conversions",
+    "version": "7.0.0",
+    "license": "BSD-2-Clause",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "whatwg-encoding",
+    "version": "3.1.1",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "whatwg-mimetype",
+    "version": "4.0.0",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "whatwg-url",
+    "version": "14.2.0",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "which",
+    "version": "2.0.2",
+    "license": "ISC",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "why-is-node-running",
+    "version": "3.2.1",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "word-wrap",
+    "version": "1.2.5",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "wrap-ansi",
+    "version": "8.1.0",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "wrap-ansi-cjs",
+    "version": "7.0.0",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "ansi-regex",
+    "version": "5.0.1",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "emoji-regex",
+    "version": "8.0.0",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "string-width",
+    "version": "4.2.3",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "strip-ansi",
+    "version": "6.0.1",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "ansi-styles",
+    "version": "6.2.3",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "ws",
+    "version": "8.21.0",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "xml-name-validator",
+    "version": "4.0.0",
+    "license": "Apache-2.0",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "xmlchars",
+    "version": "2.2.0",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "project": "admin",
+    "package": "yocto-queue",
+    "version": "0.1.0",
+    "license": "MIT",
+    "development": true,
+    "optional": false
   }
 ]

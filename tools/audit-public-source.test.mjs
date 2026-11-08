@@ -42,3 +42,19 @@ test('allows loopback and official API URLs while detecting private user paths',
   assert.equal(result.ok, false);
   assert.equal(result.findings[0].rule, 'personal-home-path');
 });
+
+test('allows only the fixed RocketMQ container home in its deployment manifest', t => {
+  const root = fixture(t);
+  const directory = path.join(root, 'deploy/jeepay');
+  fs.mkdirSync(directory, { recursive: true });
+  const file = path.join(directory, 'docker-compose.yml');
+  fs.writeFileSync(file, 'volume: ' + ['', 'home', 'rocketmq', 'store'].join('/'));
+  assert.equal(auditPublicSource(root).ok, true);
+  fs.writeFileSync(file, 'volume: ' + ['', 'home', 'private-user', 'store'].join('/'));
+  assert.equal(auditPublicSource(root).ok, false);
+  fs.writeFileSync(file, 'volume: ' + ['', 'home', 'rocketmq-private', 'store'].join('/'));
+  assert.equal(auditPublicSource(root).ok, false);
+  fs.writeFileSync(file, 'volume: ' + ['', 'home', 'rocketmq', 'store'].join('/'));
+  fs.writeFileSync(path.join(root, 'source.js'), ['', 'home', 'rocketmq', 'private.txt'].join('/'));
+  assert.equal(auditPublicSource(root).ok, false);
+});

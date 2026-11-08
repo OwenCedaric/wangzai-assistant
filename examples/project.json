@@ -1,0 +1,28 @@
+{
+  "name": "Ozon助手（接入示例）",
+  "code": "ozon_helper",
+  "version": "1.0.0",
+  "description": "License Center 标准项目清单示例；复制后替换为实际软件信息。",
+  "modules": [
+    {
+      "code": "order_view",
+      "name": "订单查看",
+      "description": "查看订单与基础详情"
+    },
+    {
+      "code": "order_sync",
+      "name": "订单同步",
+      "description": "从业务数据源同步订单"
+    },
+    {
+      "code": "profit",
+      "name": "利润分析",
+      "description": "查看服务端授权的利润分析功能"
+    },
+    {
+      "code": "ai_analysis",
+      "name": "AI分析",
+      "description": "使用 AI 分析能力"
+    }
+  ]
+}

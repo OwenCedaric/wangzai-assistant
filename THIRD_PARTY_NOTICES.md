@@ -15,6 +15,7 @@
 
 | 组件 | 主要许可证 | 说明 |
 | --- | --- | --- |
+| Vue、Vue Router、Element Plus、Axios | MIT | 管理后台依赖，按 `admin/package-lock.json` 安装 |
 | React、Electron、MUI 等 | MIT 等 | 保留安装包中的许可及版权声明 |
 | Apache ECharts 6、zrender | Apache-2.0、BSD-3-Clause | 已替换 ApexCharts；许可文本见 `third_party/licenses/` |
 | sharp / libvips | Apache-2.0 / LGPL-3.0-or-later 等 | 二进制分发须遵守其 LGPL 源码、通知及替换等适用要求 |
@@ -25,3 +26,5 @@
 `third_party/npm-license-inventory.json` 是按 npm 锁文件生成的依赖元数据清单，包含开发和可选依赖，并非法律结论或完整二进制 SBOM。Python 完整版本记录见 `server/requirements-lock.txt`。
 
 重新分发安装包时，应再次盘点实际装入的组件及资源，附带完整适用许可与 NOTICE，并履行 LGPL/MPL 等义务。此源码首发不提供安装包，也不声称已经完成二进制产品发布门禁。
+
+新增管理后台依赖按 `admin/package-lock.json` 记录。Jeepay 的准备工具按固定上游提交下载源码，原项目不在本仓库重复分发；适用上游许可证，本项目只提供部署脚本及安全补丁。SDK 为项目源码，适用根目录 LICENSE。

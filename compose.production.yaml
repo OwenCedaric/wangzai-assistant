@@ -183,7 +183,7 @@ services:
 
   admin:
     build:
-      context: ./frontend
+      context: ./admin
     restart: unless-stopped
     depends_on:
       backend:

@@ -41,7 +41,7 @@ test('every Windows release path fails before build when durable real-SKU eviden
 
 test('real-SKU tests and verifier use the tracked compact proof without skip or .tmp fallback', () => {
   const testSource = fs.readFileSync(
-    path.join(workspaceRoot, 'local-api', 'test', 'productRealSkuEvidence.test.js'),
+    path.join(workspaceRoot, 'local-api', 'acceptance', 'productRealSkuEvidence.acceptance.mjs'),
     'utf8',
   );
   const verifierSource = fs.readFileSync(

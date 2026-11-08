@@ -69,3 +69,11 @@ __pycache__/
 htmlcov/
 .secrets/
 !deploy/.env.production.example
+!admin/.env.example
+!deploy/jeepay/.env.example
+deploy/secrets/
+deploy/generated/
+deploy/jeepay/.keepalive.pid
+.mypy_cache/
+*.egg-info/
+.license-cache/

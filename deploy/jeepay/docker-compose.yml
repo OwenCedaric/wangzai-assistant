@@ -1,0 +1,264 @@
+name: wangzai-jeepay
+
+x-jeepay-service: &jeepay-service
+  restart: unless-stopped
+  environment: &jeepay-environment
+    SPRING_DATASOURCE_USERNAME: jeepay
+    SPRING_DATASOURCE_PASSWORD: ${JEEPAY_DB_PASSWORD:?run prepare.py first}
+    SPRING_DATA_REDIS_PASSWORD: ${JEEPAY_REDIS_PASSWORD:?run prepare.py first}
+    LOGGING_LEVEL_COM_JEEQUAN_JEEPAY: info
+    LOGGING_LEVEL_COM_JEEQUAN_JEEPAY_CORE_UTILS: "OFF"
+    SPRINGDOC_API_DOCS_ENABLED: "false"
+    SPRINGDOC_SWAGGER_UI_ENABLED: "false"
+    KNIFE4J_ENABLE: "false"
+    ISYS_ALLOW_CORS: "false"
+    JAVA_TOOL_OPTIONS: -Xms128m -Xmx384m -Djava.security.egd=file:/dev/./urandom
+  depends_on:
+    mysql:
+      condition: service_healthy
+    redis:
+      condition: service_healthy
+    rocketmq-broker:
+      condition: service_healthy
+  networks:
+    - jeepay
+
+services:
+  mysql:
+    image: mysql:8.0
+    restart: unless-stopped
+    environment:
+      LANG: C.UTF-8
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:?run prepare.py first}
+      MYSQL_DATABASE: jeepaydb
+      MYSQL_USER: jeepay
+      MYSQL_PASSWORD: ${JEEPAY_DB_PASSWORD:?run prepare.py first}
+    command:
+      - --default-authentication-plugin=mysql_native_password
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - mysqladmin ping -h 127.0.0.1 -uroot -p$$MYSQL_ROOT_PASSWORD --silent
+      interval: 10s
+      timeout: 5s
+      retries: 18
+      start_period: 30s
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ../../.runtime/jeepay-source/docs/sql/init.sql:/docker-entrypoint-initdb.d/01-init.sql:ro
+      - ../../.runtime/jeepay-source/docs/sql/patch.sql:/docker-entrypoint-initdb.d/02-patch.sql:ro
+    networks:
+      - jeepay
+
+  redis:
+    image: redis:6.2.14
+    restart: unless-stopped
+    command:
+      - redis-server
+      - --appendonly
+      - "yes"
+      - --requirepass
+      - ${JEEPAY_REDIS_PASSWORD:?run prepare.py first}
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - redis-cli -a $$JEEPAY_REDIS_PASSWORD --no-auth-warning ping | grep PONG
+      interval: 10s
+      timeout: 5s
+      retries: 18
+      start_period: 10s
+    environment:
+      JEEPAY_REDIS_PASSWORD: ${JEEPAY_REDIS_PASSWORD:?run prepare.py first}
+    volumes:
+      - redis_data:/data
+    networks:
+      - jeepay
+
+  rocketmq-namesrv:
+    image: apache/rocketmq:5.3.1
+    platform: linux/amd64
+    restart: unless-stopped
+    user: "0:0"
+    environment:
+      HEAP_OPTS: -Xms256m -Xmx256m -Xmn128m
+    command: sh mqnamesrv
+    healthcheck:
+      test: ["CMD-SHELL", "bash -c 'echo > /dev/tcp/localhost/9876'"]
+      interval: 15s
+      timeout: 15s
+      retries: 12
+      start_period: 45s
+    volumes:
+      - rocketmq_namesrv_logs:/home/rocketmq/logs
+    networks:
+      - jeepay
+
+  rocketmq-broker:
+    image: apache/rocketmq:5.3.1
+    platform: linux/amd64
+    restart: unless-stopped
+    user: "0:0"
+    environment:
+      NAMESRV_ADDR: rocketmq-namesrv:9876
+      JAVA_OPT_EXT: -Xms512m -Xmx512m -Xmn256m
+    command: >-
+      sh mqbroker -n rocketmq-namesrv:9876
+      -c /home/rocketmq/rocketmq-5.3.1/conf/broker.conf
+    depends_on:
+      rocketmq-namesrv:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "bash -c 'echo > /dev/tcp/localhost/10911'"]
+      interval: 15s
+      timeout: 15s
+      retries: 18
+      start_period: 120s
+    volumes:
+      - rocketmq_broker_logs:/home/rocketmq/logs
+      - rocketmq_broker_store:/home/rocketmq/store
+      - ../../.runtime/jeepay-source/docker/rocketmq/broker/conf/broker.conf:/home/rocketmq/rocketmq-5.3.1/conf/broker.conf:ro
+    networks:
+      - jeepay
+
+  payment:
+    <<: *jeepay-service
+    build:
+      context: ../../.runtime/jeepay-source/jeepay-payment
+      dockerfile: Dockerfile
+      args:
+        BASE_IMAGE: eclipse-temurin:17-jre
+    image: wangzai/jeepay-payment:ba371119
+    environment:
+      <<: *jeepay-environment
+    ports:
+      - 127.0.0.1:9216:9216
+    healthcheck:
+      test: ["CMD-SHELL", "bash -c 'echo > /dev/tcp/localhost/9216'"]
+      interval: 15s
+      timeout: 5s
+      retries: 18
+      start_period: 60s
+    volumes:
+      - payment_logs:/jeepayhomes/service/logs
+      - payment_uploads:/jeepayhomes/service/uploads
+      - ../../.runtime/jeepay-source/conf/payment/application.yml:/jeepayhomes/service/app/application.yml:ro
+
+  manager:
+    <<: *jeepay-service
+    build:
+      context: ../../.runtime/jeepay-source/jeepay-manager
+      dockerfile: Dockerfile
+      args:
+        BASE_IMAGE: eclipse-temurin:17-jre
+    image: wangzai/jeepay-manager:ba371119
+    environment:
+      <<: *jeepay-environment
+      ISYS_JWT_SECRET: ${JEEPAY_MANAGER_JWT_SECRET:?run prepare.py first}
+    ports:
+      - 127.0.0.1:9217:9217
+    healthcheck:
+      test: ["CMD-SHELL", "bash -c 'echo > /dev/tcp/localhost/9217'"]
+      interval: 15s
+      timeout: 5s
+      retries: 18
+      start_period: 60s
+    volumes:
+      - manager_logs:/jeepayhomes/service/logs
+      - manager_uploads:/jeepayhomes/service/uploads
+      - ../../.runtime/jeepay-source/conf/manager/application.yml:/jeepayhomes/service/app/application.yml:ro
+
+  merchant:
+    <<: *jeepay-service
+    build:
+      context: ../../.runtime/jeepay-source/jeepay-merchant
+      dockerfile: Dockerfile
+      args:
+        BASE_IMAGE: eclipse-temurin:17-jre
+    image: wangzai/jeepay-merchant:ba371119
+    environment:
+      <<: *jeepay-environment
+      ISYS_JWT_SECRET: ${JEEPAY_MERCHANT_JWT_SECRET:?run prepare.py first}
+    ports:
+      - 127.0.0.1:9218:9218
+    healthcheck:
+      test: ["CMD-SHELL", "bash -c 'echo > /dev/tcp/localhost/9218'"]
+      interval: 15s
+      timeout: 5s
+      retries: 18
+      start_period: 60s
+    volumes:
+      - merchant_logs:/jeepayhomes/service/logs
+      - merchant_uploads:/jeepayhomes/service/uploads
+      - ../../.runtime/jeepay-source/conf/merchant/application.yml:/jeepayhomes/service/app/application.yml:ro
+
+  ui-payment:
+    build:
+      context: ../../.runtime/jeepay-ui
+      dockerfile: ../../deploy/jeepay/ui.Dockerfile
+      args:
+        PLATFORM: cashier
+    image: wangzai/jeepay-ui-payment:17d057db
+    restart: unless-stopped
+    environment:
+      BACKEND_HOST: payment:9216
+    ports:
+      - 127.0.0.1:9226:80
+    depends_on:
+      payment:
+        condition: service_healthy
+    networks:
+      - jeepay
+
+  ui-manager:
+    build:
+      context: ../../.runtime/jeepay-ui
+      dockerfile: ../../deploy/jeepay/ui.Dockerfile
+      args:
+        PLATFORM: manager
+    image: wangzai/jeepay-ui-manager:17d057db
+    restart: unless-stopped
+    environment:
+      BACKEND_HOST: manager:9217
+    ports:
+      - 127.0.0.1:9227:80
+    depends_on:
+      manager:
+        condition: service_healthy
+    networks:
+      - jeepay
+
+  ui-merchant:
+    build:
+      context: ../../.runtime/jeepay-ui
+      dockerfile: ../../deploy/jeepay/ui.Dockerfile
+      args:
+        PLATFORM: merchant
+    image: wangzai/jeepay-ui-merchant:17d057db
+    restart: unless-stopped
+    environment:
+      BACKEND_HOST: merchant:9218
+    ports:
+      - 127.0.0.1:9228:80
+    depends_on:
+      merchant:
+        condition: service_healthy
+    networks:
+      - jeepay
+
+networks:
+  jeepay:
+
+volumes:
+  mysql_data:
+  redis_data:
+  rocketmq_namesrv_logs:
+  rocketmq_broker_logs:
+  rocketmq_broker_store:
+  payment_logs:
+  payment_uploads:
+  manager_logs:
+  manager_uploads:
+  merchant_logs:
+  merchant_uploads:

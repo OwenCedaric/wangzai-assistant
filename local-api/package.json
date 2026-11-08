@@ -19,13 +19,15 @@
     "oss:check": "node scripts/check-product-image-oss.mjs",
     "db:inspect": "node scripts/inspect-db.mjs",
     "perf:baseline": "node scripts/perf-baseline.mjs",
-    "test": "node --test",
+    "test": "npm run test:source && npm run test:evidence",
     "test:account-removal:stress": "node scripts/verify-account-removal-stress.mjs --cycles=50",
     "security:protected-compute": "node scripts/scan-protected-compute-boundary.mjs",
     "evidence:sku": "node scripts/verify-real-sku-evidence.mjs",
     "evidence:sku:build": "node scripts/build-real-sku-evidence-bundle.mjs",
     "charges:reconcile": "node scripts/reconcile-cross-border-charges.mjs",
-    "provenance:smoke": "node scripts/test-image-provenance-smoke.mjs"
+    "provenance:smoke": "node scripts/test-image-provenance-smoke.mjs",
+    "test:source": "node --test",
+    "test:evidence": "node --test acceptance/productRealSkuEvidence.acceptance.mjs"
   },
   "dependencies": {
     "ag-psd": "^30.2.0",

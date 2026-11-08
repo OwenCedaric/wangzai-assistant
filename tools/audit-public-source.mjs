@@ -70,6 +70,10 @@ export function auditPublicSource(root, { trackedOnly = false } = {}) {
       const source = bytes.toString('utf8');
       for (const [rule, pattern] of rules) {
         for (const match of source.matchAll(pattern)) {
+          // Apache RocketMQ's published container uses this fixed service home.
+          // This exact deployment file/path is not a developer home directory.
+          if (rule === 'personal-home-path' && relative === 'deploy/jeepay/docker-compose.yml'
+              && match[0] === ['', 'home', 'rocketmq'].join('/')) continue;
           // Deliberately recognizable synthetic provider IDs in isolated tests;
           // real key material remains checked even when stored in a test file.
           if (rule === 'provider-token' && /(?:^|\/)tests?\//u.test(relative)
