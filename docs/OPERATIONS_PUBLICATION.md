@@ -53,4 +53,4 @@ node tools/verify-source-completeness.mjs --client-root='<原客户端目录>' -
 
 上一轮公开源码提交 `6a87185` 的 [Source checks](https://github.com/superbaiss/wangzai-assistant/actions/runs/42488985592) 六个任务全部通过，其中后端 536 项、本地 API 1,698 项；这些不是本轮新增代码的全量结果。
 
-本轮修复后的 [9f63974 检查](https://github.com/superbaiss/wangzai-assistant/actions/runs/42492241781) 已通过源码公开、SDK 和实际容器检查，其他任务提交本文时仍在运行。查看运行链接获取最终状态；不将正在运行记为通过。GitHub 还报告了仓库现有依赖安全告警，本轮源码完整性和容器验证没有处理或豁免这些告警。
+2026-11-09 已核实后续源码提交 `8d099ec` 的 [完整检查](https://github.com/superbaiss/wangzai-assistant/actions/runs/42492429174)：源码公开、前端、服务端、本地 API、管理后台、SDK 和容器七个任务全部成功。GitHub 还报告了仓库现有依赖安全告警，本轮源码完整性和容器验证没有处理或豁免这些告警。
