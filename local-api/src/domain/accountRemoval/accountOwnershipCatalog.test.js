@@ -1,3 +1,4 @@
+import { verifyCurrentDiscoveryReviews, resolveReviewedCatalogRelocation } from './accountOwnershipCurrentDiscoveryReviews.js';
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
 import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs';
@@ -1612,9 +1613,11 @@ function isCatalogOrLedgerBackedStateFact(fact, ledger, catalog) {
 
 function assertNoUnregisteredDiscoveredState(scan, ledger, catalog = ACCOUNT_OWNERSHIP_CATALOG) {
   const systemSourceFacts = verifyAccountOwnershipSystemSourceFacts(scan);
+  const currentSourceFacts = verifyCurrentDiscoveryReviews(scan);
   const unregistered = scan.discoveredStateFacts
     .filter((fact) => !isCatalogOrLedgerBackedStateFact(fact, ledger, catalog)
-      && !systemSourceFacts.some((reviewed) => reviewed.discovery === fact));
+      && !systemSourceFacts.some((reviewed) => reviewed.discovery === fact)
+      && !currentSourceFacts.some((reviewed) => reviewed.discovery === fact));
   if (unregistered.length > 0) {
     throw new Error('ACCOUNT_OWNERSHIP_UNREGISTERED_DISCOVERY:' + unregistered.map((fact) => fact.sourceFile + ':' + fact.sourceSymbol).join(','));
   }
@@ -1650,6 +1653,10 @@ function createCatalogSourceEvidenceFact(entry, frozenResource, sourceByFile) {
   const source = sourceByFile.get(sourceFile);
   if (typeof source !== 'string') {
     return { id: entry.id, sourceFile, anchored: false, reason: 'catalog-source-file-missing' };
+  }
+  const relocated = resolveReviewedCatalogRelocation(entry, sourceByFile);
+  if (relocated) {
+    return { id: entry.id, sourceFile: relocated.sourceFile, anchored: true, matchMode: 'exact-literal', usingReviewedCurrentSource: true };
   }
   const primaryCompatibility = currentPrimarySourceCompatibility(frozenResource);
   if (primaryCompatibility && entry.id === primaryCompatibility.id && ['sourceFile', 'sourceSymbol', 'ownerBasis'].every((field) => (
@@ -1958,6 +1965,7 @@ test('B1 production source scanner consumes all eight roots, frozen anchors, and
   assert.deepEqual([...scan.rootFileCounts.keys()], [...B1_PRODUCTION_SOURCE_ROOTS]);
   for (const root of B1_PRODUCTION_SOURCE_ROOTS) assert.ok(scan.rootFileCounts.get(root) > 0, 'scanner must read real root: ' + root);
   assert.ok(scan.discoveredStateFacts.length > 0, 'scanner must discover real production state facts');
+  assert.equal(verifyCurrentDiscoveryReviews(scan).length, 6, 'all six exact reviewed discoveries must still be present');
   assertNoUnregisteredDiscoveredState(scan, ledger);
   assertFrozenAnchorFacts(scan.frozenResourceFacts);
   for (const symbol of ['backupDirectory', 'temporaryDirectory']) {

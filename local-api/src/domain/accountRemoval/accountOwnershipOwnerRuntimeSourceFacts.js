@@ -3,7 +3,7 @@ import { createHash } from 'node:crypto';
 // These six task registries were added after the immutable B0 inventory. They
 // contain owner-bearing asynchronous work, not system-only subscriptions. This
 // supplemental source proof neither adds deletion resources nor changes B0.
-export const ACCOUNT_OWNERSHIP_OWNER_RUNTIME_SOURCE_FACTS_VERSION = 'account-ownership-owner-runtime-source-facts-v1';
+export const ACCOUNT_OWNERSHIP_OWNER_RUNTIME_SOURCE_FACTS_VERSION = 'account-ownership-owner-runtime-source-facts-v2';
 
 const rendererBinding = Object.freeze({
   sourceFile: 'frontend/src/features/settings/accountRemoval/services/accountRemovalRuntime.js',
@@ -64,7 +64,9 @@ const reviewedFacts = [
   {
     sourceFile: 'frontend/src/services/productMaterialProfileStore.js',
     sourceSymbol: 'productMaterialHydrations',
-    sourceSHA256: 'D2F5B06F3DA34C2CFD6CF7E6ABE5982BDBF0D3EEF60D92AE025BEAAF7B9CAD66',
+    // Re-reviewed with owner-race and persistence tests; see docs/CI_REPAIR_REVIEW.md.
+    previousSourceSHA256: 'D2F5B06F3DA34C2CFD6CF7E6ABE5982BDBF0D3EEF60D92AE025BEAAF7B9CAD66',
+    sourceSHA256: 'F97178E020EF48335EE249F18FE66283F302109D78090F254C0C5C5D2FF3ACB8',
     ownerType: 'ozon_shop',
     ownerResourceId: 'logical:local-data-product-material-profiles-shop-records',
     barrierEntryPoint: 'fenceAndDrainProductMaterialProfileWrites',
@@ -96,7 +98,9 @@ const reviewedFacts = [
   {
     sourceFile: 'frontend/src/services/purchaseOrderRuntime.js',
     sourceSymbol: 'purchaseOrderOverrideReads',
-    sourceSHA256: 'B46C58476D750641396AFBF6E45DB02A9CC8DF6E87588A187E772E40886D10E1',
+    // Re-reviewed with owner-race and persistence tests; see docs/CI_REPAIR_REVIEW.md.
+    previousSourceSHA256: 'B46C58476D750641396AFBF6E45DB02A9CC8DF6E87588A187E772E40886D10E1',
+    sourceSHA256: '6124D1A6362BE5BF8D471C24EF36EDAB3910DA9383B0AC9B86BA5575693C40EE',
     ownerType: 'ozon_shop',
     ownerResourceId: 'logical:local-data-purchase-order-overrides-shop-records',
     barrierEntryPoint: 'fenceAndDrainPurchaseOrderOverrideWrites',

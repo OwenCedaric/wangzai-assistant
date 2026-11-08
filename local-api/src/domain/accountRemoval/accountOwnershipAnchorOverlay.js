@@ -1,5 +1,5 @@
 // Bound to phase-b-b0-frozen-ledger-v2 and the immutable current Catalog source.
-export const ACCOUNT_OWNERSHIP_ANCHOR_OVERLAY_VERSION = 'phase-b-account-ownership-anchor-overlay-v20';
+export const ACCOUNT_OWNERSHIP_ANCHOR_OVERLAY_VERSION = 'phase-b-account-ownership-anchor-overlay-v21';
 export const ACCOUNT_OWNERSHIP_ANCHOR_OVERLAY_V2_LEDGER_SHA256 = 'EDFF68B271830BFEFE320D19774B3DE2B1FC61DF640FED1224D8C61D593B737C';
 export const ACCOUNT_OWNERSHIP_ANCHOR_OVERLAY_CATALOG_BASELINE_SHA256 = '2574361EF90FD4531060D8CF6EB8FEB09A53DEFD303C2966EBC21E0043F9D3B8';
 
@@ -35,7 +35,7 @@ export function applyAccountOwnershipAnchorOverlay({
 // Versioned Catalog extensions did not exist in the B0 ledger. Their immutable
 // source-evidence identity needs a separate, exact compatibility record; they
 // must never be added to or substituted for the frozen 76-entry certificate.
-export const ACCOUNT_OWNERSHIP_CURRENT_CATALOG_SOURCE_VERSION = 'account-ownership-current-catalog-source-v1';
+export const ACCOUNT_OWNERSHIP_CURRENT_CATALOG_SOURCE_VERSION = 'account-ownership-current-catalog-source-v2';
 export const ACCOUNT_OWNERSHIP_CURRENT_CATALOG_SOURCE_COMPATIBILITY = Object.freeze([
   ['browser:purchase-persistent-partition', 'the CEF profile directory is derived only from the HMAC owner reference'],
   ['browser:integration-persistent-partition', 'controller closes interactive and collector runtimes before removing the exact owner storage path'],
@@ -61,7 +61,9 @@ export const ACCOUNT_OWNERSHIP_CURRENT_CATALOG_SOURCE_COMPATIBILITY = Object.fre
     currentSourceAnchor: Object.freeze({
       sourceFile: 'desktop/src/purchaseBrowser/cefPurchaseBrowserController.js',
       sourceSymbol: 'async function purgeOperation(operationId, update = () => undefined) {',
-      line: '4766-4834',
+      // Current cleanup body re-reviewed at its exact location and owner guards.
+      // See docs/CI_REPAIR_REVIEW.md; frozen Catalog identities stay unchanged.
+      line: '4769-4837',
       ownerBasis,
     }),
     requiredSourceStatements: Object.freeze([
@@ -428,12 +430,12 @@ export const ACCOUNT_OWNERSHIP_FROZEN_SOURCE_LINE_OVERLAY = Object.freeze([
     ownerBasis: "renderer normalization drops authoritative shop ownership from job-only keys",
   })]),
   Object.freeze(["runtime:renderer-local-api-request-listeners", "66,104,230,232"]),
-  Object.freeze(["memory:static:frontend-src-entities-order-order-shop-scope:legacy-marketing-activity-fields", "487"]),
-  Object.freeze(["memory:static:frontend-src-entities-order-order-shop-scope:legacy-marketing-product-fields", "488"]),
-  Object.freeze(["memory:static:frontend-src-entities-order-order-shop-scope:legacy-marketing-product-status-aliases", "656"]),
-  Object.freeze(["memory:static:frontend-src-entities-order-order-shop-scope:legacy-marketing-snapshot-fields", "477"]),
-  Object.freeze(["memory:static:frontend-src-entities-order-order-shop-scope:legacy-marketing-source-type-aliases", "633"]),
-  Object.freeze(["memory:static:frontend-src-entities-order-order-shop-scope:legacy-marketing-summary-fields", "489"]),
+  Object.freeze(["memory:static:frontend-src-entities-order-order-shop-scope:legacy-marketing-activity-fields", Object.freeze({ sourceFile: "frontend/src/entities/marketing/marketingActivityLegacyMigration.jsx", line: "31" })]),
+  Object.freeze(["memory:static:frontend-src-entities-order-order-shop-scope:legacy-marketing-product-fields", Object.freeze({ sourceFile: "frontend/src/entities/marketing/marketingActivityLegacyMigration.jsx", line: "33" })]),
+  Object.freeze(["memory:static:frontend-src-entities-order-order-shop-scope:legacy-marketing-product-status-aliases", Object.freeze({ sourceFile: "frontend/src/entities/marketing/marketingActivityLegacyMigration.jsx", line: "176" })]),
+  Object.freeze(["memory:static:frontend-src-entities-order-order-shop-scope:legacy-marketing-snapshot-fields", Object.freeze({ sourceFile: "frontend/src/entities/marketing/marketingActivityLegacyMigration.jsx", line: "20" })]),
+  Object.freeze(["memory:static:frontend-src-entities-order-order-shop-scope:legacy-marketing-source-type-aliases", Object.freeze({ sourceFile: "frontend/src/entities/marketing/marketingActivityLegacyMigration.jsx", line: "153" })]),
+  Object.freeze(["memory:static:frontend-src-entities-order-order-shop-scope:legacy-marketing-summary-fields", Object.freeze({ sourceFile: "frontend/src/entities/marketing/marketingActivityLegacyMigration.jsx", line: "35" })]),
   Object.freeze(["memory:static:frontend-src-entities-product-product-attributes:product-attribute-id-name-map", "324"]),
   Object.freeze(["memory:static:frontend-src-entities-product-product-attributes:product-attribute-value-map", "460"]),
   Object.freeze(["memory:static:frontend-src-features-licensing-services-license-center-client:entitlement-rejection-statuses", Object.freeze({
@@ -486,7 +488,7 @@ export const ACCOUNT_OWNERSHIP_FROZEN_SOURCE_LINE_OVERLAY = Object.freeze([
   Object.freeze(["memory:static:frontend-src-services-purchase-order-runtime:purchase-empty-order-no-values", "624"]),
   Object.freeze(["memory:static:frontend-src-services-purchase-order-runtime:purchase-empty-platform-values", "626"]),
   Object.freeze(["memory:static:frontend-src-services-purchase-order-runtime:purchase-empty-price-values", "628"]),
-  Object.freeze(["memory:static:frontend-src-services-purchase-order-runtime:purchase-override-protected-fields", "789"]),
+  Object.freeze(["memory:static:frontend-src-services-purchase-order-runtime:purchase-override-protected-fields", Object.freeze({ sourceFile: "frontend/src/services/purchaseOrderOverrideRules.js", line: "38" })]),
   Object.freeze(["memory:static:frontend-src-services-purchase-plugin-context-store:purchase-plugin-context-envelope-fields", "50"]),
   Object.freeze(["memory:static:frontend-src-services-purchase-plugin-context-store:purchase-plugin-context-fields", "45"]),
   Object.freeze(["memory:static:frontend-src-shared-config-app-config-core:cross-border-legacy-empty-text", "547"]),
@@ -660,9 +662,9 @@ export const ACCOUNT_OWNERSHIP_FROZEN_SOURCE_LINE_OVERLAY = Object.freeze([
     ownerBasis: "cooldown state has no one-owner selector",
   })]),
   Object.freeze(["runtime:renderer-sales-orders-page-load", Object.freeze({
-    sourceFile: "frontend/src/App.jsx",
+    sourceFile: "frontend/src/appLazyRoutes.jsx",
     sourceSymbol: "let salesOrdersPageLoadPromise = null;",
-    line: "205",
+    line: "48",
     ownerBasis: "lazy page load is global renderer runtime",
   })]),
   Object.freeze(["runtime:renderer-sales-supplement-cooldown-unattributed", Object.freeze({

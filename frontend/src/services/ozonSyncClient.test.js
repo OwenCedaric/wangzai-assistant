@@ -925,6 +925,7 @@ describe('ozonSyncClient unified scheduler adapter', () => {
           new Response(
             JSON.stringify({
               ok: true,
+              complete: true,
               rows: [
                 {
                   operation_id: 'op-1',

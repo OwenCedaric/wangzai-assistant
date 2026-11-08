@@ -21,7 +21,9 @@ describe('order split relation page integration', () => {
   });
 
   it('excludes split parents from purchase and profit business flows', () => {
-    expect(appSource).toContain('const matchSplitBusiness = shouldIncludeOrderInBusinessFlow(order);');
+    // The range reader memoizes this predicate per immutable order snapshot.
+    expect(appSource).toContain('businessFlow: shouldIncludeOrderInBusinessFlow(order),');
+    expect(appSource).toContain('const matchSplitBusiness = description.businessFlow;');
     expect(appSource).toContain(
       'return matchSplitBusiness && matchFulfillment && matchKeyword && matchPaymentStart && matchPaymentEnd;'
     );

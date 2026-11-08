@@ -1,4 +1,4 @@
-﻿import test from 'node:test';
+﻿import test, { beforeEach } from 'node:test';
 import assert from 'node:assert/strict';
 import { createApp } from '../src/app/createApp.js';
 import { createRecoveryReconcileState } from '../src/backup/recoveryReconcileState.js';
@@ -7,6 +7,12 @@ import { createOrdersService } from '../src/domain/orders/ordersService.js';
 import { createShopRepository } from '../src/db/repositories/shopRepository.js';
 import { createContinuousSyncService } from '../src/sync/continuousSyncService.js';
 import { createMigratedTestDb, saveUnitShop } from './testDb.js';
+
+// These fixtures describe June/July orders. Freeze only Date so the rolling
+// 90-day cache window stays deterministic; real async timers still execute.
+beforeEach((t) => {
+  t.mock.timers.enable({ apis: ['Date'], now: new Date('2026-08-01T12:00:00.000Z') });
+});
 
 function orderRow(overrides = {}) {
   return {

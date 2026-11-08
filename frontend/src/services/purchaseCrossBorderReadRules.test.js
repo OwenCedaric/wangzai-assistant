@@ -227,11 +227,13 @@ describe('purchase cross-border read rules', () => {
   });
 
   it('does not show cross-border writes as completed before a successful readback', () => {
-    const operationStart = appSource.indexOf('const executePurchaseOperation = async () => {');
-    const operationEnd = appSource.indexOf('const stats = [', operationStart);
+    // Read the extracted production hook instead of slicing across unrelated pages.
+    const hookSource = readFileSync(join(process.cwd(), 'src/features/orders/purchase/model/usePurchaseOperationExecutionState.jsx'), 'utf8');
+    const operationStart = hookSource.indexOf('const executePurchaseOperation = async () => {');
+    const operationEnd = hookSource.indexOf('const executePurchaseForecastAuto = async () => {', operationStart);
     expect(operationStart).toBeGreaterThanOrEqual(0);
     expect(operationEnd).toBeGreaterThan(operationStart);
-    const operationSource = appSource.slice(operationStart, operationEnd);
+    const operationSource = hookSource.slice(operationStart, operationEnd);
 
     expect(operationSource).toContain('const sheetReadBack = await readCrossBorderForOrder');
     expect(operationSource).toContain('const packageReadBack = await readCrossBorderForOrder');
